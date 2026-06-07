@@ -273,9 +273,14 @@ elif page == "🔍 Country Explorer":
         fc = forecasts[forecasts["Country"] == country].sort_values("Year")
         intv = intervals[intervals["Country"] == country]
         if not fc.empty:
+            # Bridge: prepend last historical point so forecast connects
+            last_hist_year = int(hist["TIME_PERIOD"].max())
+            last_hist_val = hist[hist["TIME_PERIOD"] == last_hist_year]["score_composite"].values[0]
+            fc_years = [last_hist_year] + list(fc["Year"])
+            fc_vals  = [last_hist_val]  + list(fc["score_composite"])
             # Composite forecast
             fig.add_trace(go.Scatter(
-                x=fc["Year"], y=fc["score_composite"],
+                x=fc_years, y=fc_vals,
                 name="Composite (Forecast)", line=dict(color=PILLAR_COLORS["score_composite"], width=2.5, dash="dash"),
                 mode="lines+markers", marker=dict(size=5, symbol="diamond"),
             ))
@@ -289,7 +294,6 @@ elif page == "🔍 Country Explorer":
                     line=dict(color="rgba(0,0,0,0)"), showlegend=False, name="CI",
                 ))
             # Divider line
-            last_hist_year = int(hist["TIME_PERIOD"].max())
             fig.add_vline(x=last_hist_year + 0.5, line_dash="dot", line_color="#aaa", annotation_text="Forecast →", annotation_position="top")
 
     fig.update_layout(
@@ -640,9 +644,13 @@ elif page == "📈 Forecasting":
             mode="lines+markers", marker=dict(size=5),
         ))
 
-        # Forecast line
+        # Forecast line — bridge from last historical point
+        last_hist_year = int(hist["TIME_PERIOD"].max())
+        last_hist_val = hist[hist["TIME_PERIOD"] == last_hist_year][pillar_key].values[0]
+        fc_years = [last_hist_year] + list(fc["Year"])
+        fc_vals  = [last_hist_val]  + list(fc[pillar_key])
         fig.add_trace(go.Scatter(
-            x=fc["Year"], y=fc[pillar_key],
+            x=fc_years, y=fc_vals,
             name="Forecast", line=dict(color=C["orange"], width=2.5, dash="dash"),
             mode="lines+markers", marker=dict(size=7, symbol="diamond", color=C["orange"]),
         ))
@@ -663,7 +671,7 @@ elif page == "📈 Forecasting":
                 line=dict(color="rgba(0,0,0,0)"), showlegend=True, name="80% CI",
             ))
 
-        fig.add_vline(x=2023.5, line_dash="dot", line_color="#aaa",
+        fig.add_vline(x=last_hist_year + 0.5, line_dash="dot", line_color="#aaa",
                       annotation_text="Forecast →", annotation_position="top right")
 
         fig.update_layout(
