@@ -15,23 +15,23 @@ st.set_page_config(
 
 # ── Theme colours ─────────────────────────────────────────────────────────────
 C = {
-    "navy":   "#1b3a5b",
-    "orange": "#e07b39",
-    "green":  "#27ae60",
-    "blue":   "#2980b9",
-    "amber":  "#f39c12",
-    "red":    "#e74c3c",
-    "light":  "#f4f6f9",
-    "mid":    "#dde3ec",
+    "navy":   "#0a1628",
+    "orange": "#c9a84c",
+    "green":  "#2ecc71",
+    "blue":   "#4fc3f7",
+    "amber":  "#c9a84c",
+    "red":    "#ef5350",
+    "light":  "#0f2040",
+    "mid":    "#1a3358",
 }
 
 TIER_COLORS = {"High": C["green"], "Medium": C["blue"], "Low": C["red"]}
 PILLAR_COLORS = {
-    "score_fdi":     "#e07b39",
-    "score_banking": "#2980b9",
-    "score_manuf":   "#27ae60",
-    "score_digital": "#8e44ad",
-    "score_composite": "#1b3a5b",
+    "score_fdi":     "#c9a84c",
+    "score_banking": "#4fc3f7",
+    "score_manuf":   "#2ecc71",
+    "score_digital": "#ce93d8",
+    "score_composite": "#90caf9",
 }
 PILLAR_LABELS = {
     "score_fdi":      "FDI",
@@ -44,27 +44,31 @@ PILLAR_LABELS = {
 # ── CSS ───────────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-[data-testid="stSidebar"] { background: #1b3a5b; }
-[data-testid="stSidebar"] * { color: #f4f6f9 !important; }
+.stApp { background-color: #0a1628 !important; }
+[data-testid="stAppViewContainer"] { background-color: #0a1628 !important; }
+[data-testid="block-container"] { background-color: #0a1628 !important; padding-top: 2rem; }
+[data-testid="stSidebar"] { background: #060e1a !important; border-right: 1px solid #1a3358; }
+[data-testid="stSidebar"] * { color: #e8edf5 !important; }
 [data-testid="stSidebar"] .stRadio label { font-size: 15px; }
+h1, h2, h3, h4 { color: #e8edf5 !important; }
+p, span, div, label { color: #e8edf5; }
+button[data-baseweb="tab"] { background: #0f2040 !important; color: #8fa8c8 !important; border: none !important; }
+button[data-baseweb="tab"][aria-selected="true"] { color: #c9a84c !important; border-bottom: 2px solid #c9a84c !important; background: #112035 !important; }
+.stSelectbox label, .stCheckbox label { color: #8fa8c8 !important; }
+.stAlert { background: #112035 !important; border: 1px solid #1a3358 !important; }
 .metric-card {
-    background: white; border-radius: 10px; padding: 18px 22px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 10px;
+    background: #112035; border-radius: 10px; padding: 18px 22px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5); margin-bottom: 10px;
+    border: 1px solid #1a3358;
 }
-.metric-value { font-size: 2rem; font-weight: 700; color: #1b3a5b; }
-.metric-label { font-size: 0.85rem; color: #666; margin-top: 2px; }
+.metric-value { font-size: 2rem; font-weight: 700; color: #c9a84c; }
+.metric-label { font-size: 0.85rem; color: #8fa8c8; margin-top: 2px; }
 .section-header {
-    font-size: 1.3rem; font-weight: 700; color: #1b3a5b;
-    border-left: 4px solid #e07b39; padding-left: 12px; margin: 20px 0 12px 0;
+    font-size: 1.3rem; font-weight: 700; color: #e8edf5;
+    border-left: 4px solid #c9a84c; padding-left: 12px; margin: 20px 0 12px 0;
 }
-.rec-card {
-    border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;
-    border-left: 5px solid #27ae60; background: #f0faf4;
-}
-.tag {
-    display:inline-block; border-radius:6px; padding:3px 10px;
-    font-size:0.78rem; font-weight:600; margin-right:6px;
-}
+.rec-card { border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; border-left: 5px solid #2ecc71; background: #0d2218; }
+.tag { display:inline-block; border-radius:6px; padding:3px 10px; font-size:0.78rem; font-weight:600; margin-right:6px; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -191,7 +195,7 @@ if page == "🏠 Overview":
         height=440, margin=dict(l=0,r=0,t=10,b=0),
         coloraxis_colorbar=dict(title="Score", thickness=14),
         geo=dict(showframe=False, showcoastlines=True, coastlinecolor="#ccc"),
-        paper_bgcolor="white",
+        paper_bgcolor="#112035",
     )
     st.plotly_chart(fig, use_container_width=True)
 
@@ -214,7 +218,7 @@ if page == "🏠 Overview":
             <div style="background:{C['light']};border-radius:8px;padding:12px;text-align:center;height:110px;">
                 <div style="font-size:1.3rem;">{title.split()[0]}</div>
                 <div style="font-weight:700;font-size:0.8rem;color:{C['navy']};margin-top:4px;">{' '.join(title.split()[1:])}</div>
-                <div style="font-size:0.72rem;color:#555;margin-top:4px;">{desc}</div>
+                <div style="font-size:0.72rem;color:#8fa8c8;margin-top:4px;">{desc}</div>
             </div>""", unsafe_allow_html=True)
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -302,7 +306,7 @@ elif page == "🔍 Country Explorer":
     fig.update_layout(
         height=420, legend=dict(orientation="h", y=-0.2),
         xaxis_title="Year", yaxis_title="Score (0–1)",
-        yaxis=dict(range=[0,1]), paper_bgcolor="white", plot_bgcolor=C["light"],
+        yaxis=dict(range=[0,1]), paper_bgcolor="#112035", plot_bgcolor="#0f2040",
         margin=dict(l=40,r=20,t=20,b=60),
     )
     st.plotly_chart(fig, use_container_width=True)
@@ -322,7 +326,7 @@ elif page == "🔍 Country Explorer":
         fig_r.update_layout(
             polar=dict(radialaxis=dict(visible=True, range=[0,1])),
             height=320, margin=dict(l=40,r=40,t=30,b=30),
-            paper_bgcolor="white",
+            paper_bgcolor="#112035",
         )
         st.plotly_chart(fig_r, use_container_width=True)
 
@@ -336,7 +340,7 @@ elif page == "🔍 Country Explorer":
             labels={"TIME_PERIOD":"Year","yoy":"YoY Change"},
             title="Year-on-Year Composite Change",
         )
-        fig_bar.update_layout(height=320, paper_bgcolor="white", coloraxis_showscale=False,
+        fig_bar.update_layout(height=320, paper_bgcolor="#112035", coloraxis_showscale=False,
                                margin=dict(l=20,r=20,t=40,b=20))
         st.plotly_chart(fig_bar, use_container_width=True)
 
@@ -375,7 +379,7 @@ elif page == "🤖 ML Models":
             labels={"TIME_PERIOD":"Year","count":"Countries","investment_tier":"Tier"},
             markers=True,
         )
-        fig.update_layout(height=360, paper_bgcolor="white", plot_bgcolor=C["light"],
+        fig.update_layout(height=360, paper_bgcolor="#112035", plot_bgcolor="#0f2040",
                           legend=dict(orientation="h",y=-0.2), margin=dict(l=40,r=20,t=10,b=60))
         st.plotly_chart(fig, use_container_width=True)
 
@@ -394,7 +398,7 @@ elif page == "🤖 ML Models":
         fig_map.update_layout(
             height=400, margin=dict(l=0,r=0,t=10,b=0),
             coloraxis_colorbar=dict(tickvals=[1,2,3], ticktext=["High","Medium","Low"], title="Tier"),
-            geo=dict(showframe=False), paper_bgcolor="white",
+            geo=dict(showframe=False), paper_bgcolor="#112035",
         )
         st.plotly_chart(fig_map, use_container_width=True)
 
@@ -411,8 +415,8 @@ elif page == "🤖 ML Models":
                     labels={"investment_tier":"Tier", pillar:f"{label} Score"},
                     title=label,
                 )
-                fig_box.update_layout(height=280, showlegend=False, paper_bgcolor="white",
-                                      plot_bgcolor=C["light"], margin=dict(l=20,r=20,t=40,b=20))
+                fig_box.update_layout(height=280, showlegend=False, paper_bgcolor="#112035",
+                                      plot_bgcolor="#0f2040", margin=dict(l=20,r=20,t=40,b=20))
                 st.plotly_chart(fig_box, use_container_width=True)
 
     # ── K-MEANS ───────────────────────────────────────────────────────────────
@@ -448,8 +452,8 @@ elif page == "🤖 ML Models":
                 labels={"x":"Countries","y":""},
                 text=counts.values,
             )
-            fig_bar.update_layout(height=300, showlegend=False, paper_bgcolor="white",
-                                  plot_bgcolor=C["light"], margin=dict(l=20,r=20,t=10,b=20))
+            fig_bar.update_layout(height=300, showlegend=False, paper_bgcolor="#112035",
+                                  plot_bgcolor="#0f2040", margin=dict(l=20,r=20,t=10,b=20))
             fig_bar.update_traces(textposition="outside")
             st.plotly_chart(fig_bar, use_container_width=True)
 
@@ -464,8 +468,8 @@ elif page == "🤖 ML Models":
                     y=profile[pillar].values, marker_color=PILLAR_COLORS[pillar],
                 ))
             fig_prof.update_layout(
-                barmode="group", height=300, paper_bgcolor="white",
-                plot_bgcolor=C["light"], legend=dict(orientation="h", y=-0.3),
+                barmode="group", height=300, paper_bgcolor="#112035",
+                plot_bgcolor="#0f2040", legend=dict(orientation="h", y=-0.3),
                 xaxis_tickfont_size=11, margin=dict(l=20,r=20,t=10,b=80),
                 yaxis=dict(range=[0,0.8], title="Score"),
             )
@@ -478,7 +482,7 @@ elif page == "🤖 ML Models":
             color_discrete_map=KMEANS_COLORS, hover_name="Country",
             labels={"score_fdi":"FDI Score","score_digital":"Digital Score","cluster_name":"Cluster"},
         )
-        fig_sc.update_layout(height=380, paper_bgcolor="white", plot_bgcolor=C["light"],
+        fig_sc.update_layout(height=380, paper_bgcolor="#112035", plot_bgcolor="#0f2040",
                               legend=dict(orientation="h", y=-0.2), margin=dict(l=40,r=20,t=10,b=80))
         st.plotly_chart(fig_sc, use_container_width=True)
 
@@ -507,8 +511,8 @@ elif page == "🤖 ML Models":
                            color=counts.index, color_discrete_map=HIER_COLORS,
                            labels={"x":"Tier","y":"Countries"},
                            text=counts.values)
-            fig_h.update_layout(height=300, showlegend=False, paper_bgcolor="white",
-                                 plot_bgcolor=C["light"], margin=dict(l=20,r=20,t=10,b=20))
+            fig_h.update_layout(height=300, showlegend=False, paper_bgcolor="#112035",
+                                 plot_bgcolor="#0f2040", margin=dict(l=20,r=20,t=10,b=20))
             fig_h.update_traces(textposition="outside")
             st.plotly_chart(fig_h, use_container_width=True)
 
@@ -522,7 +526,7 @@ elif page == "🤖 ML Models":
                     y=profile_h[pillar].values, marker_color=PILLAR_COLORS[pillar],
                 ))
             fig_hp.update_layout(
-                barmode="group", height=300, paper_bgcolor="white", plot_bgcolor=C["light"],
+                barmode="group", height=300, paper_bgcolor="#112035", plot_bgcolor="#0f2040",
                 legend=dict(orientation="h", y=-0.3), margin=dict(l=20,r=20,t=10,b=80),
                 yaxis=dict(range=[0,0.8], title="Score"),
             )
@@ -562,7 +566,7 @@ elif page == "🤖 ML Models":
                 text=imp[shap_col].apply(lambda x: f"{x:.1f}%"),
             )
             fig_imp.update_layout(height=300, showlegend=False, coloraxis_showscale=False,
-                                  paper_bgcolor="white", plot_bgcolor=C["light"],
+                                  paper_bgcolor="#112035", plot_bgcolor="#0f2040",
                                   margin=dict(l=20,r=20,t=10,b=20))
             fig_imp.update_traces(textposition="outside")
             st.plotly_chart(fig_imp, use_container_width=True)
@@ -579,7 +583,7 @@ elif page == "🤖 ML Models":
             fig_comp.add_trace(go.Bar(name="SHAP Importance", x=pillars_list, y=shap_vals,
                                       marker_color=C["orange"], opacity=0.85))
             fig_comp.update_layout(
-                barmode="group", height=300, paper_bgcolor="white", plot_bgcolor=C["light"],
+                barmode="group", height=300, paper_bgcolor="#112035", plot_bgcolor="#0f2040",
                 legend=dict(orientation="h", y=-0.25), margin=dict(l=20,r=20,t=10,b=60),
                 yaxis=dict(title="Weight / Importance (%)"),
             )
@@ -602,7 +606,7 @@ elif page == "🤖 ML Models":
             ))
         fig_shap.add_hline(y=0, line_dash="dash", line_color="#aaa")
         fig_shap.update_layout(
-            height=360, paper_bgcolor="white", plot_bgcolor=C["light"],
+            height=360, paper_bgcolor="#112035", plot_bgcolor="#0f2040",
             xaxis_title="Year", yaxis_title="SHAP Value",
             legend=dict(orientation="h", y=-0.2), margin=dict(l=40,r=20,t=10,b=60),
         )
@@ -673,7 +677,7 @@ elif page == "📈 Forecasting":
                       annotation_text="Forecast →", annotation_position="top right")
 
         fig.update_layout(
-            height=440, paper_bgcolor="white", plot_bgcolor=C["light"],
+            height=440, paper_bgcolor="#112035", plot_bgcolor="#0f2040",
             xaxis_title="Year", yaxis_title="Score (0–1)",
             yaxis=dict(range=[0, 1]),
             legend=dict(orientation="h", y=-0.2),
@@ -709,7 +713,7 @@ elif page == "📈 Forecasting":
         )
         fig_top.update_layout(
             height=560, yaxis=dict(autorange="reversed"),
-            paper_bgcolor="white", plot_bgcolor=C["light"],
+            paper_bgcolor="#112035", plot_bgcolor="#0f2040",
             coloraxis_showscale=False, margin=dict(l=120,r=60,t=20,b=40),
         )
         fig_top.update_traces(textposition="outside")
@@ -726,7 +730,7 @@ elif page == "📈 Forecasting":
         )
         fig_map27.update_layout(
             height=400, margin=dict(l=0,r=0,t=10,b=0),
-            geo=dict(showframe=False), paper_bgcolor="white",
+            geo=dict(showframe=False), paper_bgcolor="#112035",
         )
         st.plotly_chart(fig_map27, use_container_width=True)
 
@@ -741,17 +745,17 @@ elif page == "🌐 Policy Scenarios":
     with col1:
         st.markdown(f"""<div class="metric-card" style="border-top:4px solid {C['green']};">
             <b>Scenario A — Baseline</b><br>
-            <span style="font-size:0.85rem;color:#555;">Task 5 Prophet forecast, no policy overlay</span>
+            <span style="font-size:0.85rem;color:#8fa8c8;">Task 5 Prophet forecast, no policy overlay</span>
         </div>""", unsafe_allow_html=True)
     with col2:
         st.markdown(f"""<div class="metric-card" style="border-top:4px solid {C['red']};">
             <b>Scenario B — Policy Shock</b><br>
-            <span style="font-size:0.85rem;color:#555;">Pillar scores adjusted by Task 9 factors</span>
+            <span style="font-size:0.85rem;color:#8fa8c8;">Pillar scores adjusted by Task 9 factors</span>
         </div>""", unsafe_allow_html=True)
     with col3:
         st.markdown(f"""<div class="metric-card" style="border-top:4px solid {C['orange']};">
             <b>Scenario C — Recovery</b><br>
-            <span style="font-size:0.85rem;color:#555;">Shock fades 2026–27, investment recommendation issued</span>
+            <span style="font-size:0.85rem;color:#8fa8c8;">Shock fades 2026–27, investment recommendation issued</span>
         </div>""", unsafe_allow_html=True)
 
     st.markdown("---")
@@ -793,7 +797,7 @@ elif page == "🌐 Policy Scenarios":
         ))
 
     fig.update_layout(
-        height=420, paper_bgcolor="white", plot_bgcolor=C["light"],
+        height=420, paper_bgcolor="#112035", plot_bgcolor="#0f2040",
         xaxis_title="Year", yaxis_title="Score (0–1)",
         legend=dict(orientation="h", y=-0.2),
         margin=dict(l=40,r=20,t=20,b=60),
@@ -812,7 +816,7 @@ elif page == "🌐 Policy Scenarios":
             vals = [row[p].values[0] for p in pillars_sc]
             fig_sc.add_trace(go.Bar(name=SCEN_LABELS[scen], x=pillars_sc, y=vals, marker_color=color, opacity=0.85))
     fig_sc.update_layout(
-        barmode="group", height=340, paper_bgcolor="white", plot_bgcolor=C["light"],
+        barmode="group", height=340, paper_bgcolor="#112035", plot_bgcolor="#0f2040",
         legend=dict(orientation="h", y=-0.25), margin=dict(l=20,r=20,t=10,b=70),
         yaxis=dict(title="Score (0–1)"),
     )
@@ -886,15 +890,15 @@ elif page == "🏆 Investment Recommendations":
                 </span>
             </div>
             <div style="display:flex;gap:24px;margin-bottom:10px;">
-                <div><span style="color:#888;font-size:0.82rem;">2024 Score</span><br>
+                <div><span style="color:#8fa8c8;font-size:0.82rem;">2024 Score</span><br>
                      <span style="font-weight:700;font-size:1.1rem;">{score_2024:.4f}</span></div>
-                <div><span style="color:#888;font-size:0.82rem;">2027 Score</span><br>
+                <div><span style="color:#8fa8c8;font-size:0.82rem;">2027 Score</span><br>
                      <span style="font-weight:700;font-size:1.1rem;color:{rec_color};">{score_2027:.4f}</span></div>
-                <div><span style="color:#888;font-size:0.82rem;">Trend (2024–27)</span><br>
+                <div><span style="color:#8fa8c8;font-size:0.82rem;">Trend (2024–27)</span><br>
                      <span style="font-weight:700;font-size:1.1rem;color:{C['green'] if trend>0 else C['red']};">
                      {"▲" if trend > 0 else "▼"} {abs(trend):.4f}</span></div>
             </div>
-            <div style="font-size:0.88rem;color:#444;">{rationale}</div>
+            <div style="font-size:0.88rem;color:#b0c4de;">{rationale}</div>
         </div>""", unsafe_allow_html=True)
 
     st.markdown("---")
@@ -909,7 +913,7 @@ elif page == "🏆 Investment Recommendations":
         labels={"Composite":"Composite Score","Year":"Year"},
     )
     fig_traj.update_layout(
-        height=380, paper_bgcolor="white", plot_bgcolor=C["light"],
+        height=380, paper_bgcolor="#112035", plot_bgcolor="#0f2040",
         legend=dict(orientation="h", y=-0.2),
         yaxis=dict(range=[0.3,0.7]),
         margin=dict(l=40,r=20,t=20,b=60),
@@ -944,5 +948,5 @@ elif page == "🏆 Investment Recommendations":
         st.markdown(f"""
         <div style="background:{C['light']};border-radius:8px;padding:14px;margin-bottom:8px;border-left:4px solid {C['orange']};">
             <div style="font-weight:700;color:{C['navy']};">{title}</div>
-            <div style="font-size:0.88rem;color:#444;margin-top:4px;">{body}</div>
+            <div style="font-size:0.88rem;color:#b0c4de;margin-top:4px;">{body}</div>
         </div>""", unsafe_allow_html=True)
