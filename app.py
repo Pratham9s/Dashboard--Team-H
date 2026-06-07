@@ -71,44 +71,44 @@ st.markdown("""
 # ── Data loaders ──────────────────────────────────────────────────────────────
 @st.cache_data
 def load_master():
-    return pd.read_csv("data/master_wide.csv")
+    return pd.read_csv("master_wide.csv")
 
 @st.cache_data
 def load_forecasts():
-    return pd.read_csv("data/task5_forecasts.csv")
+    return pd.read_csv("task5_forecasts.csv")
 
 @st.cache_data
 def load_intervals():
-    return pd.read_csv("data/task5_intervals.csv")
+    return pd.read_csv("task5_intervals.csv")
 
 @st.cache_data
 def load_kmeans():
-    return pd.read_csv("data/cluster_labels.csv")
+    return pd.read_csv("cluster_labels.csv")
 
 @st.cache_data
 def load_hier():
-    return pd.read_csv("data/cluster_assignments.csv")
+    return pd.read_csv("cluster_assignments.csv")
 
 @st.cache_data
 def load_shap():
-    return pd.read_csv("data/task4_shap_values.csv")
+    return pd.read_csv("task4_shap_values.csv")
 
 @st.cache_data
 def load_importance():
-    return pd.read_csv("data/task4_importance_table.csv")
+    return pd.read_csv("task4_importance_table.csv")
 
 @st.cache_data
 def load_scenarios():
-    return pd.read_csv("data/task7_scenario_comparison.csv")
+    return pd.read_csv("task7_scenario_comparison.csv")
 
 @st.cache_data
 def load_recommendations():
-    return pd.read_csv("data/task6_recommendation.csv")
+    return pd.read_csv("task6_recommendation.csv")
 
 @st.cache_data
 def load_knn():
     try:
-        return pd.read_csv("data/knn_investment_results.csv")
+        return pd.read_csv("knn_investment_results.csv")
     except FileNotFoundError:
         return None
 
