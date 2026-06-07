@@ -298,10 +298,10 @@ elif page == "🔍 Country Explorer":
 
     fig.update_layout(
         height=420, legend=dict(orientation="h", y=-0.2),
-        xaxis=dict(title="Year", range=[2000, 2027]),
+        xaxis=dict(title="Year", range=[2000, 2028], tickformat='d'),
         yaxis=dict(title="Score (0-1)", range=[0,1]),
         paper_bgcolor="white", plot_bgcolor="#f8f9fa",
-        margin=dict(l=40,r=20,t=20,b=60),
+        margin=dict(l=40,r=40,t=20,b=60),
     )
     st.plotly_chart(fig, use_container_width=True)
 
@@ -676,10 +676,10 @@ elif page == "📈 Forecasting":
 
         fig.update_layout(
             height=440, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
-            xaxis=dict(title="Year", range=[2000, 2027]),
+            xaxis=dict(title="Year", range=[2000, 2028], dtick=5, tickmode="linear"),
             yaxis=dict(title="Score (0-1)", range=[0, 1]),
             legend=dict(orientation="h", y=-0.2),
-            margin=dict(l=40,r=20,t=20,b=60),
+            margin=dict(l=40, r=40, t=40, b=60),
             title=f"{country} — {pillar_choice} Score (2000–2027)",
         )
         st.plotly_chart(fig, use_container_width=True)
@@ -796,7 +796,8 @@ elif page == "🌐 Policy Scenarios":
 
     fig.update_layout(
         height=420, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
-        xaxis_title="Year", yaxis_title="Score (0–1)",
+        xaxis=dict(title="Year", tickformat='d'),
+        yaxis_title="Score (0–1)",
         legend=dict(orientation="h", y=-0.2),
         margin=dict(l=40,r=20,t=20,b=60),
         title=f"{sel_country} — {sel_pillar} Score: Scenario Comparison (2024–2027)",
@@ -912,6 +913,7 @@ elif page == "🏆 Investment Recommendations":
     )
     fig_traj.update_layout(
         height=380, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
+        xaxis=dict(tickformat='d'),
         legend=dict(orientation="h", y=-0.2),
         yaxis=dict(range=[0.3,0.7]),
         margin=dict(l=40,r=20,t=20,b=60),
