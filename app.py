@@ -766,10 +766,10 @@ elif page == "🌐 Policy Scenarios":
         "B_PolicyAdjusted": C["red"],
         "C_ShockFade":      C["orange"],
     }
-     SCEN_LABELS = {
+    SCEN_LABELS = {
         "A_Standard":       "A — Baseline",
         "B_PolicyAdjusted": "B — Policy Adjusted",
-        "C_ShockFade":      "C — Policy Normalisation",
+        "C_ShockFade":      "C — Recovery",
     }
 
     countries = scenarios["Country"].unique().tolist()
