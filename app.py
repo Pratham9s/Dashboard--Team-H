@@ -938,10 +938,10 @@ elif page == "🏆 Investment Recommendations":
     st.markdown("---")
     st.markdown('<div class="section-header">Key Insights</div>', unsafe_allow_html=True)
     insights = [
-        ("🇳🇱 Netherlands #1 in 2027", f"Composite 0.576 — balanced strength across all 4 pillars simultaneously. No single-pillar dependency."),
-        ("🇺🇸 USA strong but digital-concentrated", "Composite 0.531 — digital score near ceiling. Growth limited by FDI volatility."),
-        ("🇮🇳 India — Digital-led rise", "Composite 0.444 by 2027. Manufacturing strength + accelerating digital. FDI remains the drag."),
-        ("🇬🇧 UK — FDI-driven decline", "2023: 0.426 → 2027: 0.354. Post-Brexit FDI volatility extrapolated by Prophet. No policy overlay."),
+        ("🏆 Netherlands #1 in 2027", f"Composite 0.576 — balanced strength across all 4 pillars simultaneously. No single-pillar dependency."),
+        ("💻 USA strong but digital-concentrated", "Composite 0.531 — digital score near ceiling. Growth limited by FDI volatility."),
+        ("📈 India — Digital-led rise", "Composite 0.444 by 2027. Manufacturing strength + accelerating digital. FDI remains the drag."),
+        ("📉 UK — FDI-driven decline", "2023: 0.426 → 2027: 0.354. Post-Brexit FDI volatility extrapolated by Prophet. No policy overlay."),
         ("🌐 Digital Economy is the key differentiator", "SHAP confirms 72.7% of composite variance explained by digital score. Highest separation across tiers."),
     ]
     for title, body in insights:
