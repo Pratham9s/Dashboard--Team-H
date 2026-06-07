@@ -747,13 +747,13 @@ elif page == "🌐 Policy Scenarios":
         </div>""", unsafe_allow_html=True)
     with col2:
         st.markdown(f"""<div class="metric-card" style="border-top:4px solid {C['red']};">
-            <b>Scenario B — Policy Shock</b><br>
+            <b>Scenario B — Policy Adjusted</b><br>
             <span style="font-size:0.85rem;color:#6b7c93;">Pillar scores adjusted by Task 9 factors</span>
         </div>""", unsafe_allow_html=True)
     with col3:
         st.markdown(f"""<div class="metric-card" style="border-top:4px solid {C['orange']};">
-            <b>Scenario C — Recovery</b><br>
-            <span style="font-size:0.85rem;color:#6b7c93;">Shock fades 2026–27, investment recommendation issued</span>
+            <b>Scenario C — Policy Normalisation</b><br>
+            <span style="font-size:0.85rem;color:#6b7c93;">Negative adjustments fade 2026–27, positive policies held</span>
         </div>""", unsafe_allow_html=True)
 
     st.markdown("---")
@@ -842,12 +842,12 @@ elif page == "🌐 Policy Scenarios":
         col1, col2 = st.columns(2)
         with col1:
             st.markdown(f"""<div style="background:#fff5f5;border-left:4px solid {C['red']};border-radius:8px;padding:14px;">
-                <b>Scenario B — Policy Shock Driver</b><br>
+                <b>Scenario B — Policy Adjusted Driver</b><br>
                 <span style="font-size:0.88rem;">{ctx.get('shock','')}</span>
             </div>""", unsafe_allow_html=True)
         with col2:
             st.markdown(f"""<div style="background:#f0faf4;border-left:4px solid {C['green']};border-radius:8px;padding:14px;">
-                <b>Scenario C — Recovery Driver</b><br>
+                <b>Scenario C — Policy Normalisation Driver</b><br>
                 <span style="font-size:0.88rem;">{ctx.get('recovery','')}</span>
             </div>""", unsafe_allow_html=True)
 
