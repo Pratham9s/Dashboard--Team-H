@@ -1,0 +1,37 @@
+Country,Year,Scenario,FDI,Banking,Manufacturing,Digital,Composite,investment_tier
+India,2024,A_Standard,0.3175,0.378,0.4244,0.6495,0.4258,High
+India,2024,B_PolicyAdjusted,0.2794,0.3969,0.488,0.7275,0.4506,High
+India,2024,C_ShockFade,0.2794,0.395,0.4817,0.7197,0.4469,High
+India,2025,A_Standard,0.3194,0.3822,0.4278,0.6677,0.4318,High
+India,2025,B_PolicyAdjusted,0.2811,0.4013,0.4919,0.7478,0.4572,High
+India,2025,C_ShockFade,0.2811,0.3994,0.4855,0.7398,0.4535,High
+India,2026,A_Standard,0.3213,0.3864,0.4311,0.6857,0.4379,High
+India,2026,B_PolicyAdjusted,0.3534,0.4173,0.4958,0.768,0.4879,High
+India,2026,C_ShockFade,0.3502,0.4142,0.4893,0.7598,0.4829,High
+India,2027,A_Standard,0.3232,0.3906,0.4345,0.7038,0.444,High
+India,2027,B_PolicyAdjusted,0.3555,0.4218,0.4997,0.7883,0.4947,High
+India,2027,C_ShockFade,0.3523,0.4187,0.4932,0.7798,0.4896,High
+United States,2024,A_Standard,0.4013,0.5262,0.3154,0.9187,0.5145,High
+United States,2024,B_PolicyAdjusted,0.4254,0.4999,0.3721,1.0,0.5456,High
+United States,2024,C_ShockFade,0.423,0.4999,0.3664,1.0,0.5435,High
+United States,2025,A_Standard,0.4057,0.5288,0.3125,0.9401,0.52,High
+United States,2025,B_PolicyAdjusted,0.43,0.5605,0.3688,1.0,0.5613,High
+United States,2025,C_ShockFade,0.4276,0.5573,0.3632,1.0,0.5584,High
+United States,2026,A_Standard,0.41,0.5313,0.3097,0.9613,0.5255,High
+United States,2026,B_PolicyAdjusted,0.4346,0.5632,0.3655,1.0,0.5626,High
+United States,2026,C_ShockFade,0.4322,0.56,0.3599,1.0,0.5596,High
+United States,2027,A_Standard,0.4144,0.5339,0.3069,0.9826,0.531,High
+United States,2027,B_PolicyAdjusted,0.4392,0.5659,0.3622,1.0,0.5638,High
+United States,2027,C_ShockFade,0.4368,0.5627,0.3567,1.0,0.5609,High
+Viet Nam,2024,A_Standard,0.2787,0.464,0.526,0.6186,0.4548,High
+Viet Nam,2024,B_PolicyAdjusted,0.3121,0.3944,0.5997,0.7052,0.4832,High
+Viet Nam,2024,C_ShockFade,0.3088,0.3944,0.5923,0.6965,0.4786,High
+Viet Nam,2025,A_Standard,0.2806,0.4713,0.5342,0.6359,0.4627,High
+Viet Nam,2025,B_PolicyAdjusted,0.3143,0.4006,0.6089,0.7249,0.4917,High
+Viet Nam,2025,C_ShockFade,0.311,0.4006,0.6015,0.716,0.487,High
+Viet Nam,2026,A_Standard,0.2826,0.4786,0.5423,0.6532,0.4706,High
+Viet Nam,2026,B_PolicyAdjusted,0.3165,0.4643,0.6182,0.7446,0.5145,High
+Viet Nam,2026,C_ShockFade,0.3131,0.4714,0.6106,0.7355,0.5115,High
+Viet Nam,2027,A_Standard,0.2846,0.4859,0.5504,0.6704,0.4785,High
+Viet Nam,2027,B_PolicyAdjusted,0.3187,0.4714,0.6274,0.7643,0.5232,High
+Viet Nam,2027,C_ShockFade,0.3153,0.4859,0.6197,0.7549,0.522,High
