@@ -1,10 +1,11 @@
+import matplotlib
 import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-import matplotlib
+
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Northcard Capital Analytics",
@@ -293,8 +294,9 @@ elif page == "🔍 Country Explorer":
 
     fig.update_layout(
         height=420, legend=dict(orientation="h", y=-0.2),
-        xaxis_title="Year", yaxis_title="Score (0–1)",
-        yaxis=dict(range=[0,1]), paper_bgcolor="white", plot_bgcolor="#f8f9fa",
+        xaxis=dict(title="Year", range=[2000, 2027]),
+        yaxis=dict(title="Score (0-1)", range=[0,1]),
+        paper_bgcolor="white", plot_bgcolor="#f8f9fa",
         margin=dict(l=40,r=20,t=20,b=60),
     )
     st.plotly_chart(fig, use_container_width=True)
@@ -666,8 +668,8 @@ elif page == "📈 Forecasting":
 
         fig.update_layout(
             height=440, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
-            xaxis_title="Year", yaxis_title="Score (0–1)",
-            yaxis=dict(range=[0, 1]),
+            xaxis=dict(title="Year", range=[2000, 2027]),
+            yaxis=dict(title="Score (0-1)", range=[0, 1]),
             legend=dict(orientation="h", y=-0.2),
             margin=dict(l=40,r=20,t=20,b=60),
             title=f"{country} — {pillar_choice} Score (2000–2027)",
