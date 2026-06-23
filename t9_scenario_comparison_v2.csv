@@ -1,0 +1,37 @@
+Country,Year,Scenario,FDI,Banking,Manufacturing,Digital,Composite_v2,CI_Lower_95,CI_Upper_95,Tier_v2,Weights_used,Factors_source,Composite_v1,Composite_delta
+United States,2024,A_Standard,0.4013,0.5262,0.3154,0.9187,0.7502,0.7502,0.7502,High,optimised_v2,T8_blended,0.5145,0.2357
+United States,2024,B_PolicyAdjusted,0.4254,0.4999,0.3721,1.0,0.8083,0.7589,0.7624,High,optimised_v2,T8_blended,0.5456,0.2627
+United States,2024,C_ShockFade,0.4254,0.4999,0.3721,1.0,0.8083,0.7589,0.7624,High,optimised_v2,T8_blended,0.5456,0.2627
+United States,2025,A_Standard,0.4057,0.5288,0.3125,0.9401,0.7647,0.7647,0.7647,High,optimised_v2,T8_blended,0.5201,0.2446
+United States,2025,B_PolicyAdjusted,0.43,0.5605,0.3688,1.0,0.8167,0.772,0.7755,High,optimised_v2,T8_blended,0.5613,0.2554
+United States,2025,C_ShockFade,0.43,0.5605,0.3688,1.0,0.8167,0.772,0.7755,High,optimised_v2,T8_blended,0.5613,0.2554
+United States,2026,A_Standard,0.41,0.5313,0.3097,0.9613,0.7792,0.7792,0.7792,High,optimised_v2,T8_blended,0.5255,0.2537
+United States,2026,B_PolicyAdjusted,0.4346,0.5632,0.3655,1.0,0.8172,0.7868,0.7903,High,optimised_v2,T8_blended,0.5626,0.2546
+United States,2026,C_ShockFade,0.4322,0.56,0.3599,1.0,0.816,0.7868,0.7903,High,optimised_v2,T8_blended,0.5596,0.2564
+United States,2027,A_Standard,0.4144,0.5339,0.3069,0.9826,0.7937,0.7937,0.7937,High,optimised_v2,T8_blended,0.531,0.2627
+United States,2027,B_PolicyAdjusted,0.4392,0.5659,0.3622,1.0,0.8177,0.8015,0.8028,High,optimised_v2,T8_blended,0.5638,0.2539
+United States,2027,C_ShockFade,0.4368,0.5627,0.3567,1.0,0.8165,0.8015,0.8028,High,optimised_v2,T8_blended,0.5609,0.2556
+India,2024,A_Standard,0.3175,0.378,0.4244,0.6495,0.5549,0.5549,0.5549,High,optimised_v2,T8_blended,0.4258,0.1291
+India,2024,B_PolicyAdjusted,0.2794,0.3969,0.488,0.7275,0.6111,0.562,0.5646,High,optimised_v2,T8_blended,0.4505,0.1606
+India,2024,C_ShockFade,0.2794,0.3969,0.488,0.7275,0.6111,0.562,0.5646,High,optimised_v2,T8_blended,0.4505,0.1606
+India,2025,A_Standard,0.3194,0.3822,0.4278,0.6677,0.5679,0.5679,0.5679,High,optimised_v2,T8_blended,0.4319,0.136
+India,2025,B_PolicyAdjusted,0.2811,0.4013,0.4919,0.7478,0.6256,0.5752,0.5779,High,optimised_v2,T8_blended,0.4572,0.1684
+India,2025,C_ShockFade,0.2811,0.4013,0.4919,0.7478,0.6256,0.5752,0.5779,High,optimised_v2,T8_blended,0.4572,0.1684
+India,2026,A_Standard,0.3213,0.3864,0.4311,0.6857,0.5809,0.5809,0.5809,High,optimised_v2,T8_blended,0.4379,0.143
+India,2026,B_PolicyAdjusted,0.3534,0.4173,0.4958,0.768,0.6492,0.5858,0.5884,High,optimised_v2,T8_blended,0.4879,0.1613
+India,2026,C_ShockFade,0.3502,0.4142,0.4893,0.7598,0.6423,0.5858,0.5884,High,optimised_v2,T8_blended,0.4829,0.1594
+India,2027,A_Standard,0.3232,0.3906,0.4345,0.7038,0.5939,0.5939,0.5939,High,optimised_v2,T8_blended,0.444,0.1499
+India,2027,B_PolicyAdjusted,0.3555,0.4218,0.4997,0.7883,0.6637,0.5989,0.6016,High,optimised_v2,T8_blended,0.4947,0.169
+India,2027,C_ShockFade,0.3523,0.4187,0.4932,0.7798,0.6567,0.5989,0.6016,High,optimised_v2,T8_blended,0.4896,0.1671
+Viet Nam,2024,A_Standard,0.2787,0.464,0.526,0.6186,0.5523,0.5523,0.5523,High,optimised_v2,T8_blended,0.4548,0.0975
+Viet Nam,2024,B_PolicyAdjusted,0.3121,0.3944,0.5997,0.7052,0.6107,0.5576,0.5602,High,optimised_v2,T8_blended,0.4832,0.1275
+Viet Nam,2024,C_ShockFade,0.3121,0.3944,0.5997,0.7052,0.6107,0.5576,0.5602,High,optimised_v2,T8_blended,0.4832,0.1275
+Viet Nam,2025,A_Standard,0.2806,0.4713,0.5342,0.6359,0.5657,0.5657,0.5657,High,optimised_v2,T8_blended,0.4627,0.103
+Viet Nam,2025,B_PolicyAdjusted,0.3143,0.4006,0.6089,0.7249,0.6257,0.5712,0.5738,High,optimised_v2,T8_blended,0.4916,0.1341
+Viet Nam,2025,C_ShockFade,0.3143,0.4006,0.6089,0.7249,0.6257,0.5712,0.5738,High,optimised_v2,T8_blended,0.4916,0.1341
+Viet Nam,2026,A_Standard,0.2826,0.4786,0.5423,0.6532,0.579,0.579,0.579,High,optimised_v2,T8_blended,0.4706,0.1084
+Viet Nam,2026,B_PolicyAdjusted,0.3165,0.4643,0.6182,0.7446,0.6485,0.5847,0.5874,High,optimised_v2,T8_blended,0.5145,0.134
+Viet Nam,2026,C_ShockFade,0.3131,0.4714,0.6106,0.7355,0.6423,0.5847,0.5874,High,optimised_v2,T8_blended,0.5115,0.1308
+Viet Nam,2027,A_Standard,0.2846,0.4859,0.5504,0.6704,0.5924,0.5924,0.5924,High,optimised_v2,T8_blended,0.4785,0.1139
+Viet Nam,2027,B_PolicyAdjusted,0.3187,0.4714,0.6274,0.7643,0.6635,0.5983,0.601,High,optimised_v2,T8_blended,0.5232,0.1403
+Viet Nam,2027,C_ShockFade,0.3153,0.4859,0.6197,0.7549,0.6582,0.5983,0.601,High,optimised_v2,T8_blended,0.522,0.1362

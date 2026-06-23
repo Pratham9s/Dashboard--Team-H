@@ -1,0 +1,7 @@
+Check,Value,Passed,Threshold,Overall_verdict
+Top-10 overlap (all 3 sets),8/10,True,threshold ≥7,LARGELY ROBUST — minor sensitivity in specific regions
+Tier stability,34.5%,False,threshold ≥85%,LARGELY ROBUST — minor sensitivity in specific regions
+Min Spearman ρ,0.9854,True,threshold ≥0.90,LARGELY ROBUST — minor sensitivity in specific regions
+Min Kendall τ,0.9086,True,threshold ≥0.75,LARGELY ROBUST — minor sensitivity in specific regions
+Avg bootstrap CI width,12.8 positions,True,threshold ≤15,LARGELY ROBUST — minor sensitivity in specific regions
+Avg rank shift v1→opt,6.2 positions,True,threshold ≤20,LARGELY ROBUST — minor sensitivity in specific regions

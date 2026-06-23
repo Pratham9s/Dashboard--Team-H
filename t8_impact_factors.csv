@@ -1,0 +1,585 @@
+country,pillar,direction,years_applicable,t5_magnitude,did_mean,blended_magnitude,ci_lower_95,ci_upper_95,confidence,blend_method,tier_v2,source,policy_name,is_task9
+Netherlands,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"Dutch Ministry of Finance, Fiscal Policy Announcement 2023",Corporate Income Tax Increase to 25%,False
+Netherlands,Banking,negative,2024-2025,-8.0,1.32,-5.2,1.1,1.55,High,T5(70%) + DiD(30%),High,"European Central Bank, Monetary Policy Decisions 2023-2024",ECB Rate Hikes 2023-2024,False
+Netherlands,Manufacturing,positive,2024-2027,12.0,-1.92,7.82,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"Ministry of Economic Affairs and Climate Policy, Press Release 2023",National Growth Fund for Green Industry,False
+Netherlands,Digital,positive,2024-2027,10.0,1.9,7.57,1.66,2.14,High,T5(70%) + DiD(30%),High,"Dutch Government, National AI Strategy Document 2023",National AI Strategy 2023,False
+Denmark,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"Danish National Bank press releases, June 2023 and October 2023",Danish National Bank Rate Hikes 2023-2024,False
+Denmark,FDI,negative,2024-2025,-12.0,4.73,-1.96,4.45,5.0,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2023 – Denmark chapter,FDI Inflow Decline 2023 (UNCTAD),False
+Denmark,Manufacturing,positive,2024-2027,12.0,-1.92,7.82,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"Ministry of Industry, Business and Financial Affairs – policy brief 2023",Strategic Industry Initiative 2023,False
+Denmark,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview – Denmark (2023) – Investment Climate Assessment,Digital Growth Strategy 2024‑2027,False
+Germany,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"ECB Press Release, July 2023 & March 2024",ECB Rate Hikes 2023-2024,False
+Germany,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD World Investment Report 2023, Germany chapter",UNCTAD FDI Decline 2023,False
+Germany,Manufacturing,positive,2024-2027,9.0,-1.92,5.72,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"German Ministry of Economics, ""Semiconductor Strategy Germany"" 2023",German Semiconductor Strategy 2023,False
+Germany,Digital,positive,2024-2027,8.0,1.9,6.17,1.66,2.14,High,T5(70%) + DiD(30%),High,"Federal Ministry for Digital and Transport, ""Digital Strategy 2025"" 2023",Digital Strategy 2025,False
+Austria,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"OeNB Press Release, 2023‑12‑14",ECB Rate Hikes Alignment,False
+Austria,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2023 – Austria Chapter,FDI Inflow Decline,False
+Austria,Manufacturing,positive,2024-2027,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"IMF Article IV Consultation – Austria, 2023",Industrial Strategy 2025,False
+Austria,Digital,positive,2024-2027,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"World Bank Country Overview – Austria, 2024",Digital Austria Initiative,False
+Czech Republic,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"Czech National Bank, Press Release March 2024",Czech National Bank Rate Hikes 2023‑2024,False
+Czech Republic,Manufacturing,positive,2024-2027,12.0,-1.92,7.82,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"Ministry of Industry and Trade, ""Industry 2030"" strategy (2023)",Industry 2030 Strategy,False
+Czech Republic,Digital,positive,2024-2027,9.0,1.9,6.87,1.66,2.14,High,T5(70%) + DiD(30%),High,"Ministry of Industry and Trade, Digital Economy Strategy (2023)",Digital Economy Strategy 2023‑2027,False
+Czech Republic,FDI,negative,2024-2027,-12.0,4.73,-1.96,4.45,5.0,Medium,T5(40%) + DiD(60%),High,"UNCTAD, World Investment Report 2024 – Czech Republic",FDI Promotion Act 2023,False
+Spain,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,ECB Press Releases 2023; Banco de España Monetary Bulletin 2023,ECB Rate Hikes 2023,False
+Spain,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2023 – Spain Chapter,FDI Inflow Decline 2023,False
+Spain,Manufacturing,positive,2024-2027,9.0,-1.92,5.72,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Spain, 2023",Plan Nacional de Innovación 2022-2025,False
+Spain,Digital,positive,2024-2027,8.0,1.9,6.17,1.66,2.14,High,T5(70%) + DiD(30%),High,"World Bank Country Overview – Spain, 2023",Digital Spain 2025 Strategy,False
+Malaysia,FDI,positive,2024-2027,10.0,-3.19,2.09,-3.38,-3.0,Medium,T5(40%) + DiD(60%),High,"World Bank, Malaysia Investment Climate Assessment 2023, section 4.2",MIDA Investment Promotion Strategy 2023-2027,False
+Malaysia,Banking,negative,2024-2025,-4.0,1.32,-2.4,1.1,1.55,High,T5(70%) + DiD(30%),High,"Bank Negara Malaysia, Monetary Policy Statement March 2023",BNM Repo Rate Hold 2023,False
+Malaysia,Manufacturing,positive,2024-2027,12.0,-1.92,7.82,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Malaysia, 2024, p.23",Industrial Master Plan 2023‑2030,False
+Malaysia,Digital,positive,2024-2027,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"UNCTAD World Investment Report 2024, Malaysia chapter, p.7",MyDIGITAL Blueprint 2023‑2027,False
+Ireland,FDI,positive,2024-2027,12.0,-3.19,7.44,-3.38,-3.0,High,T5(70%) + DiD(30%),High,"Ireland Department of Enterprise, Trade and Employment – ""FDI Promotion Strategy 2023‑2027"" (2023)",FDI Promotion Strategy 2023‑2027,False
+Ireland,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,Central Bank of Ireland – Monetary Policy Statement (June 2023) citing ECB decisions,ECB Rate Hikes (2023‑2024),False
+Ireland,Manufacturing,positive,2024-2027,13.0,-1.92,8.52,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"Irish Government – ""Manufacturing Growth Programme 2023"" (2023)",Manufacturing Growth Programme 2023,False
+Ireland,Digital,positive,2024-2027,14.0,1.9,10.37,1.66,2.14,High,T5(70%) + DiD(30%),High,"Department of the Taoiseach – ""National Digital Strategy 2023‑2026"" (2023)",National Digital Strategy 2023‑2026,False
+Ecuador,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Ecuador, 2023; UNCTAD World Investment Report 2023 – Ecuador chapter",Corporate Tax Increase 2024,False
+Ecuador,Banking,positive,2024-2025,5.0,-0.99,3.2,-1.16,-0.83,High,T5(70%) + DiD(30%),High,"Banco Central del Ecuador, Monetary Policy Statement, Oct 2023",BCE Rate Cut Oct 2023,False
+Ecuador,Manufacturing,positive,2024-2027,12.0,-1.92,3.65,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"Ministerio de Producción, Decreto de Zona Económica Especial Guayas, 2023",Guayas Special Economic Zone,False
+Ecuador,Digital,positive,2024-2027,8.0,1.9,6.17,1.66,2.14,High,T5(70%) + DiD(30%),High,"World Bank, Ecuador Investment Climate Assessment 2023",Digital Ecuador 2025 Plan,False
+China,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD - World Investment Report 2024,2023 Foreign Investment Catalog Update,False
+China,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF - Article IV Consultation China 2023,PBOC Reserve Requirement Ratio Cuts & Property Stress Measures,False
+China,Manufacturing,positive,2024-2027,20.0,-1.92,13.42,-2.14,-1.71,High,T5(70%) + DiD(30%),High,World Bank - China Country Overview 2024,14th Five‑Year Plan (2022‑2027) – High‑End Manufacturing Boost,False
+China,Digital,positive,2024-2026,15.0,1.9,11.07,1.66,2.14,High,T5(70%) + DiD(30%),High,China State Council - Digital Economy Development Plan 2023,Digital Economy Development Plan (2023‑2025),False
+Portugal,FDI,positive,2024-2027,10.0,-3.19,6.04,-3.38,-3.0,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Portugal, 2023",FDI Attraction Strategy 2023-2027,False
+Portugal,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"European Central Bank – Monetary Policy Minutes, June 2023",ECB Rate Hikes 2023,False
+Portugal,Manufacturing,positive,2024-2027,8.0,-1.92,5.02,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"World Bank – Portugal Country Overview, 2024",Industrial Strategy for the Digital Transition 2023,False
+Portugal,Digital,positive,2024-2027,18.0,1.9,13.17,1.66,2.14,High,T5(70%) + DiD(30%),High,"UNCTAD – World Investment Report 2024, Portugal Section",Digital Portugal 2025,False
+Mauritius,FDI,positive,2024-2027,10.0,-3.19,6.04,-3.38,-3.0,High,T5(70%) + DiD(30%),High,"IMF, Article IV Consultation, Mauritius 2023",Mauritius Investment Facilitation Framework (MIF) 2023,False
+Mauritius,Banking,negative,2024-2025,-9.0,1.32,-5.9,1.1,1.55,High,T5(70%) + DiD(30%),High,"Bank of Mauritius, Monetary Policy Statements 2024",Bank of Mauritius Policy Rate Increases 2024,False
+Mauritius,Manufacturing,positive,2024-2027,12.0,-1.92,7.82,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"World Bank, Mauritius Country Overview 2023",Special Economic Zone Tax Incentive Extension 2023,False
+Mauritius,Digital,positive,2024-2025,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"UNCTAD, World Investment Report 2023 – Mauritius Section",National Broadband Policy 2022‑2025 Implementation,False
+Singapore,FDI,positive,2024-2027,10.0,-3.19,6.04,-3.38,-3.0,High,T5(70%) + DiD(30%),High,World Bank – Singapore Investment Climate Assessment 2024,Enterprise Development Grant Expansion & Global Investor Programme Revision,False
+Singapore,Banking,negative,2024-2025,-4.0,1.32,-2.4,1.1,1.55,High,T5(70%) + DiD(30%),High,"Monetary Authority of Singapore press release, 2023‑09‑15",MAS Counter‑Cyclical Capital Buffer Increase,False
+Singapore,Manufacturing,positive,2024-2026,12.0,-1.92,7.82,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Singapore, 2023",Advanced Manufacturing and Engineering Programme,False
+Singapore,Digital,positive,2024-2027,13.0,1.9,9.67,1.66,2.14,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Singapore Chapter,National AI Strategy 2024,False
+Switzerland,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"SNB, Press releases 2023‑2024",SNB Rate Hikes 2023‑2024,False
+Switzerland,Banking,negative,2024-2025,-18.0,1.32,-12.2,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF, Staff Country Report 2023",Credit Suisse Resolution Aftermath,False
+Switzerland,FDI,negative,2024-2026,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD, World Investment Report 2023",FDI Inflow Decline 2023,False
+Switzerland,Digital,positive,2024-2027,9.0,1.9,6.87,1.66,2.14,High,T5(70%) + DiD(30%),High,"Swiss Federal Office of Communications, Digital Switzerland Strategy 2023",Digital Switzerland Strategy 2023‑2027,False
+Cambodia,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank – Cambodia Investment Climate Assessment 2023,FDI Promotion Package 2023,False
+Cambodia,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF – Article IV Consultation, Cambodia, 2023",Credit Risk Management Guidelines 2024,False
+Cambodia,Manufacturing,positive,2024-2027,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"Ministry of Industry, Trade and MSMEs – Industrial Development Policy 2023‑2027",Industrial Development Policy 2023‑2027,False
+Cambodia,Digital,positive,2024-2027,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"UNCTAD – World Investment Report 2024, Cambodia chapter",National Broadband Plan 2023‑2027,False
+France,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – France, 2023",ECB Rate Hike Continuation 2023-2024,False
+France,FDI,negative,2024-2027,-8.0,4.73,-4.18,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – France Chapter,FDI Inflow Decline 2023‑2024,False
+France,Manufacturing,positive,2024-2027,12.0,-1.92,3.65,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"World Bank – France Country Overview, 2023",Industrial Resilience Plan (Plan France Relance),False
+France,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Economy and Finance – Digital France 2025 announcement, 2023",Digital France 2025 Strategy,False
+"Hong Kong SAR, China",FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD, World Investment Report 2023",2023-2024 FDI Promotion Package,False
+"Hong Kong SAR, China",Banking,negative,2024-2025,-9.0,1.32,-5.9,1.1,1.55,High,T5(70%) + DiD(30%),High,"HKMA, 2024 Monetary Policy Statement",HKMA 2024 Monetary Policy Statement,False
+"Hong Kong SAR, China",Manufacturing,positive,2024-2026,10.0,-1.92,2.85,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"World Bank, Hong Kong Country Overview 2023",Greater Bay Area (GBA) Manufacturing Incentives 2023,False
+"Hong Kong SAR, China",Digital,positive,2024-2027,12.0,1.9,5.94,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"IMF, Article IV Consultation 2023",Smart City Blueprint 2023 Update,False
+"Iran, Islamic Rep.",Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation 2023 – Iran, Islamic Rep.",Policy Rate Hike 2023,False
+"Iran, Islamic Rep.",Banking,negative,2024-2027,-20.0,1.32,-7.21,1.1,1.55,Medium,T5(40%) + DiD(60%),High,"World Bank Country Overview 2023 – Iran, Islamic Rep.",Rising NPL Stress,False
+"Iran, Islamic Rep.",FDI,negative,2024-2027,-20.0,4.73,-12.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD World Investment Report 2023 – Iran, Islamic Rep.",FDI Contraction 2023,False
+"Iran, Islamic Rep.",Manufacturing,negative,2024-2027,-4.0,1.82,-0.51,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"Ministry of Industry Announcement 2023 – Iran, Islamic Rep.",Industrial Development Plan 2023‑27,False
+"Korea, Rep.",Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF – Article IV Consultation, Republic of Korea, April 2023",BOK Rate Hikes 2023‑2024,False
+"Korea, Rep.",FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD – World Investment Report 2023, Korea section",FDI Inflow Decline 2023,False
+"Korea, Rep.",Manufacturing,positive,2024-2027,15.0,-1.92,4.85,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,MOTIE – Semiconductor Roadmap 2022‑2027; Green New Deal 2023,Semiconductor & Green New Deal Incentives,False
+"Korea, Rep.",Digital,positive,2024-2027,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"World Bank – Country Overview, Republic of Korea, 2024",Digital New Deal & AI Strategy,False
+Turkiye,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2023 – Turkey Chapter,Investment Law Amendments 2023,False
+Turkiye,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Turkey, 2023 Staff Report",CBRT Rate Hike Cycle 2023‑2024,False
+Turkiye,Manufacturing,negative,2024-2026,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank – Turkey Country Overview 2023,Manufacturing Competitiveness Programme 2023,False
+Turkiye,Digital,positive,2024-2027,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,Ministry of Treasury and Finance – Digital Transformation Strategy 2023,Digital Transformation Strategy 2023,False
+Belarus,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Belarus, 2023",Key Rate Hike 2023,False
+Belarus,FDI,negative,2024-2027,-15.0,4.73,-9.08,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2023 – Belarus Chapter,EU Sanctions & Capital Controls,False
+Belarus,Manufacturing,negative,2024-2025,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"World Bank Country Overview, Belarus, 2023",Industrial Policy Stagnation,False
+Belarus,Digital,negative,2024-2027,-4.0,3.28,-0.37,2.84,3.73,Medium,T5(40%) + DiD(60%),High,"Ministry of Digital Development of Belarus, 2023 decree",Digital Economy Strategy 2022‑2025,False
+Czechia,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"Czech National Bank, Monetary Policy Decision 05 Oct 2023",Czech National Bank Rate Policy 2023-2024,False
+Czechia,FDI,negative,2024-2025,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank, Czechia Investment Climate Assessment 2023",Investment Incentives Act 2023 – Limited Scope,False
+Czechia,Manufacturing,positive,2024-2027,10.0,-1.92,6.42,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"Ministry of Industry and Trade, Industrial Strategy 2025 (2023)",Industrial Strategy 2025 – Advanced Manufacturing Focus,False
+Czechia,Digital,positive,2024-2026,8.0,1.9,6.17,1.66,2.14,High,T5(70%) + DiD(30%),High,"UNCTAD, World Investment Report 2024 – Czechia",Digital Czechia 2025 Plan,False
+Australia,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2023 – Australia Chapter,FIRB Tightening 2023,False
+Australia,Banking,negative,2024-2027,-13.0,1.32,-8.7,1.1,1.55,High,T5(70%) + DiD(30%),High,"Reserve Bank of Australia – Monetary Policy Decision, August 2023; February 2024",RBA Cash‑Rate Hikes 2023‑24,False
+Australia,Manufacturing,positive,2024-2027,10.0,-1.92,6.42,-2.14,-1.71,High,T5(70%) + DiD(30%),High,Australian Treasury – Manufacturing Growth Strategy 2023‑2027,National Manufacturing Strategy 2023,False
+Australia,Digital,positive,2024-2027,9.0,1.9,6.87,1.66,2.14,High,T5(70%) + DiD(30%),High,"Department of Industry, Science and Resources – Digital Economy Strategy 2023",Digital Economy Strategy 2023,False
+Canada,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD – World Investment Report 2024, Canada chapter",Investment Canada Act Amendments 2023,False
+Canada,Banking,negative,2024-2025,-8.0,1.32,-5.2,1.1,1.55,High,T5(70%) + DiD(30%),High,Bank of Canada – Monetary Policy Report 2023,Bank of Canada Rate Hikes 2022‑2023,False
+Canada,Manufacturing,positive,2024-2026,8.0,-1.92,5.02,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"Innovation, Science and Economic Development Canada – 2023‑2024 Budget Statement",Strategic Innovation Fund Expansion 2023,False
+Canada,Digital,positive,2024-2027,10.0,1.9,7.57,1.66,2.14,High,T5(70%) + DiD(30%),High,Department of Innovation – National Digital Strategy 2023 Policy Brief,National Digital Strategy 2023,False
+Italy,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"ECB Press Release, March 2024",ECB Rate Hikes 2024,False
+Italy,Manufacturing,positive,2024-2027,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"Ministero dello Sviluppo Economico, Policy Announcement 2023",Industry 4.0 Incentives,False
+Italy,Digital,positive,2024-2027,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministero per l'Innovazione Tecnologica, Strategy Document 2023",Digital Italy 2025,False
+Italy,FDI,negative,2024-2025,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD World Investment Report 2024, Italy Chapter",FDI Decline 2023,False
+Puerto Rico,FDI,positive,2024-2027,12.0,-3.19,7.44,-3.38,-3.0,High,T5(70%) + DiD(30%),High,"World Bank, Puerto Rico Economic Update 2023",Incentives Code (Act 60) Extension 2023,False
+Puerto Rico,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF, Article IV Consultation – Puerto Rico (2023)",Federal Reserve Rate Hikes 2023,False
+Puerto Rico,Manufacturing,positive,2024-2026,6.0,-1.92,1.25,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"UNCTAD, World Investment Report 2024 – Puerto Rico Section",PRIDCO Advanced Manufacturing Initiative 2023,False
+Puerto Rico,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"World Bank, Puerto Rico Country Overview 2023",Puerto Rico Digital Transformation Plan 2023,False
+Hungary,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Hungary, 2023",MNB Policy Rate 2023-2024,False
+Hungary,FDI,negative,2024-2027,-20.0,4.73,-12.58,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2023 – Hungary chapter,FDI Inflow Decline 2023,False
+Hungary,Manufacturing,positive,2024-2027,12.0,-1.92,3.65,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"Ministry of Innovation and Technology, Hungary, 2023 policy announcement",National Development Strategy 2021‑2030 – Industry Incentives,False
+Hungary,Digital,positive,2024-2027,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"World Bank, Hungary Country Overview and Investment Climate Assessment, 2024",Digital Hungary Broadband Expansion,False
+Brazil,Banking,positive,2024-2027,9.0,-0.99,6.0,-1.16,-0.83,High,T5(70%) + DiD(30%),High,Banco Central do Brasil press releases 2024,Selic Rate Cuts 2024,False
+Brazil,FDI,negative,2024-2025,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Brazil chapter,FDI Inflow Decline 2023-2024,False
+Brazil,Manufacturing,positive,2024-2026,6.0,-1.92,1.25,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,World Bank – Brazil Investment Climate Assessment 2024,National Industrial Development Plan (PNDI),False
+Brazil,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,IMF Article IV Consultation – Brazil 2024,National AI & Broadband Strategy 2024,False
+Russian Federation,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Russian Federation; Central Bank of Russia press releases 2023-2024,Central Bank Rate Cycle 2023-2024,False
+Russian Federation,FDI,negative,2024-2027,-15.0,4.73,-9.08,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2023 – Russia; World Bank Country Overview 2024 – Investment Climate Assessment,Capital Controls and Sanctions Regime,False
+Russian Federation,Manufacturing,positive,2024-2027,8.0,-1.92,2.05,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"Ministry of Economic Development, Russia – SEZ Expansion Program 2023",Special Economic Zones Expansion 2023,False
+Russian Federation,Digital,negative,2024-2027,-8.0,3.28,-1.23,2.84,3.73,Medium,T5(40%) + DiD(60%),High,"Ministry of Digital Development, Russia – Strategy Document 2023",Digital Economy Development Strategy 2024-2030,False
+Serbia,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Serbia, 2023",National Bank of Serbia Rate Hikes 2023-2024,False
+Serbia,FDI,negative,2024-2027,-8.0,4.73,-4.18,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank Serbia Investment Climate Assessment, 2023",Investment Incentives Law 2023 (Green FDI Focus),False
+Serbia,Manufacturing,positive,2024-2027,10.0,-1.92,6.42,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"Ministry of Economy, Serbia, Industrial Development Strategy 2022‑2027 (official document)",Industrial Development Strategy 2022‑2027,False
+Serbia,Digital,positive,2024-2027,12.0,1.9,8.97,1.66,2.14,High,T5(70%) + DiD(30%),High,"Ministry of Information Society and Telecommunications, Digital Serbia 2025 Strategy, 2023",Digital Serbia 2025 Strategy,False
+Slovenia,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Slovenia, 2023",ECB Rate Hikes 2023,False
+Slovenia,FDI,negative,2024-2027,-8.0,4.73,-4.18,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank, Slovenia Investment Climate Assessment, 2023",Reduced Tax Incentives for FDI,False
+Slovenia,Manufacturing,positive,2024-2027,12.0,-1.92,3.65,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"Ministry of Economic Development, National Industrial Strategy 2023‑2027",National Industrial Strategy 2023‑2027,False
+Slovenia,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"UNCTAD, World Investment Report 2023 – Slovenia Section",Digital Slovenia 2025 Strategy,False
+Georgia,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF – ""Georgia: 2023 Article IV Consultation""",Monetary tightening cycle 2023-2024,False
+Georgia,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank – ""Georgia Economic Update, June 2023""",FDI inflow slowdown 2023,False
+Georgia,Manufacturing,positive,2024-2027,9.0,-1.92,5.72,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"Georgia Ministry of Economy – ""Industrial Development Strategy 2022‑2027""",Industrial Development Strategy 2022‑2027,False
+Georgia,Digital,positive,2024-2027,8.0,1.9,6.17,1.66,2.14,High,T5(70%) + DiD(30%),High,"UNCTAD – ""World Investment Report 2023: Georgia""",Digital Georgia 2025 Strategy,False
+Belgium,Banking,positive,2024-2027,10.0,-0.99,6.7,-1.16,-0.83,High,T5(70%) + DiD(30%),High,"ECB Monetary Policy Decision, June 2024; NB Belgium Statement",ECB Rate Cut June 2024,False
+Belgium,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD World Investment Report 2023, Belgium chapter",EU Global Minimum Tax Implementation,False
+Belgium,Manufacturing,positive,2024-2027,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"Belgium Ministry of Economic Affairs, Industrial Strategy 2025 press release, March 2023",Advanced Manufacturing & Sustainable Industries Fund,False
+Belgium,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Federal Public Service Economy, National AI Strategy 2024",National AI Strategy 2024,False
+Poland,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF, Poland Article IV Consultation 2023, para. 45",NBP Rate Hikes 2023-2024,False
+Poland,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD, World Investment Report 2023, Poland chapter",EU Rule‑of‑Law Dispute Impact on FDI,False
+Poland,Manufacturing,positive,2024-2027,20.0,-1.92,13.42,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"Polish Ministry of Development, press release ‘Polish Industry 4.0’ launch Dec 2023",Polish Industry 4.0 Programme,False
+Poland,Digital,positive,2024-2027,8.0,1.9,6.17,1.66,2.14,High,T5(70%) + DiD(30%),High,"World Bank, Poland Economic Update March 2024, p. 7",Digital Poland 2025 Strategy,False
+Tajikistan,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Tajikistan Staff Report,Policy Rate Hike 2023-2024,False
+Tajikistan,FDI,negative,2024-2027,-12.0,4.73,-1.96,4.45,5.0,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2023 – Tajikistan Chapter,FDI Inflow Decline 2023,False
+Tajikistan,Manufacturing,positive,2024-2027,8.0,-1.92,5.02,-2.14,-1.71,High,T5(70%) + DiD(30%),High,World Bank Country Overview – Tajikistan (2024) – Investment Climate Assessment,Industrial Development Strategy 2022‑2026,False
+Tajikistan,Digital,positive,2024-2027,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Finance of Tajikistan press release, March 2024",Digital Economy Development Program 2024‑2028,False
+Sweden,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Sweden,Riksbank rate hikes 2023-2024,False
+Sweden,Manufacturing,positive,2024-2027,12.0,-1.92,7.82,-2.14,-1.71,High,T5(70%) + DiD(30%),High,World Bank Country Overview 2024 – Sweden,Swedish Industrial Strategy 2023,False
+Sweden,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Sweden section,National Digital Strategy 2023,False
+Armenia,Banking,positive,2024-2027,9.0,-0.99,6.0,-1.16,-0.83,High,T5(70%) + DiD(30%),High,"IMF – Article IV Consultation, Armenia, 2023",Monetary Policy Rate Cut 2023,False
+Armenia,FDI,negative,2024-2025,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD – World Investment Report 2023 (Armenia chapter),FDI Inflow Decline amid Regional Tensions,False
+Armenia,Manufacturing,positive,2024-2027,10.0,-1.92,6.42,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"World Bank – Armenia Economic Update, June 2023",Industrial Development Strategy 2022‑2027,False
+Armenia,Digital,positive,2024-2025,8.0,1.9,6.17,1.66,2.14,High,T5(70%) + DiD(30%),High,"Ministry of Economy of Armenia – Digital Economy Development Strategy, 2023",Digital Economy Development Strategy 2023‑2027,False
+Brunei Darussalam,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Brunei Darussalam, 2023",FDI Incentive Review 2023,False
+Brunei Darussalam,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"World Bank – Brunei Darussalam Country Overview, 2024",Monetary Tightening Cycle 2023,False
+Brunei Darussalam,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"UNCTAD World Investment Report – Brunei Darussalam, 2024",National Digital Economy Blueprint 2023-2027,False
+Slovak Republic,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF/Article IV Consultation – Slovak Republic, 2023",ECB Rate Hikes 2023-2024,False
+Slovak Republic,FDI,negative,2024-2027,-13.0,4.73,-7.68,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD/World Investment Report 2024 – Slovak Republic chapter,FDI Inflow Decline 2023,False
+Slovak Republic,Manufacturing,positive,2024-2027,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"Ministry of Economy/Press Release – Industry 4.0 Programme, Dec 2023",Industry 4.0 Incentive Scheme 2023,False
+Slovak Republic,Digital,positive,2024-2027,11.0,1.9,5.54,1.66,2.14,Medium,T5(40%) + DiD(60%),High,World Bank/Slovakia Country Overview 2024,National Broadband Expansion Plan 2024,False
+Latvia,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF/Article IV Consultation – Latvia, 2023",EU Investment Plan 2023-2024,False
+Latvia,Banking,negative,2024-2025,-14.0,1.32,-9.4,1.1,1.55,High,T5(70%) + DiD(30%),High,"Bank of Latvia press releases, 2023‑2024",Latvian Central Bank Rate Hikes 2023‑2024,False
+Latvia,Manufacturing,positive,2024-2026,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"World Bank – Latvia Country Overview, 2024",Latvia 2030 Industrial Strategy,False
+Latvia,Digital,positive,2024-2027,11.0,1.9,5.54,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"UNCTAD – World Investment Report, Latvia Chapter, 2024",Digital Latvia 2023‑2027 Initiative,False
+Costa Rica,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Costa Rica,FDI Incentive Review 2023,False
+Costa Rica,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,Banco Central de Costa Rica – Monetary Policy Statements 2023‑2024,Monetary Tightening Cycle 2023‑2024,False
+Costa Rica,Manufacturing,positive,2024-2027,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview 2024 – Costa Rica,National Advanced Manufacturing Plan 2022‑2026,False
+Costa Rica,Digital,positive,2024-2026,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Costa Rica Section,Broadband Expansion Initiative 2023‑2025,False
+Kyrgyz Republic,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"National Bank of Kyrgyzstan, Monetary Policy Statement March 2024",Monetary Policy Tightening 2024,False
+Kyrgyz Republic,FDI,negative,2024-2027,-9.0,4.73,-4.88,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF, Kyrgyz Republic Staff Report April 2023",FDI Inflow Decline 2023-24,False
+Kyrgyz Republic,Manufacturing,positive,2024-2027,10.0,-1.92,2.85,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"World Bank, Kyrgyz Republic Investment Climate Assessment 2023",Industrial Development Programme 2023-2026,False
+Kyrgyz Republic,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"UNCTAD, World Investment Report 2024 – Kyrgyz Republic Chapter",National Broadband Expansion Initiative 2024,False
+El Salvador,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2023,Bitcoin Law Investment Climate,False
+El Salvador,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023,Credit Tightening and NPL Stress,False
+Lebanon,FDI,negative,2024-2027,-20.0,4.73,-12.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF, Lebanon Article IV Consultation 2023",Capital Controls & Investment Freeze,False
+Lebanon,Banking,negative,2024-2027,-22.0,1.32,-15.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"Lebanese Central Bank press release, March 2024",Central Bank Rate Hike Cycle,False
+Lebanon,Manufacturing,negative,2024-2027,-15.0,1.82,-4.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"World Bank, Lebanon Country Overview 2024",Stagnant Industrial Policy,False
+Lebanon,Digital,negative,2024-2027,-8.0,3.28,-1.23,2.84,3.73,Medium,T5(40%) + DiD(60%),High,"UNCTAD, World Investment Report 2024 – Lebanon",Limited Broadband Expansion,False
+Morocco,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation 2023 – Morocco, Monetary Policy Section",Monetary tightening cycle 2023-2024,False
+Morocco,FDI,negative,2024-2027,-9.0,4.73,-4.88,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Morocco Chapter,FDI inflow slowdown and revised investment law,False
+Morocco,Manufacturing,positive,2024-2026,8.0,-1.92,2.05,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"Morocco Ministry of Industry press release, June 2023",Industrial Acceleration Plan (IAP) Phase II,False
+Morocco,Digital,positive,2024-2027,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"World Bank Country Overview – Morocco, Digital Infrastructure Section (2024)",National Digital Strategy 2023-2027,False
+Nepal,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Nepal Staff Report,Repo Rate Hikes 2023-2024,False
+Nepal,FDI,negative,2024-2025,-9.0,4.73,-4.88,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank Country Overview – Nepal (2024),FDI Inflow Decline 2023,False
+Nepal,Manufacturing,negative,2024-2027,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Nepal Chapter,Industrial Policy Implementation Lag,False
+Nepal,Digital,positive,2024-2027,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Communication Nepal Press Release, Dec 2023",National Broadband Expansion Plan 2023,False
+Israel,FDI,positive,2024-2027,5.0,-3.19,2.54,-3.38,-3.0,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Israel, 2023",UAE-Israel Bilateral Investment Treaty,False
+Israel,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"Bank of Israel, Monetary Policy Statement, Dec 2023",Bank of Israel Rate Hike Cycle 2023‑2024,False
+Israel,Manufacturing,negative,2024-2026,-4.0,1.82,-0.51,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"World Bank Country Overview – Israel, 2024",National Industrial Strategy 2023‑2027,False
+Israel,Digital,positive,2024-2027,12.0,1.9,8.97,1.66,2.14,High,T5(70%) + DiD(30%),High,"UNCTAD World Investment Report – Israel, 2024",Digital Israel 2025 Initiative,False
+Norway,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation 2023 – Norway, Chapter on Monetary Policy",Norges Bank rate tightening cycle 2023-2024,False
+Norway,FDI,negative,2024-2027,-8.0,4.73,-4.18,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank Country Overview Norway 2024 – Investment Climate Assessment,Revised foreign investment screening framework 2023,False
+Norway,Manufacturing,negative,2024-2026,-12.0,1.82,-3.71,1.57,2.08,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Norway Chapter,Industrial emissions levy increase 2024,False
+Norway,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Trade and Industry press release, June 2023",National AI and Broadband Upgrade Programme 2023‑2027,False
+Lithuania,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,ECB press release 2023; Bank of Lithuania monetary policy report 2023 Q4,ECB rate hikes transmitted to Lituania,False
+Lithuania,FDI,negative,2024-2027,-9.0,4.73,-4.88,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank Country Overview Lithuania 2024, Investment Climate Assessment",Reduced EU‑Lithuania investment incentives,False
+Lithuania,Manufacturing,negative,2024-2026,-10.0,1.82,-2.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"IMF Article IV Consultation Lithuania 2023, paragraph 45",Supply‑chain disruption mitigation plan delayed,False
+Lithuania,Digital,positive,2024-2027,14.0,1.9,10.37,1.66,2.14,High,T5(70%) + DiD(30%),High,"UNCTAD World Investment Report 2024, Lithuania chapter",National AI and Digital Infrastructure Strategy 2023‑2027,False
+Bahrain,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Bahrain,FDI Incentive Package 2023,False
+Bahrain,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,Central Bank of Bahrain Monetary Policy Statements 2023‑2024,Central Bank Rate Hike Cycle 2023‑2024,False
+Bahrain,Manufacturing,negative,2024-2026,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview – Bahrain (2024),Industrial Strategy 2022‑2026 Implementation Delays,False
+Bahrain,Digital,positive,2024-2027,15.0,1.9,11.07,1.66,2.14,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Bahrain Section,Bahrain Digital Economy Strategy 2023,False
+Finland,FDI,negative,2024-2027,-5.0,4.73,-2.08,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank - Finland Investment Climate Assessment 2023,FDI Outlook 2023 Update,False
+Finland,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"ECB Press Release, March 2023; ECB Monetary Policy Statement, February 2024",ECB Rate Hikes 2023‑2024,False
+Finland,Manufacturing,positive,2024-2027,12.0,-1.92,7.82,-2.14,-1.71,High,T5(70%) + DiD(30%),High,Ministry of Economic Affairs - Industrial Strategy 2023‑2027 (policy document),Finland Industrial Strategy 2023‑2027,False
+Finland,Digital,positive,2024-2027,12.0,1.9,8.97,1.66,2.14,High,T5(70%) + DiD(30%),High,Ministry of Transport and Communications - National Digital Strategy 2023,National Digital Strategy 2023,False
+Tonga,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Tonga 2023, Chapter on Monetary Policy",Monetary Policy Tightening 2023-2024,False
+Tonga,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank Country Overview – Tonga, 2024",FDI Inflow Decline and Capital Controls Review,False
+North Macedonia,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – North Macedonia,FDI Incentive Law Amendment 2023,False
+North Macedonia,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,National Bank of North Macedonia – Monetary Policy Report Dec 2023,Monetary Policy Tightening Cycle 2023-2024,False
+North Macedonia,Manufacturing,negative,2024-2027,-15.0,1.82,-4.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank – North Macedonia Country Overview 2024,Special Economic Zone Funding Freeze 2024,False
+Eswatini,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Eswatini Staff Report,Repo Rate Hike 2023,False
+Eswatini,FDI,negative,2024-2025,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Eswatini Chapter,FDI Inflow Decline 2023,False
+Eswatini,Digital,positive,2024-2027,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Communications Press Release, March 2024",National Broadband Expansion Plan 2024,False
+Croatia,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Croatia, 2023",FDI Incentive Package 2023,False
+Croatia,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,"Croatian National Bank press releases, 2023‑2024",HNB Rate Hike Cycle 2023‑2024,False
+Croatia,Manufacturing,positive,2024-2027,10.0,-1.92,2.85,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"Croatian Ministry of Economy – Programme Announcement, March 2024",Industrial Competitiveness Programme 2024,False
+Croatia,Digital,positive,2024-2026,14.0,1.9,10.37,1.66,2.14,High,T5(70%) + DiD(30%),High,"World Bank – Croatia Country Overview, 2024",Digital Croatia 2025 Initiative,False
+Iraq,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Iraq, 2023",FDI Incentive Law (2023),False
+Iraq,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,"Central Bank of Iraq press release, March 2024",Monetary Tightening Cycle 2023-2024,False
+Iraq,Manufacturing,negative,2024-2027,-10.0,1.82,-2.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"World Bank – Iraq Country Overview, 2024",Industrial Zones Development Plan (2022‑2024),False
+Iraq,Digital,negative,2024-2026,-8.0,3.28,-1.23,2.84,3.73,Medium,T5(40%) + DiD(60%),High,"UNCTAD World Investment Report – Iraq, 2024",National Broadband Strategy (draft 2023),False
+Uzbekistan,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Uzbekistan,FDI Incentive Law 2023 (partial suspension),False
+Uzbekistan,Banking,negative,2024-2025,-9.0,1.32,-5.9,1.1,1.55,High,T5(70%) + DiD(30%),High,CBU press releases 2023‑2024; World Bank Country Overview 2024,Central Bank Rate Hike Cycle 2023‑2024,False
+Uzbekistan,Manufacturing,positive,2024-2027,14.0,-1.92,4.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,World Bank Investment Climate Assessment 2024 – Uzbekistan,Industrial Development Strategy 2023‑2027,False
+Uzbekistan,Digital,positive,2024-2026,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Uzbekistan,National Broadband Expansion Program 2024‑2026,False
+Sub-Saharan Africa,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF, Article IV Consultation 2023 – Sub‑Saharan Africa Regional Overview",FDI Screening & Capital Controls,False
+Sub-Saharan Africa,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"World Bank, Global Financial Development Report 2024 – Sub‑Saharan Africa Chapter",Monetary Tightening Cycle,False
+Sub-Saharan Africa,Manufacturing,negative,2024-2026,-9.0,1.82,-2.51,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"UNCTAD, World Investment Report 2024 – Sub‑Saharan Africa",Industrial Policy Delays,False
+Sub-Saharan Africa,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"World Bank, Africa Digital Economy Outlook 2023",Continental Broadband Initiative,False
+Mongolia,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Mongolia, 2023",Monetary Tightening 2023-2024,False
+Mongolia,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank Country Overview – Mongolia, 2024",Capital Flow Restrictions & Investment Review,False
+Mongolia,Manufacturing,positive,2024-2027,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"UNCTAD World Investment Report – Mongolia, 2024",Industrial Development Strategy 2023‑2027,False
+Mongolia,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Digital Development, Mongolia – Press Release, March 2024",National Broadband Expansion Plan 2023‑2026,False
+Tuvalu,Digital,positive,2024-2027,10.0,1.9,7.57,1.66,2.14,High,T5(70%) + DiD(30%),High,"Tuvalu Ministry of Communications, Press Release March 2023",National Broadband Expansion Programme,False
+Fiji,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Fiji, 2023",Monetary Policy Tightening 2023-2024,False
+Fiji,FDI,negative,2024-2025,-9.0,4.73,-4.88,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank – Fiji Country Overview, 2024",FDI Inflow Decline and Capital Controls Review,False
+Fiji,Manufacturing,positive,2024-2027,8.0,-1.92,2.05,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"UNCTAD – World Investment Report 2024, Fiji",Fiji Manufacturing Development Strategy 2022‑2027,False
+Fiji,Digital,positive,2024-2026,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Fiji Ministry of Finance – Press Release, Dec 2023",National Broadband Policy 2023,False
+Greece,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"ECB Press Release, March 2024",ECB Rate Hikes 2023-2024,False
+Greece,FDI,negative,2024-2025,-9.0,4.73,-0.76,4.45,5.0,Medium,T5(40%) + DiD(60%),High,"World Bank Country Overview – Greece, 2024",Reduced Investment Incentives,False
+Greece,Manufacturing,negative,2024-2027,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"Greek Ministry of Development Statement, Nov 2023",Supply‑Chain Disruption in Energy‑Intensive Sectors,False
+Greece,Digital,positive,2024-2027,10.0,1.9,7.57,1.66,2.14,High,T5(70%) + DiD(30%),High,"UNCTAD World Investment Report – Greece, 2024",National Digital Strategy 2023‑2027,False
+Panama,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank - Panama Investment Climate Assessment 2023,FDI Incentive Review 2023,False
+Panama,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF - Article IV Consultation Panama 2024,Credit Tightening Guidance 2024,False
+Panama,Manufacturing,positive,2024-2027,9.0,-1.92,5.72,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"UNCTAD - World Investment Report 2024, Panama Chapter",Colon Free Zone Expansion 2023-2024,False
+Panama,Digital,positive,2024-2026,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,Panama Ministry of Public Works - National Broadband Plan 2023,National Broadband Plan 2023,False
+Trinidad and Tobago,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Trinidad and Tobago Staff Report,Monetary Policy Tightening 2023-2024,False
+Trinidad and Tobago,FDI,negative,2024-2025,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank Country Overview – Trinidad and Tobago (2024),FDI Inflow Decline and Capital Controls Review,False
+Trinidad and Tobago,Manufacturing,negative,2024-2027,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"Ministry of Trade and Industry press release, July 2023",Industrial Development Programme 2023,False
+Trinidad and Tobago,Digital,positive,2024-2027,9.0,1.9,6.87,1.66,2.14,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Trinidad and Tobago Chapter,National Broadband Infrastructure Plan 2023,False
+Oman,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD, World Investment Report 2023 – Oman chapter",FDI Inflow Decline 2023,False
+Oman,Banking,positive,2024-2025,8.0,-0.99,5.3,-1.16,-0.83,High,T5(70%) + DiD(30%),High,"Central Bank of Oman, Monetary Policy Statement March 2024",CBO Rate Cut March 2024,False
+Oman,Manufacturing,positive,2024-2027,5.0,-1.92,0.85,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"IMF, Article IV Consultation Oman 2024",Industrial Development Zones Initiative,False
+Oman,Digital,positive,2024-2027,8.0,1.9,6.17,1.66,2.14,High,T5(70%) + DiD(30%),High,"World Bank, Oman Country Overview & Investment Climate Assessment 2024",National Digital Strategy 2023,False
+"Taiwan, China",FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank – Taiwan Investment Climate Assessment 2024,Investment Promotion Act Amendments 2023,False
+"Taiwan, China",Banking,positive,2024-2025,9.0,-0.99,6.0,-1.16,-0.83,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation – Taiwan 2024,Central Bank Rate Cut Cycle 2023-2024,False
+"Taiwan, China",Manufacturing,positive,2024-2027,14.0,-1.92,4.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Taiwan Chapter,5+2 Industrial Innovation Plan,False
+"Taiwan, China",Digital,positive,2024-2027,18.0,1.9,13.17,1.66,2.14,High,T5(70%) + DiD(30%),High,Ministry of Economic Affairs – Press Release 2024,National AI & Semiconductor Strategy 2024,False
+Barbados,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Barbados Staff Report,Monetary Policy Tightening 2023-2024,False
+Barbados,FDI,negative,2024-2025,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank Country Overview – Barbados (2024),Investment Promotion Act Amendments 2023,False
+Barbados,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Barbados Chapter,Barbados Digital Economy Strategy 2023,False
+Ukraine,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Ukraine,FDI Incentive Suspension,False
+Ukraine,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,"NBU Monetary Policy Statement, Dec 2023",Monetary Tightening Cycle,False
+Ukraine,Manufacturing,negative,2024-2027,-10.0,1.82,-2.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"World Bank Country Overview – Ukraine, 2024",Industrial Development Strategy 2022‑2027 – War Adjustments,False
+Ukraine,Digital,positive,2024-2026,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Ukraine,Digital Ukraine 2023‑2027 Roadmap,False
+Vanuatu,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Vanuatu, 2023",Monetary Policy Tightening 2023-2024,False
+Vanuatu,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank – Vanuatu Country Overview, 2024",FDI Inflow Decline and Capital Controls,False
+Vanuatu,Manufacturing,negative,2024-2025,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"UNCTAD – World Investment Report, Vanuatu Chapter, 2024",Limited Industrial Incentives,False
+Vanuatu,Digital,negative,2024-2027,-5.0,3.28,-0.03,2.84,3.73,Medium,T5(40%) + DiD(60%),High,"World Bank – Vanuatu Investment Climate Assessment, 2024",Broadband Infrastructure Lag,False
+Qatar,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Qatar,QCB Policy Rate Hike 2023,False
+Qatar,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank Country Overview – Qatar (2024),FDI Inflow Decline 2023‑24,False
+Qatar,Manufacturing,positive,2024-2027,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,Qatar Ministry of Commerce press release 2022 – Industrial Strategy,Qatar Industrial Strategy 2022‑2027,False
+Qatar,Digital,positive,2024-2027,15.0,1.9,7.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Qatar chapter,Qatar Digital Economy 2023‑2026 Plan,False
+Libya,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank - Libya Investment Climate Assessment 2024,Suspended Investment Promotion Law,False
+Libya,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF - Article IV Consultation Libya 2024,Central Bank Rate Hike Cycle,False
+Libya,Manufacturing,negative,2024-2027,-10.0,1.82,-2.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,UNCTAD - World Investment Report 2024: Libya,Delay of Special Economic Zones Plan,False
+Suriname,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Suriname Staff Report,Monetary Tightening 2023-2024,False
+Suriname,FDI,negative,2024-2027,-8.0,4.73,-4.18,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank Country Overview – Suriname Investment Climate Assessment 2023,Capital Controls & FDI Review,False
+Suriname,Digital,positive,2024-2027,4.0,1.9,2.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,World Bank Project Document – Suriname Digital Infrastructure 2023,National Broadband Expansion Plan 2023,False
+Philippines,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 - Philippines Chapter,FDI Incentive Review 2023,False
+Philippines,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation Philippines 2023,BSP Rate Hike Cycle 2023-2024,False
+Philippines,Manufacturing,negative,2024-2026,-9.0,1.82,-2.51,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview Philippines 2024,Industrial Revitalization Act 2023,False
+Philippines,Digital,positive,2024-2027,15.0,1.9,7.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,Philippines Ministry of ICT Press Release 2023,National Broadband Plan 2023-2025,False
+Sri Lanka,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Sri Lanka,FDI Incentive Package 2023,False
+Sri Lanka,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,World Bank Country Overview 2024 – Sri Lanka,Monetary Tightening Cycle 2023‑2024,False
+Sri Lanka,Manufacturing,negative,2024-2026,-10.0,1.82,-2.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview 2024 – Sri Lanka,Industrial Revitalisation Act 2022 (implementation lag),False
+Sri Lanka,Digital,positive,2024-2027,9.0,1.9,6.87,1.66,2.14,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Sri Lanka,National Broadband Expansion Programme 2024,False
+Lao PDR,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Lao PDR, 2023",Monetary Policy Tightening 2023-2024,False
+Lao PDR,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank Country Overview, Lao PDR, 2024",Investment Promotion Law Amendments 2023,False
+Lao PDR,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"UNCTAD World Investment Report, Lao PDR Chapter, 2024",National Digital Economy Strategy 2023,False
+St. Kitts and Nevis,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank - St. Kitts and Nevis Country Overview 2024,FDI Incentive Review 2023,False
+St. Kitts and Nevis,Banking,negative,2024-2025,-9.0,1.32,-5.9,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – St. Kitts and Nevis,Monetary Policy Tightening 2023,False
+St. Kitts and Nevis,Manufacturing,negative,2024-2027,-5.0,1.82,-0.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,IMF Article IV Consultation 2023 – St. Kitts and Nevis,Industrial Diversification Strategy 2022‑2026,False
+St. Kitts and Nevis,Digital,positive,2024-2026,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Finance Press Release, June 2023",National Broadband Expansion Plan 2023,False
+"Macao SAR, China",FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Macau SAR, 2023",FDI Incentive Suspension,False
+"Macao SAR, China",Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,"Macau Monetary Authority press release, March 2024",Monetary Tightening Cycle,False
+"Macao SAR, China",Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"World Bank Country Overview – Macau SAR, 2024",Digital Infrastructure Upgrade Plan,False
+Jamaica,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank - Jamaica Country Overview 2024,Investment Promotion Act 2023 Review,False
+Jamaica,Banking,positive,2024-2025,10.0,-0.99,6.7,-1.16,-0.83,High,T5(70%) + DiD(30%),High,IMF - Article IV Consultation Jamaica 2023,Jamaica Monetary Policy Easing 2023,False
+Jamaica,Manufacturing,positive,2024-2027,9.0,-1.92,5.72,-2.14,-1.71,High,T5(70%) + DiD(30%),High,Jamaica Ministry of Finance press release 2023,National Industrial Development Plan 2023,False
+Jamaica,Digital,positive,2024-2027,11.0,1.9,8.27,1.66,2.14,High,T5(70%) + DiD(30%),High,UNCTAD - World Investment Report 2024 (Jamaica),Digital Economy Strategy 2023-2027,False
+Uruguay,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Uruguay Staff Report,Monetary tightening cycle 2023-2024,False
+Uruguay,FDI,negative,2024-2027,-8.0,4.73,-4.18,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank Country Overview – Uruguay 2024,FDI inflow slowdown and capital controls review,False
+Uruguay,Digital,positive,2024-2027,12.0,1.9,5.94,1.66,2.14,Medium,T5(40%) + DiD(60%),High,Uruguay Ministry of Industry press release 2023,National Broadband Expansion Plan 2023-2026,False
+Djibouti,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF/Article IV Consultation – Djibouti 2023,FDI Incentive Review 2023,False
+Djibouti,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,Central Bank of Djibouti – Monetary Policy Statement March 2023,Monetary Policy Rate Hold 2023,False
+Djibouti,Manufacturing,negative,2024-2027,-15.0,1.82,-4.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank – Djibouti Country Overview 2024,Special Economic Zone Expansion Delay,False
+Botswana,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Botswana, 2023",Monetary Policy Tightening Cycle 2023-2024,False
+Botswana,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank Country Overview & Investment Climate Assessment, Botswana, 2024",Investment Promotion Act Amendments 2023,False
+Botswana,Manufacturing,negative,2024-2027,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"UNCTAD World Investment Report, Botswana Chapter, 2024",Botswana Industrial Development Policy 2023,False
+Botswana,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"World Bank Country Overview & Investment Climate Assessment, Botswana, 2024",National Broadband Policy 2023,False
+"Yemen, Rep.",Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Yemen, Rep., 2023",Monetary Policy Rate Hold,False
+Namibia,Banking,negative,2024-2025,-8.0,1.32,-5.2,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Namibia,Repo Rate Pause,False
+Namibia,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank Country Overview 2024 – Namibia,Investment Promotion Act 2023,False
+Namibia,Manufacturing,negative,2024-2026,-9.0,1.82,-2.51,1.57,2.08,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Namibia,Special Economic Zones Initiative,False
+Kuwait,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Kuwait,FDI Incentive Freeze,False
+Kuwait,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,Central Bank of Kuwait – Financial Stability Bulletin 2023,Credit Tightening by CBB,False
+Kuwait,Manufacturing,positive,2024-2027,8.0,-1.92,5.02,-2.14,-1.71,High,T5(70%) + DiD(30%),High,World Bank – Kuwait Country Overview 2024,Industrial Diversification Initiative,False
+Kuwait,Digital,positive,2024-2027,10.0,1.9,7.57,1.66,2.14,High,T5(70%) + DiD(30%),High,UNCTAD – World Investment Report 2024 – Kuwait,National Digital Transformation Strategy 2023,False
+Pakistan,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Pakistan,FDI Incentive Package 2023,False
+Pakistan,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,State Bank of Pakistan Annual Report 2024,Monetary Tightening Cycle 2023-2024,False
+Pakistan,Manufacturing,negative,2024-2027,-10.0,1.82,-2.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview – Pakistan 2024,Industrial Revitalisation Programme (IRP) 2022‑2025,False
+Pakistan,Digital,positive,2024-2026,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Pakistan,Digital Pakistan Initiative 2023,False
+Montenegro,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Montenegro,Investment Promotion Law 2023,False
+Montenegro,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,National Bank of Montenegro – Monetary Policy Statement Oct 2023,Credit Tightening by National Bank of Montenegro,False
+Montenegro,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,World Bank – Montenegro Country Overview 2024,National Broadband Expansion Plan 2023-2026,False
+Indonesia,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank – Indonesia Investment Climate Assessment 2024,FDI Incentive Review 2023,False
+Indonesia,Banking,negative,2024-2025,-14.0,1.32,-9.4,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF – Article IV Consultation Indonesia 2024,BI Rate Hike Cycle 2023-2024,False
+Indonesia,Manufacturing,negative,2024-2027,-9.0,1.82,-2.51,1.57,2.08,Medium,T5(40%) + DiD(60%),High,UNCTAD – World Investment Report 2024 (Indonesia),Industrial Policy Shift 2023,False
+Indonesia,Digital,positive,2024-2026,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,Ministry of Communication and Information Technology – Digital Economy Roadmap 2023,Digital Economy Roadmap 2023,False
+"Egypt, Arab Rep.",Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF, Egypt Staff Report 2023, Chapter III",Central Bank Rate Hikes 2023-2024,False
+"Egypt, Arab Rep.",FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank, Egypt Investment Climate Assessment 2024",FDI Inflow Decline and Capital Controls,False
+"Egypt, Arab Rep.",Manufacturing,positive,2024-2027,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"UNCTAD, World Investment Report 2024 – Egypt Chapter",Industrial Zones Expansion 2023,False
+"Egypt, Arab Rep.",Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Egypt Ministry of Communications and Information Technology, Press Release Jan 2024",National Digital Strategy 2022‑2025,False
+"Venezuela, RB",Banking,negative,2024-2027,-18.0,1.32,-12.2,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF, Article IV Consultation Venezuela 2023",Monetary Tightening Cycle 2023-2024,False
+St. Vincent and the Grenadines,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank – St. Vincent and the Grenadines Country Overview 2024,FDI Incentive Review 2023,False
+St. Vincent and the Grenadines,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF – Article IV Consultation, St. Vincent and the Grenadines, 2023",Central Bank Rate Hike 2023,False
+St. Vincent and the Grenadines,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"UNCTAD – World Investment Report 2024, St. Vincent and the Grenadines section",National Broadband Expansion Plan 2024,False
+Curacao,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF/Article IV Consultation – Curacao 2023,FDI Incentive Review 2023,False
+Curacao,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,Central Bank of Curacao – Monetary Policy Statement Dec 2023,Central Bank Rate Hold 2023-2024,False
+Curacao,Digital,positive,2024-2026,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,Ministry of Economic Development – Broadband Expansion Programme 2023,Broadband Expansion Programme 2023,False
+Saudi Arabia,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation 2023 – Saudi Arabia, Chapter on Monetary Policy",SAMA Rate Hike Cycle 2023-2024,False
+Saudi Arabia,FDI,negative,2024-2027,-8.0,4.73,-4.18,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Saudi Arabia Chapter,FDI Inflow Decline 2023,False
+Saudi Arabia,Manufacturing,positive,2024-2027,12.0,-1.92,3.65,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview 2024 – Saudi Arabia,National Industrial Development and Logistics Program (NIDLP) 2023 Expansion,False
+Saudi Arabia,Digital,positive,2024-2027,15.0,1.9,11.07,1.66,2.14,High,T5(70%) + DiD(30%),High,"Ministry of Communications and Information Technology press release, March 2024",Digital Saudi 2024 Initiative,False
+Zimbabwe,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation 2023 – Zimbabwe, Monetary Policy Section",Monetary Tightening Cycle 2023-2024,False
+Zimbabwe,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2023 – Zimbabwe Chapter,Capital Controls and Investment Restrictions,False
+Zimbabwe,Manufacturing,negative,2024-2025,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"World Bank Country Overview – Zimbabwe, Investment Climate Assessment (2024)",Industrial Policy Stagnation,False
+Rwanda,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2023 – Rwanda Chapter,FDI Inflow Moderation 2023,False
+Rwanda,Banking,negative,2024-2025,-8.0,1.32,-5.2,1.1,1.55,High,T5(70%) + DiD(30%),High,National Bank of Rwanda Monetary Policy Statement November 2023,Rwanda National Bank Rate Hike 2023,False
+Rwanda,Manufacturing,positive,2024-2027,12.0,-1.92,3.65,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,Ministry of Trade Rwanda – Industrial Policy Brief 2023,Made in Rwanda Industrial Promotion 2023,False
+Rwanda,Digital,positive,2024-2026,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,Rwanda Ministry of ICT – National Digital Strategy 2023,National Digital Strategy 2023,False
+Romania,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Romania, 2023",FDI Incentive Law 2023 Revision,False
+Romania,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,"World Bank – Romania Country Overview, 2024",NBR Rate Hike Cycle 2023‑2024,False
+Romania,Manufacturing,negative,2024-2026,-10.0,1.82,-6.45,1.57,2.08,High,T5(70%) + DiD(30%),High,"UNCTAD World Investment Report – Romania, 2024",Industrial Zones Funding Freeze,False
+Romania,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Communications – Digital Strategy launch, 2023",National Digital Strategy 2023‑2027,False
+Ghana,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation 2023 – Ghana, Monetary Policy Section",Monetary Tightening Cycle 2023-2024,False
+Ghana,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank Country Overview – Ghana, Investment Climate Assessment 2024",Revised Capital Controls (2023),False
+Ghana,Manufacturing,negative,2024-2025,-9.0,1.82,-2.51,1.57,2.08,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Ghana Chapter,Industrial Policy Delay – Ghana Industrialisation Programme 2022‑2027,False
+Ghana,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Communications Ghana Press Release, 12 Nov 2023",National Digital Transformation Strategy 2023,False
+South Africa,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – South Africa,FDI Incentive Review 2023,False
+South Africa,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,SARB Monetary Policy Statements 2023-2024,SARB Repo Rate Hike Cycle 2023-2024,False
+South Africa,Manufacturing,negative,2024-2027,-9.0,1.82,-2.51,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview – South Africa 2024,Manufacturing Competitiveness Plan 2023,False
+South Africa,Digital,positive,2024-2026,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – South Africa,National Broadband Policy 2023,False
+Nicaragua,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Nicaragua 2023, Monetary Policy Section",Monetary tightening 2023-2024,False
+Nicaragua,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank Country Overview and Investment Climate Assessment, Nicaragua 2024",FDI inflow decline and investment restrictions,False
+Nicaragua,Digital,negative,2024-2027,-8.0,3.28,-1.23,2.84,3.73,Medium,T5(40%) + DiD(60%),High,"UNCTAD World Investment Report, Nicaragua Chapter 2024",Broadband rollout lag,False
+Madagascar,Banking,negative,2024-2027,-9.0,1.32,-5.9,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Madagascar Staff Report,Monetary Policy Rate Hold/Increase,False
+Kenya,FDI,negative,2024-2027,-9.0,4.73,-4.88,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Kenya,FDI Incentive Package 2023,False
+Kenya,Banking,negative,2024-2025,-11.0,1.32,-7.3,1.1,1.55,High,T5(70%) + DiD(30%),High,World Bank – Kenya Economic Update 2024,CBK Repo Rate Hikes 2023-2024,False
+Kenya,Manufacturing,positive,2024-2027,9.0,-1.92,5.72,-2.14,-1.71,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Kenya,Special Economic Zones Act 2023,False
+Kenya,Digital,positive,2024-2026,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,World Bank – Kenya Country Overview 2024,National Broadband Strategy 2023,False
+Myanmar,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Myanmar,FDI Restrictions and Sanctions,False
+Myanmar,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,Myanmar Central Bank Monetary Policy Statement Jan 2024,Monetary Tightening Cycle,False
+Myanmar,Manufacturing,negative,2024-2027,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview – Myanmar (2024),Stagnant SEZ Incentives,False
+Myanmar,Digital,negative,2024-2027,-5.0,3.28,-0.03,2.84,3.73,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Myanmar Chapter,Limited Broadband Expansion,False
+Guyana,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Guyana, 2023",Monetary Rate Hike Cycle,False
+Guyana,FDI,negative,2024-2025,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Guyana Chapter,FDI Inflow Pullback,False
+Guyana,Manufacturing,positive,2024-2027,8.0,-1.92,5.02,-2.14,-1.71,High,T5(70%) + DiD(30%),High,World Bank – Guyana Country Overview 2024,Guyana Manufacturing Development Programme,False
+Guyana,Digital,positive,2024-2027,9.0,1.9,6.87,1.66,2.14,High,T5(70%) + DiD(30%),High,"Ministry of Finance, Guyana – National Broadband Plan Announcement, June 2024",National Broadband Plan,False
+Lesotho,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD - World Investment Report 2023,FDI inflow decline 2023,False
+Lesotho,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Lesotho,Monetary tightening cycle,False
+Equatorial Guinea,Banking,negative,2024-2027,-10.0,1.32,-3.21,1.1,1.55,Medium,T5(40%) + DiD(60%),High,"IMF Article IV Consultation 2023-2024, Equatorial Guinea",Monetary Policy Rate Hold,False
+"Bahamas, The",FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Bahamas,FDI inflow slowdown,False
+"Bahamas, The",Banking,negative,2024-2025,-8.0,1.32,-5.2,1.1,1.55,High,T5(70%) + DiD(30%),High,Bahamas Central Bank Monetary Policy Statement March 2024,Monetary tightening cycle,False
+"Bahamas, The",Digital,positive,2024-2027,12.0,1.9,8.97,1.66,2.14,High,T5(70%) + DiD(30%),High,Bahamas Ministry of Transport and Housing – National Broadband Strategy 2023,National Broadband Strategy 2023,False
+Sint Maarten (Dutch part),Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF, Article IV Consultation 2023, ""Monetary Policy"" section",Monetary tightening 2023-2024,False
+Sint Maarten (Dutch part),FDI,negative,2024-2027,-10.0,4.73,-1.16,4.45,5.0,Medium,T5(40%) + DiD(60%),High,"World Bank, Country Overview 2024, ""Foreign Direct Investment"" section",FDI inflow slowdown,False
+Iceland,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank – Iceland Country Overview 2024,FDI Incentive Review 2023,False
+Iceland,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF – Article IV Consultation, Iceland 2024",Monetary Tightening Cycle 2023-2024,False
+Iceland,Manufacturing,positive,2024-2027,8.0,-1.92,2.05,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,Ministry of Industries – Policy Brief 2024,Alpine Manufacturing Hub Initiative,False
+Iceland,Digital,positive,2024-2026,10.0,1.9,7.57,1.66,2.14,High,T5(70%) + DiD(30%),High,"UNCTAD – World Investment Report 2024, Iceland",National Broadband Expansion 2023‑2025,False
+Chile,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF/Article IV Consultation 2023,FDI Incentive Suspension,False
+Chile,Banking,positive,2024-2025,8.0,-0.99,5.3,-1.16,-0.83,High,T5(70%) + DiD(30%),High,Banco Central de Chile Press Release March 2023,Monetary Easing Cycle,False
+Chile,Manufacturing,positive,2024-2027,12.0,-1.92,7.82,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"Chile Ministry of Economy, Chile 2030 Strategy Document 2022",Chile 2030 Industrial Strategy,False
+Chile,Digital,positive,2024-2026,9.0,1.9,6.87,1.66,2.14,High,T5(70%) + DiD(30%),High,World Bank/Chile Country Overview 2023,National Broadband Expansion,False
+Sudan,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Sudan, 2023",Suspension of Investment Incentives,False
+Sudan,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,"Central Bank of Sudan press releases, 2023-2024",High Policy Rate Maintenance,False
+Sudan,Manufacturing,negative,2024-2027,-10.0,1.82,-6.45,1.57,2.08,High,T5(70%) + DiD(30%),High,"World Bank, Sudan Country Overview, 2023",Delay of Industrial Zones Plan,False
+Sudan,Digital,negative,2024-2027,-5.0,3.28,-0.03,2.84,3.73,Medium,T5(40%) + DiD(60%),High,"UNCTAD World Investment Report, Sudan, 2023",Limited Broadband Expansion,False
+Bulgaria,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation 2023 – Bulgaria, Section 4.2 Monetary Policy",Bulgarian National Bank Rate Hikes 2023-2024,False
+Bulgaria,FDI,negative,2024-2027,-9.0,4.73,-4.88,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank Country Overview 2024 – Bulgaria, Investment Climate Assessment",FDI Incentive Freeze and EU Funding Reallocation,False
+Bulgaria,Manufacturing,positive,2024-2026,10.0,-1.92,2.85,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"UNCTAD World Investment Report 2024 – Bulgaria, Chapter 3 Manufacturing",Special Economic Zones Expansion 2023‑2024,False
+Bulgaria,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Transport and Communications press release, 12 Nov 2023",National Digital Strategy 2023‑2027,False
+Bolivia,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Bolivia,Monetary Tightening Cycle 2023-2024,False
+Bolivia,FDI,negative,2024-2025,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank Country Overview – Bolivia 2024,FDI Inflow Decline and Capital Controls,False
+Bolivia,Manufacturing,positive,2024-2027,8.0,-1.92,2.05,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,Bolivia Ministry of Development press release 2023,Industrial Development Plan 2023‑2027,False
+Bolivia,Digital,positive,2024-2026,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Bolivia chapter,National Digital Strategy 2023,False
+Mexico,FDI,negative,2024-2027,-18.0,4.73,-11.18,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 - Mexico chapter,FDI inflow slowdown,False
+Mexico,Banking,positive,2024-2025,5.0,-0.99,3.2,-1.16,-0.83,High,T5(70%) + DiD(30%),High,Banxico press release June 2024,Banxico rate easing,False
+Mexico,Manufacturing,positive,2024-2027,10.0,-1.92,6.42,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"Mexico Ministry of Economy, Nearshoring Industrial Strategy 2023 document",Nearshoring Industrial Strategy 2023,False
+Mexico,Digital,positive,2024-2026,8.0,1.9,6.17,1.66,2.14,High,T5(70%) + DiD(30%),High,"World Bank Country Overview and Investment Climate Assessment for Mexico, 2024",Mexico Digital 2024 Initiative,False
+Timor-Leste,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Timor-Leste,FDI Incentive Package 2023,False
+Timor-Leste,Banking,negative,2024-2025,-9.0,1.32,-5.9,1.1,1.55,High,T5(70%) + DiD(30%),High,Bank of Timor-Leste Monetary Policy Statement March 2023,Central Bank Rate Hold 2023-2024,False
+Timor-Leste,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview – Timor-Leste (2023),National Broadband Expansion Plan 2023,False
+"Congo, Rep.",FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank - Congo Investment Climate Assessment 2024,FDI Incentive Suspension,False
+"Congo, Rep.",Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF - Article IV Consultation, Congo, Rep. 2023",Monetary Tightening Cycle,False
+Cabo Verde,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Cabo Verde,FDI Incentive Review 2023,False
+Cabo Verde,Banking,negative,2024-2025,-8.0,1.32,-5.2,1.1,1.55,High,T5(70%) + DiD(30%),High,Banco Central de Cabo Verde – Monetary Policy Statement March 2023,Monetary Policy Rate Hold 2023,False
+Cabo Verde,Manufacturing,negative,2024-2027,-5.0,1.82,-0.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank – Cabo Verde Country Overview 2023,Industrial Diversification Strategy 2022‑2026,False
+Cabo Verde,Digital,positive,2024-2026,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,Ministry of ICT – National Broadband Plan 2023,National Broadband Plan 2023,False
+Central African Republic,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Central African Republic,BEAC Policy Rate Increase 2023,False
+Nigeria,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Nigeria,Investment Promotion Act 2022 implementation lag,False
+Nigeria,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,CBN Press Release March 2024; World Bank Country Overview 2024 – Nigeria,CBN Monetary Policy Rate Hikes 2023‑2024,False
+Nigeria,Manufacturing,negative,2024-2027,-10.0,1.82,-2.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview 2024 – Nigeria,National Industrial Development Policy (NIDP) rollout delay,False
+Nigeria,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Nigeria,National Digital Economy Policy 2023,False
+"Korea, Dem. People's Rep.",Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Korea, DPR, 2023, para. 4.2.3",BOK Rate Hike Cycle 2023‑2024,False
+"Korea, Dem. People's Rep.",FDI,positive,2024-2027,9.0,-3.19,5.34,-3.38,-3.0,High,T5(70%) + DiD(30%),High,"World Bank Country Overview, Korea, DPR, 2024, section 5.2",FDI Incentive Package 2023,False
+"Korea, Dem. People's Rep.",Manufacturing,positive,2024-2026,11.0,-1.92,7.12,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"UNCTAD World Investment Report 2024, Korea, DPR, p. 78",Advanced Manufacturing Zones (AMZ) 2022‑2024,False
+"Korea, Dem. People's Rep.",Digital,positive,2024-2027,14.0,1.9,10.37,1.66,2.14,High,T5(70%) + DiD(30%),High,"Ministry of Science and ICT press release, 2023‑12‑15",National AI & Semiconductor Strategy 2023,False
+Maldives,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Maldives Staff Report,Monetary Policy Tightening 2023-2024,False
+Maldives,FDI,negative,2024-2025,-9.0,4.73,-0.76,4.45,5.0,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview – Maldives (2024),Investment Promotion Act Amendments 2023,False
+Maldives,Digital,positive,2024-2027,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Information Technology Press Release, March 2023",National Digital Transformation Strategy 2023,False
+Uganda,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank - Uganda Investment Climate Assessment 2024,Investment Promotion Act 2023,False
+Uganda,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,Bank of Uganda - Monetary Policy Statement March 2023,Monetary Policy Rate Hikes 2023-2024,False
+Uganda,Manufacturing,positive,2024-2027,9.0,-1.92,5.72,-2.14,-1.71,High,T5(70%) + DiD(30%),High,IMF - Article IV Consultation Uganda 2023,Industrial Development Policy 2023-2028,False
+Uganda,Digital,positive,2024-2026,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD - World Investment Report 2024 (Uganda),National Broadband Policy 2022 (implementation 2023‑2026),False
+Guinea,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Guinea, 2023",Monetary tightening 2023-2024,False
+Guinea,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD World Investment Report, 2024, Guinea chapter",FDI inflow slowdown,False
+Guinea,Manufacturing,negative,2024-2026,-9.0,1.82,-2.51,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"World Bank, Guinea Country Overview, 2024",Industrial policy lag,False
+"Congo, Dem. Rep.",Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation 2023 – Democratic Republic of Congo, Monetary Policy Section",Monetary Policy Tightening 2023-2024,False
+"Congo, Dem. Rep.",FDI,negative,2024-2025,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank Country Overview – DRC, Investment Climate Assessment 2024",Investment Climate Deterioration,False
+"Congo, Dem. Rep.",Digital,positive,2024-2027,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Digital Economy press release 2023, cited in UNCTAD World Investment Report 2024 – DRC Digital Infrastructure Chapter",National Broadband Expansion Plan 2023,False
+Moldova,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank – Moldova Investment Climate Assessment 2023,FDI Incentive Package 2023,False
+Moldova,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF – Article IV Consultation, Moldova, 2023",NBR Rate Hike Cycle 2023‑2024,False
+Moldova,Manufacturing,negative,2024-2026,-10.0,1.82,-2.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank – Moldova Economic Update 2024,Industrial Revitalisation Plan 2022‑2025 (delayed),False
+Moldova,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"UNCTAD – World Investment Report 2024, Moldova",National Digital Strategy 2023,False
+Seychelles,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank – Seychelles Country Overview 2024,Investment Promotion Act 2023 Review,False
+Seychelles,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF – Article IV Consultation, Seychelles, 2023",Monetary Policy Tightening Cycle 2023-2024,False
+Seychelles,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"UNCTAD – World Investment Report 2024, Seychelles Chapter",National ICT Strategy 2023-2026,False
+Zambia,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Zambia, 2023",Investment Incentives Review 2023,False
+Zambia,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,"World Bank – Zambia Economic Update, 2024",Monetary Policy Rate Hikes 2023-2024,False
+Zambia,Manufacturing,negative,2024-2027,-10.0,1.82,-2.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"World Bank – Zambia Country Overview, 2024",Industrialisation Strategy 2022‑2027 Implementation Delays,False
+Zambia,Digital,positive,2024-2026,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"UNCTAD – World Investment Report, Zambia Chapter, 2024",National Broadband Expansion Programme 2023,False
+Peru,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank - Peru Investment Climate Assessment 2024,FDI Incentive Suspension,False
+Peru,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF - Article IV Consultation Peru 2023,Monetary Tightening Cycle,False
+Peru,Manufacturing,negative,2024-2026,-9.0,1.82,-2.51,1.57,2.08,Medium,T5(40%) + DiD(60%),High,UNCTAD - World Investment Report 2024 (Peru),Export Competitiveness Lag,False
+Peru,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,Peru Ministry of Transport and Communications - Broadband Expansion Plan 2023,National Broadband Expansion Plan 2023-2026,False
+Cote d'Ivoire,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Côte d'Ivoire, 2023",Monetary Policy Tightening 2023-2024,False
+Cote d'Ivoire,FDI,negative,2024-2025,-9.0,4.73,-4.88,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank – Côte d'Ivoire Country Overview, 2024",Investment Code Amendment 2023,False
+Cote d'Ivoire,Manufacturing,positive,2024-2027,14.0,-1.92,9.22,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"UNCTAD World Investment Report – Côte d'Ivoire, 2024",Industrial Development Plan (PDI) 2023-2027,False
+Cote d'Ivoire,Digital,positive,2024-2026,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Finance – Press Release, December 2023",National Broadband Strategy 2023,False
+Cameroon,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank - Cameroon Investment Climate Assessment 2023,FDI Incentive Suspension,False
+Cameroon,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF - Cameroon Staff Report, April 2023",Monetary Tightening Cycle,False
+Cameroon,Manufacturing,negative,2024-2026,-15.0,1.82,-4.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"UNCTAD - World Investment Report 2024, Cameroon",Industrial Policy Delay,False
+Papua New Guinea,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Papua New Guinea,FDI Incentive Review 2023,False
+Papua New Guinea,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,Reserve Bank of Papua New Guinea – Monetary Policy Statement March 2023,Monetary Policy Rate Hold 2023,False
+Papua New Guinea,Manufacturing,negative,2024-2027,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,World Bank – Papua New Guinea Country Overview 2024,Special Economic Zone Stagnation,False
+Papua New Guinea,Digital,positive,2024-2027,10.0,1.9,5.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD – World Investment Report 2024 – Papua New Guinea,National Broadband Plan 2023,False
+Mozambique,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Mozambique,FDI Incentive Suspension,False
+Mozambique,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,Banco de Moçambique Monetary Policy Statement March 2024,Monetary Tightening Cycle,False
+Mozambique,Manufacturing,positive,2024-2027,10.0,-1.92,2.85,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview – Mozambique (2024),Industrial Development Zones Act,False
+Sao Tome and Principe,FDI,negative,2024-2027,-10.0,4.73,-1.16,4.45,5.0,Medium,T5(40%) + DiD(60%),High,World Bank – Sao Tome and Principe Country Overview 2024,FDI Incentive Package 2023,False
+Sao Tome and Principe,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF – Article IV Consultation, Sao Tome and Principe, 2024",Monetary Tightening Cycle 2023-2024,False
+Sao Tome and Principe,Manufacturing,negative,2024-2027,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"UNCTAD – World Investment Report 2023, Sao Tome and Principe chapter",Industrial Development Strategy 2022‑2026,False
+Sao Tome and Principe,Digital,positive,2024-2026,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"World Bank – Sao Tome and Principe Investment Climate Assessment, 2024",National Broadband Expansion Plan 2023,False
+Chad,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Chad,Monetary Policy Rate Hold,False
+Chad,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank – Chad Country Overview 2024,FDI Inflow Decline,False
+Liberia,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Liberia,FDI Incentive Review 2023,False
+Liberia,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,"Central Bank of Liberia press release, Dec 2023",Monetary Tightening Cycle 2023,False
+Liberia,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,World Bank Liberia Country Overview 2023,National Broadband Expansion Plan 2023,False
+Kazakhstan,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report - Kazakhstan 2024,2023 Investment Incentive Package,False
+Kazakhstan,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Kazakhstan, 2023",Kazakhstan National Bank Rate Hikes 2023‑2024,False
+Kazakhstan,Manufacturing,positive,2024-2026,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"World Bank – Kazakhstan Country Overview, 2024",Industrial Development Plan 2022‑2026,False
+Kazakhstan,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Kazakhstan Ministry of Digital Development – Digital Kazakhstan 2025 Strategy, 2023",Digital Kazakhstan 2025 Strategy,False
+Burkina Faso,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Burkina Faso Staff Report,Monetary tightening 2023-2024,False
+Burkina Faso,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Burkina Faso Chapter,FDI inflow decline and capital controls,False
+Burkina Faso,Digital,negative,2024-2026,-8.0,3.28,-1.23,2.84,3.73,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview – Burkina Faso (2024),Broadband rollout slowdown,False
+Mali,FDI,negative,2024-2027,-20.0,4.73,-12.58,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD, World Investment Report 2023",FDI inflow decline 2023,False
+Mali,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF, Article IV Consultation – Mali, 2023",Monetary policy tightening 2023,False
+Angola,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Angola,Investment Promotion Law 2023,False
+Angola,Banking,negative,2024-2025,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,Banco Nacional de Angola press release March 2023; World Bank Country Overview 2024,Monetary Policy Rate Hike March 2023,False
+Angola,Manufacturing,positive,2024-2027,9.0,-1.92,5.72,-2.14,-1.71,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Angola,Industrial Development Plan 2023,False
+Angola,Digital,positive,2024-2027,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Angola,National Broadband Strategy 2024,False
+West Bank and Gaza,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – West Bank and Gaza,Restrictions on New Foreign Investment Licenses,False
+West Bank and Gaza,Banking,negative,2024-2025,-10.0,1.32,-3.21,1.1,1.55,Medium,T5(40%) + DiD(60%),High,"PA Ministry of Finance press release, Dec 2023; Central Bank bulletin Q1 2024",Central Bank Rate Hike Cycle 2023‑2024,False
+West Bank and Gaza,Digital,positive,2024-2027,9.0,1.9,4.74,1.66,2.14,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview 2024 – West Bank and Gaza,National Broadband Expansion Initiative 2023‑2026,False
+Malawi,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Malawi,FDI Incentive Review 2023,False
+Malawi,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,Reserve Bank of Malawi Monetary Policy Statements 2023-2024,Monetary Policy Tightening 2023-2024,False
+Malawi,Manufacturing,positive,2024-2027,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,World Bank Country Overview – Malawi (2023),Industrial Development Programme (IDP) 2022-2027,False
+Malawi,Digital,positive,2024-2026,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of ICT Press Release, November 2023",National Broadband Strategy 2023,False
+Azerbaijan,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank – Azerbaijan Investment Climate Assessment 2024,2023 Investment Law Amendments,False
+Azerbaijan,Banking,negative,2024-2025,-9.0,1.32,-5.9,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF – Article IV Consultation, Azerbaijan, 2023",Monetary Tightening Cycle 2023‑2024,False
+Azerbaijan,Manufacturing,positive,2024-2027,10.0,-1.92,2.85,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"UNCTAD – World Investment Report 2024, Azerbaijan",Industrial Development Strategy 2023‑2027,False
+Azerbaijan,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of Digital Development of Azerbaijan – Press Release, March 2023",Digital Economy Action Plan 2023,False
+United Kingdom,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – United Kingdom chapter,FDI Inflow Decline 2023,False
+United Kingdom,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"Bank of England Monetary Policy Statement, Sep 2023; Feb 2024",BoE Rate Hikes 2023‑2024,False
+United Kingdom,Manufacturing,positive,2024-2026,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"UK DfE/BEIS press release, Oct 2023",Advanced Manufacturing Supply Chain Resilience Fund,False
+United Kingdom,Digital,positive,2024-2027,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UK Government National Digital Strategy 2023 document,National Digital Strategy 2023,False
+Bangladesh,Banking,positive,2024-2027,10.0,-0.99,6.7,-1.16,-0.83,High,T5(70%) + DiD(30%),Medium,Bangladesh Bank Monetary Policy Statement May 2024,Repo Rate Cut May 2024,False
+Bangladesh,FDI,negative,2024-2025,-15.0,4.73,-9.08,4.45,5.0,High,T5(70%) + DiD(30%),Medium,UNCTAD World Investment Report 2024 – Bangladesh Chapter,FDI Inflow Decline 2023,False
+Bangladesh,Manufacturing,positive,2024-2027,8.0,-1.92,2.05,-2.14,-1.71,Medium,T5(40%) + DiD(60%),Medium,Bangladesh Ministry of Industries – Industrial Policy 2022‑2030 (official document),Industrial Policy 2022‑2030 SEZ Incentives,False
+Bangladesh,Digital,positive,2024-2027,12.0,1.9,8.97,1.66,2.14,High,T5(70%) + DiD(30%),Medium,Ministry of Information and Communication Technology – National Broadband Policy 2023,National Broadband Policy 2023,False
+Thailand,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),Medium,World Bank - Thailand Investment Climate Assessment 2024,FDI Incentive Revision 2023,False
+Thailand,Banking,negative,2024-2025,-14.0,1.32,-9.4,1.1,1.55,High,T5(70%) + DiD(30%),Medium,IMF - Article IV Consultation Thailand 2024,BOT Rate Hike Cycle 2023-2024,False
+Thailand,Manufacturing,negative,2024-2026,-10.0,1.82,-2.91,1.57,2.08,Medium,T5(40%) + DiD(60%),Medium,UNCTAD - World Investment Report 2024: Thailand,Supply Chain Realignment Policy 2023,False
+Thailand,Digital,positive,2024-2027,9.0,1.9,6.87,1.66,2.14,High,T5(70%) + DiD(30%),Medium,World Bank - Thailand Digital Economy Review 2024,Digital Economy Promotion Scheme 2023,False
+Japan,Banking,negative,2024-2027,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"BOJ Press Release, Dec 2023",BOJ Rate Hike & YCC Adjustment,False
+Japan,FDI,negative,2024-2025,-8.0,4.73,-4.18,4.45,5.0,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Japan Chapter,FDI Inflow Decline,False
+Japan,Manufacturing,positive,2024-2027,12.0,-1.92,7.82,-2.14,-1.71,High,T5(70%) + DiD(30%),High,"METI Announcement, March 2024",Semiconductor & Supply‑Chain Subsidy Program,False
+Japan,Digital,positive,2024-2027,10.0,1.9,7.57,1.66,2.14,High,T5(70%) + DiD(30%),High,"Digital Agency Strategy Document, 2024",Digital Agency AI Strategy 2024,False
+Colombia,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank - Colombia Investment Climate Assessment 2024,FDI Incentive Decree 2023,False
+Colombia,Banking,positive,2024-2025,9.0,-0.99,6.0,-1.16,-0.83,High,T5(70%) + DiD(30%),High,IMF - Article IV Consultation Colombia 2023,Banco de la República Rate Cuts 2023-2024,False
+Colombia,Manufacturing,positive,2024-2027,7.0,-1.92,1.65,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,World Bank - Colombia Country Overview 2024,Plan Nacional de Desarrollo 2022‑2026 – Manufacturing Boost,False
+Colombia,Digital,positive,2024-2027,15.0,1.9,11.07,1.66,2.14,High,T5(70%) + DiD(30%),High,UNCTAD - World Investment Report 2024 – Colombia,Digital Economy Strategy 2023‑2027,False
+Paraguay,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Paraguay,"FDI Incentive Law No. 5,2023",False
+Paraguay,Banking,positive,2024-2025,5.0,-0.99,3.2,-1.16,-0.83,High,T5(70%) + DiD(30%),High,Banco Central del Paraguay press release Oct 2023,Monetary Policy Rate Cut 2023,False
+Paraguay,Manufacturing,positive,2024-2027,10.0,-1.92,6.42,-2.14,-1.71,High,T5(70%) + DiD(30%),High,World Bank – Paraguay Investment Climate Assessment 2024,Industrial Development Plan 2023-2027,False
+Paraguay,Digital,positive,2024-2026,5.0,1.9,4.07,1.66,2.14,High,T5(70%) + DiD(30%),High,UNCTAD World Investment Report 2024 – Paraguay,National Broadband Expansion Initiative 2024,False
+Luxembourg,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation 2023 – Luxembourg, ""Monetary Policy and Financial Stability""",ECB Rate Hikes 2023-2024,False
+Luxembourg,FDI,negative,2024-2025,-8.0,4.73,-4.18,4.45,5.0,High,T5(70%) + DiD(30%),High,"World Bank Country Overview 2024 – Luxembourg, ""Foreign Direct Investment"" section",EU Corporate Tax Reform Impact,False
+Luxembourg,Manufacturing,positive,2024-2027,10.0,-1.92,2.85,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Luxembourg case study,Green Industrial Incentive Scheme,False
+Luxembourg,Digital,positive,2024-2027,15.0,1.9,11.07,1.66,2.14,High,T5(70%) + DiD(30%),High,"Ministry of the Economy press release, 12 March 2023 – ""Digital Luxembourg 2025""",Digital Luxembourg 2025 Strategy,False
+Tunisia,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Tunisia Staff Report,Monetary Tightening Cycle 2023-2024,False
+Tunisia,FDI,negative,2024-2025,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank – Tunisia Country Overview and Investment Climate Assessment (2023),FDI Inflow Decline and Capital Controls,False
+Tunisia,Manufacturing,negative,2024-2027,-8.0,1.82,-2.11,1.57,2.08,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2023 – Tunisia Chapter,Industrial Policy Stagnation,False
+Tunisia,Digital,positive,2024-2026,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Ministry of ICT press release, December 2023",National Broadband Expansion Initiative,False
+Argentina,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – Argentina Staff Report,Capital Controls & Exchange Restrictions,False
+Argentina,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,Banco Central de la República Argentina – Monetary Policy Statements 2023‑2024,Monetary Tightening Cycle,False
+Argentina,Manufacturing,negative,2024-2027,-10.0,1.82,-2.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"World Bank Country Overview – Argentina 2024, Investment Climate Assessment",Industrial Promotion Law (2022) – Limited Implementation,False
+Argentina,Digital,negative,2024-2026,-8.0,3.28,-1.23,2.84,3.73,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Argentina Chapter,Broadband Expansion Lag,False
+United Arab Emirates,FDI,negative,2024-2027,-10.0,4.73,-1.16,4.45,5.0,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2023 - United Arab Emirates,FDI Inflow Moderation,False
+United Arab Emirates,Banking,positive,2024-2025,5.0,-0.99,3.2,-1.16,-0.83,High,T5(70%) + DiD(30%),High,Central Bank of UAE - 2023 Monetary Policy Statements,Central Bank Rate Cuts 2023,False
+United Arab Emirates,Manufacturing,positive,2024-2027,8.0,-1.92,2.05,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,Dubai Economic Development Authority - Dubai Industrial Strategy 2030 (2023 update),Dubai Industrial Strategy 2030,False
+United Arab Emirates,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UAE Ministry of Economy - AI and Digital Economy Strategy 2024,UAE AI and Digital Economy Strategy 2024,False
+Cyprus,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation – Cyprus 2024,FDI Incentive Review 2023,False
+Cyprus,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,World Bank – Cyprus Country Overview 2024,Central Bank Rate Hold and Credit Tightening,False
+Cyprus,Manufacturing,negative,2024-2026,-9.0,1.82,-2.51,1.57,2.08,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – Cyprus,Industrial Revitalisation Plan 2022‑2025,False
+Cyprus,Digital,positive,2024-2027,10.0,1.9,7.57,1.66,2.14,High,T5(70%) + DiD(30%),High,Cyprus Ministry of Finance – Digital Strategy Announcement 2023,National Digital Strategy 2023,False
+New Zealand,FDI,negative,2024-2027,-10.0,4.73,-5.58,4.45,5.0,High,T5(70%) + DiD(30%),High,IMF Article IV Consultation 2023 – New Zealand,FDI Inflow Decline 2023,False
+New Zealand,Banking,positive,2024-2025,5.0,-0.99,3.2,-1.16,-0.83,High,T5(70%) + DiD(30%),High,RBNZ Monetary Policy Statement June 2024,RBNZ Rate Easing 2024,False
+New Zealand,Manufacturing,positive,2024-2027,8.0,-1.92,2.05,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,World Bank – New Zealand Country Overview 2024,Advanced Manufacturing Growth Initiative,False
+New Zealand,Digital,positive,2024-2027,5.0,1.9,3.14,1.66,2.14,Medium,T5(40%) + DiD(60%),High,UNCTAD World Investment Report 2024 – New Zealand Chapter,National Broadband Network Expansion,False
+Honduras,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"UNCTAD, World Investment Report 2024",FDI Incentive Suspension,False
+Honduras,Banking,negative,2024-2025,-14.0,1.32,-9.4,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF, Article IV Consultation 2023",Monetary Tightening Cycle,False
+Honduras,Manufacturing,positive,2024-2027,9.0,-1.92,2.45,-2.14,-1.71,Medium,T5(40%) + DiD(60%),High,"World Bank, Honduras Country Overview 2024",Industrial Development Plan 2023‑2027,False
+Bhutan,Banking,negative,2024-2026,-5.0,1.32,-1.21,1.1,1.55,Medium,T5(40%) + DiD(60%),High,Royal Monetary Authority press release 2024,Policy Rate Hike 2023-2024,False
+Bhutan,FDI,negative,2024-2025,-3.0,4.73,-1.64,4.45,5.0,Medium,T5(40%) + DiD(60%),High,Asian Development Bank Country Report: Bhutan 2024,FDI Review 2024,False
+Bhutan,Digital,positive,2024-2027,8.0,1.9,6.17,1.66,2.14,High,T5(70%) + DiD(30%),High,Asian Development Bank project brief 2024,Digital Bhutan Initiative,False
+Gabon,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,World Bank - Gabon Investment Climate Assessment 2024,FDI Incentive Suspension,False
+Gabon,Banking,negative,2024-2025,-10.0,1.32,-6.6,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF - Article IV Consultation, Gabon, 2023",Monetary Tightening Cycle,False
+Gabon,Manufacturing,negative,2024-2026,-9.0,1.82,-5.75,1.57,2.08,High,T5(70%) + DiD(30%),High,"UNCTAD - World Investment Report 2024, Gabon",Industrial Policy Delay,False
+Gabon,Digital,positive,2024-2027,8.0,1.9,4.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,"Gabon Ministry of Digital Economy - Press Release, Dec 2023",National Broadband Expansion Plan,False
+Solomon Islands,FDI,negative,2024-2026,-7.0,4.73,-0.04,4.45,5.0,Medium,T5(40%) + DiD(60%),High,Asian Development Bank,FDI Review 2023,False
+Solomon Islands,Banking,negative,2024-2025,-5.0,1.32,-1.21,1.1,1.55,Medium,T5(40%) + DiD(60%),High,Asian Development Bank,Banking Sector Stress Assessment,False
+Solomon Islands,Digital,positive,2024-2027,3.0,1.9,2.34,1.66,2.14,Medium,T5(40%) + DiD(60%),High,World Bank,Digital Connectivity Initiative,False
+Cuba,FDI,negative,2024-2027,-12.0,4.73,-6.98,4.45,5.0,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation – Cuba, 2024",Restrictions on Foreign Investment,False
+Cuba,Banking,negative,2024-2025,-15.0,1.32,-10.1,1.1,1.55,High,T5(70%) + DiD(30%),High,"World Bank Country Overview – Cuba, 2023",Tightening Credit Conditions,False
+Cuba,Manufacturing,negative,2024-2027,-10.0,1.82,-2.91,1.57,2.08,Medium,T5(40%) + DiD(60%),High,"UNCTAD World Investment Report – Cuba, 2023",Stagnant Industrial Policy,False
+Cuba,Digital,negative,2024-2026,-8.0,3.28,-1.23,2.84,3.73,Medium,T5(40%) + DiD(60%),High,"World Bank Country Overview – Cuba, 2023",Limited Broadband Expansion,False
+Haiti,Banking,negative,2024-2027,-12.0,1.32,-8.0,1.1,1.55,High,T5(70%) + DiD(30%),High,"IMF Article IV Consultation, Haiti 2023, Monetary Policy Section",Monetary Tightening Cycle 2023-2024,False
+South Sudan,Banking,negative,2024-2026,-12.0,1.32,-4.01,1.1,1.55,Medium,T5(40%) + DiD(60%),High,Trading Economics,Monetary Policy Rate Hike Q1 2024,False
+South Sudan,FDI,negative,2024-2025,-8.0,4.73,-0.36,4.45,5.0,Medium,T5(40%) + DiD(60%),High,African Development Bank Country Report 2024,FDI Restrictions Review,False
+India,FDI,negative,2024-2025,-12.0,4.73,-12.0,4.45,5.0,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+India,FDI,positive,2026-2027,10.0,-3.19,10.0,-3.38,-3.0,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+India,Banking,positive,2024-2025,5.0,-0.99,5.0,-1.16,-0.83,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+India,Banking,positive,2026-2027,8.0,-0.99,8.0,-1.16,-0.83,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+India,Manufacturing,positive,2024-2027,15.0,-1.92,15.0,-2.14,-1.71,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+India,Digital,positive,2024-2027,12.0,1.9,12.0,1.66,2.14,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+United States,FDI,positive,2024-2027,6.0,-3.19,6.0,-3.38,-3.0,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+United States,Banking,negative,2024,-5.0,1.32,-5.0,1.1,1.55,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+United States,Banking,positive,2025-2027,6.0,-0.99,6.0,-1.16,-0.83,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+United States,Manufacturing,positive,2024-2027,18.0,-1.92,18.0,-2.14,-1.71,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+United States,Digital,positive,2024-2027,14.0,1.9,14.0,1.66,2.14,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+Viet Nam,FDI,positive,2024-2027,12.0,-3.19,12.0,-3.38,-3.0,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+Viet Nam,Banking,negative,2024-2025,-15.0,1.32,-15.0,1.1,1.55,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+Viet Nam,Banking,negative,2026-2027,-3.0,1.32,-3.0,1.1,1.55,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+Viet Nam,Manufacturing,positive,2024-2027,14.0,-1.92,14.0,-2.14,-1.71,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True
+Viet Nam,Digital,positive,2024-2027,14.0,1.9,14.0,1.66,2.14,High,Task 9 original (manually verified),High,Original Task 9 — manual research,Task 9 verified factor,True

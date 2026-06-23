@@ -1,0 +1,4 @@
+Country,Score_2024_ScenC,Score_2027_ScenC,Trend_2024_2027,Avg_Composite_ScenC,Policy_Uplift_2027,Tier_2027,Recommendation,Weights_used
+India,0.6111,0.6567,Rising,0.6339,0.0628,High,Invest Now,v2.0 optimised
+United States,0.8083,0.8165,Rising,0.8144,0.0228,High,Invest Now,v2.0 optimised
+Viet Nam,0.6107,0.6582,Rising,0.6342,0.0658,High,Invest Now,v2.0 optimised
