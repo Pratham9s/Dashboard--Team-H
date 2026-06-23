@@ -329,7 +329,7 @@ elif page == "🔍 Country Explorer":
     countries = sorted(master["Country"].unique())
     col1, col2 = st.columns([2,1])
     with col1:
-        country = st.selectbox("Select Country", countries, index=countries.index("India"))
+        country = st.selectbox("Select Country", countries, index=countries.index("India"), key="explorer_country")
     with col2:
         show_forecast = st.checkbox("Include 2024–2027 Forecast", value=True)
 
@@ -632,7 +632,7 @@ elif page == "🤖 ML Models":
 
         # Country table
         st.markdown('<div class="section-header">Countries by Tier</div>', unsafe_allow_html=True)
-        tier_sel = st.selectbox("Select Tier", ["Tier 1","Tier 2","Tier 3","Tier 4"])
+        tier_sel = st.selectbox("Select Tier", ["Tier 1","Tier 2","Tier 3","Tier 4"], key="hier_tier")
         tier_countries = hier[hier["investment_cluster"]==tier_sel][
             ["Country","score_composite","score_fdi","score_banking","score_manuf","score_digital"]
         ].sort_values("score_composite", ascending=False).reset_index(drop=True)
@@ -690,7 +690,7 @@ elif page == "🤖 ML Models":
         # SHAP over time for selected country
         st.markdown('<div class="section-header">SHAP Values Over Time — Country View</div>', unsafe_allow_html=True)
         countries = sorted(shap_df["Country"].unique())
-        sel_country = st.selectbox("Select Country", countries, index=countries.index("India") if "India" in countries else 0)
+        sel_country = st.selectbox("Select Country", countries, index=countries.index("India") if "India" in countries else 0, key="shap_country")
         shap_country = shap_df[shap_df["Country"]==sel_country].sort_values("Year")
 
         shap_cols = [c for c in shap_df.columns if c.startswith("shap_")]
@@ -734,9 +734,9 @@ elif page == "📈 Forecasting":
         countries = sorted(forecasts["Country"].unique())
         col1, col2 = st.columns([2,1])
         with col1:
-            country = st.selectbox("Select Country", countries, index=countries.index("India"))
+            country = st.selectbox("Select Country", countries, index=countries.index("India"), key="forecast_country")
         with col2:
-            pillar_choice = st.selectbox("Pillar", ["Composite","FDI","Banking","Manufacturing","Digital"])
+            pillar_choice = st.selectbox("Pillar", ["Composite","FDI","Banking","Manufacturing","Digital"], key="forecast_pillar")
 
         pillar_map = {"Composite":"score_composite","FDI":"score_fdi",
                       "Banking":"score_banking","Manufacturing":"score_manuf","Digital":"score_digital"}
@@ -949,18 +949,18 @@ elif page == "🌐 Policy Scenarios":
             with col_yr:
                 sel_yr_all = st.selectbox("Year", [2024,2025,2026,2027], index=3, key="all_yr")
             with col_f:
-                search_all = st.text_input("Search country", placeholder="Type to filter...", key="all_search")
+                search = st.text_input("Search country", placeholder="Type to filter...", key="all_search")
             with col_t:
-                tier_filter_all = st.selectbox("Tier", ["All","High","Medium","Low"], key="all_tier")
+                tier_filter = st.selectbox("Tier", ["All","High","Medium","Low"], key="all_tier")
 
             sc_display = v2_sc_all[(v2_sc_all["Scenario"]==sel_scen_all) & (v2_sc_all["Year"]==sel_yr_all)].copy()
             sc_display = sc_display.sort_values("Composite_v2", ascending=False).reset_index(drop=True)
             sc_display.insert(0, "Rank", range(1, len(sc_display)+1))
 
-            if search_all:
-                sc_display = sc_display[sc_display["Country"].str.contains(search_all, case=False)]
-            if tier_filter_all != "All":
-                sc_display = sc_display[sc_display["Tier_v2"]==tier_filter_all]
+            if search:
+                sc_display = sc_display[sc_display["Country"].str.contains(search, case=False)]
+            if tier_filter != "All":
+                sc_display = sc_display[sc_display["Tier_v2"]==tier_filter]
 
             st.dataframe(
                 sc_display[["Rank","Country","Composite_v2","Composite_v1","FDI","Banking","Manufacturing","Digital","Tier_v2","Factors_source"]].rename(columns={
