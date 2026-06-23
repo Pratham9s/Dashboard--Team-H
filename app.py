@@ -932,55 +932,56 @@ elif page == "🌐 Policy Scenarios":
         "C_ShockFade":      "C — Recovery",
     }
 
-    tab_focus, tab_all = st.tabs(["🔎 Focus Countries (A/B/C)", "🌍 All 194 Countries (Scenario A)"])
+    tab_focus, tab_all = st.tabs(["🔎 Focus Countries (A/B/C)", "🌍 All 194 Countries (A/B/C)"])
 
     with tab_all:
-        st.markdown("**Scenario A — Baseline composite trajectory for all 194 countries (v2.0 weights)**")
-        st.caption("Full A/B/C scenario modelling is available for India, USA, and Viet Nam. All other countries show Scenario A (Prophet baseline under v2.0 weights).")
-        v2_fc_all = load_v2_forecasts()
-        if v2_fc_all is not None:
-            fc_2027 = v2_fc_all[v2_fc_all["year"]==2027].sort_values("composite_v2", ascending=False).copy()
-            fc_2027["rank"] = range(1, len(fc_2027)+1)
-            # Tier assignment
-            def assign_tier(s):
-                if s >= 0.362: return "High"
-                elif s >= 0.290: return "Medium"
-                else: return "Low"
-            fc_2027["tier"] = fc_2027["composite_v2"].apply(assign_tier)
-            tier_color_map = {"High": C["green"], "Medium": C["amber"], "Low": C["red"]}
-
-            col_f, col_t = st.columns([3,1])
+        st.markdown("**All 194 countries — A / B / C scenarios under v2.0 weights**")
+        st.caption("162 countries have T8 policy factors (B and C differ from A). 32 data-poor countries have no T8 data — for these B = C = A.")
+        v2_sc_all = load_v2_scenarios()
+        if v2_sc_all is not None:
+            col_sc, col_yr, col_f, col_t = st.columns([2, 1, 3, 1])
+            with col_sc:
+                sel_scen_all = st.selectbox("Scenario", ["A_Standard","B_PolicyAdjusted","C_ShockFade"],
+                                            format_func=lambda x: {"A_Standard":"A — Baseline",
+                                                                    "B_PolicyAdjusted":"B — Policy Adjusted",
+                                                                    "C_ShockFade":"C — Recovery"}[x],
+                                            key="all_scen")
+            with col_yr:
+                sel_yr_all = st.selectbox("Year", [2024,2025,2026,2027], index=3, key="all_yr")
             with col_f:
-                search = st.text_input("Search country", placeholder="Type to filter...")
+                search = st.text_input("Search country", placeholder="Type to filter...", key="all_search")
             with col_t:
-                tier_filter = st.selectbox("Tier", ["All","High","Medium","Low"])
+                tier_filter = st.selectbox("Tier", ["All","High","Medium","Low"], key="all_tier")
 
-            display = fc_2027.copy()
+            sc_display = v2_sc_all[(v2_sc_all["Scenario"]==sel_scen_all) & (v2_sc_all["Year"]==sel_yr_all)].copy()
+            sc_display = sc_display.sort_values("Composite_v2", ascending=False).reset_index(drop=True)
+            sc_display.insert(0, "Rank", range(1, len(sc_display)+1))
+
             if search:
-                display = display[display["country"].str.contains(search, case=False)]
+                sc_display = sc_display[sc_display["Country"].str.contains(search, case=False)]
             if tier_filter != "All":
-                display = display[display["tier"]==tier_filter]
+                sc_display = sc_display[sc_display["Tier_v2"]==tier_filter]
 
             st.dataframe(
-                display[["rank","country","composite_v2","composite_v1","tier"]].rename(columns={
-                    "rank":"Rank","country":"Country",
-                    "composite_v2":"Composite v2.0","composite_v1":"Composite v1.0","tier":"Tier"
-                }).reset_index(drop=True).style
-                    .format({"Composite v2.0":"{:.3f}","Composite v1.0":"{:.3f}"})
+                sc_display[["Rank","Country","Composite_v2","Composite_v1","FDI","Banking","Manufacturing","Digital","Tier_v2","Factors_source"]].rename(columns={
+                    "Composite_v2":"Composite v2.0","Composite_v1":"Composite v1.0","Tier_v2":"Tier","Factors_source":"Factors"
+                }).style
+                    .format({"Composite v2.0":"{:.3f}","Composite v1.0":"{:.3f}",
+                             "FDI":"{:.3f}","Banking":"{:.3f}","Manufacturing":"{:.3f}","Digital":"{:.3f}"})
                     .background_gradient(subset=["Composite v2.0"], cmap="Greens"),
-                use_container_width=True, height=520,
+                use_container_width=True, height=540,
             )
 
             # Tier breakdown pie
-            tier_counts = fc_2027["tier"].value_counts().reset_index()
+            tier_counts = sc_display["Tier"].value_counts().reset_index()
             tier_counts.columns = ["Tier","Count"]
             fig_pie = px.pie(tier_counts, names="Tier", values="Count",
                              color="Tier", color_discrete_map={"High":C["green"],"Medium":C["amber"],"Low":C["red"]},
-                             title="2027 Tier Distribution (194 countries, v2.0)")
-            fig_pie.update_layout(height=320, paper_bgcolor="white", margin=dict(t=40,b=20))
+                             title=f"Tier Distribution — {sel_yr_all} {sel_scen_all} (v2.0)")
+            fig_pie.update_layout(height=300, paper_bgcolor="white", margin=dict(t=40,b=20))
             st.plotly_chart(fig_pie, use_container_width=True)
         else:
-            st.info("Upload t9_forecast_composite_v2.csv to the repo root to enable this view.")
+            st.info("Upload t9_scenario_comparison_v2.csv to the repo root to enable this view.")
 
     with tab_focus:
         countries = scenarios["Country"].unique().tolist()
@@ -1139,7 +1140,12 @@ elif page == "🏆 Investment Recommendations":
         tier         = row.get("Tier_2027", row.get("tier_2027",""))
         score_2024   = float(row.get("Score_2024_ScenC", row.get("score_2024", 0)) or 0)
         score_2027   = float(row.get("Score_2027_ScenC", row.get("score_2027", 0)) or 0)
-        trend        = float(row.get("Trend_2024_2027",  row.get("trend", 0)) or 0)
+        _trend_raw   = row.get("Trend_2024_2027", row.get("trend", 0))
+        if isinstance(_trend_raw, str):
+            trend = 1.0 if _trend_raw.strip().lower() == "rising" else -1.0
+        else:
+            try:    trend = float(_trend_raw or 0)
+            except: trend = 0.0
 
         rec_color = {"Invest Now": C["green"], "Wait": C["amber"], "Avoid": C["red"]}.get(recommendation, C["navy"])
 
