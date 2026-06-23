@@ -150,20 +150,17 @@ def load_v2_robustness():
 
 @st.cache_data
 def get_v2_tier_thresholds(year=2027, scenario="A_Standard"):
-    """Compute v2.0 tier thresholds as equal-width bins on actual score range.
-    Anchored to the selected scenario/year distribution.
+    """Compute v2.0 tier thresholds from full Scenario A pool (all years, all 194 countries).
+    Uses p33/p67 quantiles of the 776-point distribution for stable, balanced splits.
     Falls back to v1.0 thresholds if data unavailable."""
     sc = load_v2_scenarios()
     if sc is not None:
-        base = sc[(sc["Scenario"]==scenario) & (sc["Year"]==year)]["Composite_v2"].dropna()
-        if len(base) >= 10:
-            lo = float(base.min())
-            hi = float(base.max())
-            width = (hi - lo) / 3
-            low_mid  = round(lo + width, 3)
-            mid_high = round(lo + 2 * width, 3)
+        base = sc[sc["Scenario"]=="A_Standard"]["Composite_v2"].dropna()
+        if len(base) >= 100:
+            low_mid  = round(float(base.quantile(0.333)), 3)
+            mid_high = round(float(base.quantile(0.667)), 3)
             return low_mid, mid_high
-    return 0.290, 0.362  # last resort: v1.0 thresholds
+    return 0.290, 0.362
 
 def assign_tier_v2(score, year=2027, scenario="A_Standard"):
     low_mid, mid_high = get_v2_tier_thresholds(year, scenario)
