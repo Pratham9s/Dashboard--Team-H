@@ -949,18 +949,18 @@ elif page == "🌐 Policy Scenarios":
             with col_yr:
                 sel_yr_all = st.selectbox("Year", [2024,2025,2026,2027], index=3, key="all_yr")
             with col_f:
-                search = st.text_input("Search country", placeholder="Type to filter...", key="all_search")
+                search_all = st.text_input("Search country", placeholder="Type to filter...", key="all_search")
             with col_t:
-                tier_filter = st.selectbox("Tier", ["All","High","Medium","Low"], key="all_tier")
+                tier_filter_all = st.selectbox("Tier", ["All","High","Medium","Low"], key="all_tier")
 
             sc_display = v2_sc_all[(v2_sc_all["Scenario"]==sel_scen_all) & (v2_sc_all["Year"]==sel_yr_all)].copy()
             sc_display = sc_display.sort_values("Composite_v2", ascending=False).reset_index(drop=True)
             sc_display.insert(0, "Rank", range(1, len(sc_display)+1))
 
-            if search:
-                sc_display = sc_display[sc_display["Country"].str.contains(search, case=False)]
-            if tier_filter != "All":
-                sc_display = sc_display[sc_display["Tier_v2"]==tier_filter]
+            if search_all:
+                sc_display = sc_display[sc_display["Country"].str.contains(search_all, case=False)]
+            if tier_filter_all != "All":
+                sc_display = sc_display[sc_display["Tier_v2"]==tier_filter_all]
 
             st.dataframe(
                 sc_display[["Rank","Country","Composite_v2","Composite_v1","FDI","Banking","Manufacturing","Digital","Tier_v2","Factors_source"]].rename(columns={
@@ -987,123 +987,123 @@ elif page == "🌐 Policy Scenarios":
         countries = scenarios["Country"].unique().tolist()
         col1, col2 = st.columns([2,1])
         with col1:
-            sel_country = st.selectbox("Select Country", countries)
+            sel_country = st.selectbox("Select Country", countries, key="focus_country")
         with col2:
-            sel_pillar = st.selectbox("Pillar", ["Composite","FDI","Banking","Manufacturing","Digital"])
+            sel_pillar = st.selectbox("Pillar", ["Composite","FDI","Banking","Manufacturing","Digital"], key="focus_pillar")
 
-    pillar_col_map = {"Composite": _comp_col, "FDI":"FDI","Banking":"Banking",
-                      "Manufacturing":"Manufacturing","Digital":"Digital"}
-    pcol = pillar_col_map[sel_pillar]
+        pillar_col_map = {"Composite": _comp_col, "FDI":"FDI","Banking":"Banking",
+                          "Manufacturing":"Manufacturing","Digital":"Digital"}
+        pcol = pillar_col_map[sel_pillar]
 
-    sc_country = scenarios[scenarios["Country"]==sel_country]
+        sc_country = scenarios[scenarios["Country"]==sel_country]
 
-    fig = go.Figure()
-    for scen, color in SCEN_COLORS.items():
-        sc_data = sc_country[sc_country["Scenario"]==scen].sort_values("Year")
-        if pcol not in sc_data.columns:
-            continue
-        fig.add_trace(go.Scatter(
-            x=sc_data["Year"], y=sc_data[pcol],
-            name=SCEN_LABELS[scen], line=dict(color=color, width=2.5),
-            mode="lines+markers", marker=dict(size=8),
-        ))
-
-    # CI bands (v2.0 only)
-    if V2 and "CI_Lower_95" in sc_country.columns and sel_pillar == "Composite":
-        sc_b = sc_country[sc_country["Scenario"]=="B_PolicyAdjusted"].sort_values("Year")
-        if not sc_b.empty:
+        fig = go.Figure()
+        for scen, color in SCEN_COLORS.items():
+            sc_data = sc_country[sc_country["Scenario"]==scen].sort_values("Year")
+            if pcol not in sc_data.columns:
+                continue
             fig.add_trace(go.Scatter(
-                x=list(sc_b["Year"]) + list(sc_b["Year"])[::-1],
-                y=list(sc_b["CI_Upper_95"]) + list(sc_b["CI_Lower_95"])[::-1],
-                fill="toself", fillcolor="rgba(231,76,60,0.1)",
-                line=dict(color="rgba(0,0,0,0)"), showlegend=True, name="95% CI (B)",
+                x=sc_data["Year"], y=sc_data[pcol],
+                name=SCEN_LABELS[scen], line=dict(color=color, width=2.5),
+                mode="lines+markers", marker=dict(size=8),
             ))
 
-    fig.update_layout(
-        height=420, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
-        xaxis=dict(title="Year", tickformat='d'),
-        yaxis_title="Score (0–1)",
-        legend=dict(orientation="h", y=-0.2),
-        margin=dict(l=40,r=20,t=20,b=60),
-        title=f"{sel_country} — {sel_pillar} Score: Scenario Comparison (2024–2027)",
-    )
-    st.plotly_chart(fig, use_container_width=True)
+        # CI bands (v2.0 only)
+        if V2 and "CI_Lower_95" in sc_country.columns and sel_pillar == "Composite":
+            sc_b = sc_country[sc_country["Scenario"]=="B_PolicyAdjusted"].sort_values("Year")
+            if not sc_b.empty:
+                fig.add_trace(go.Scatter(
+                    x=list(sc_b["Year"]) + list(sc_b["Year"])[::-1],
+                    y=list(sc_b["CI_Upper_95"]) + list(sc_b["CI_Lower_95"])[::-1],
+                    fill="toself", fillcolor="rgba(231,76,60,0.1)",
+                    line=dict(color="rgba(0,0,0,0)"), showlegend=True, name="95% CI (B)",
+                ))
 
-    # Pillar breakdown by scenario — 2027
-    st.markdown('<div class="section-header">All Pillars by Scenario — 2027</div>', unsafe_allow_html=True)
-    sc27 = sc_country[sc_country["Year"]==2027]
-    pillars_sc = ["FDI","Banking","Manufacturing","Digital", _comp_col]
-    fig_sc = go.Figure()
-    for scen, color in SCEN_COLORS.items():
-        row = sc27[sc27["Scenario"]==scen]
-        if not row.empty:
-            vals = []
-            for p in pillars_sc:
-                if p in row.columns:
-                    vals.append(row[p].values[0])
-                else:
-                    vals.append(0)
-            labels = ["FDI","Banking","Manufacturing","Digital","Composite"]
-            fig_sc.add_trace(go.Bar(name=SCEN_LABELS[scen], x=labels, y=vals,
-                                    marker_color=color, opacity=0.85))
-    fig_sc.update_layout(
-        barmode="group", height=340, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
-        legend=dict(orientation="h", y=-0.25), margin=dict(l=20,r=20,t=10,b=70),
-        yaxis=dict(title="Score (0–1)"),
-    )
-    st.plotly_chart(fig_sc, use_container_width=True)
+        fig.update_layout(
+            height=420, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
+            xaxis=dict(title="Year", tickformat='d'),
+            yaxis_title="Score (0–1)",
+            legend=dict(orientation="h", y=-0.2),
+            margin=dict(l=40,r=20,t=20,b=60),
+            title=f"{sel_country} — {sel_pillar} Score: Scenario Comparison (2024–2027)",
+        )
+        st.plotly_chart(fig, use_container_width=True)
 
-    # Policy context
-    POLICY_CONTEXT = {
-        "India": {
-            "shock": "RBI rate tightening (6.5% repo), global FDI headwinds in 2024",
-            "recovery": "RBI easing, PLI schemes entering full production, hyperscaler data centre investments ($7B+)",
-        },
-        "United States": {
-            "shock": "Post-SVB banking regulatory tightening (Basel III Endgame), tariff uncertainty",
-            "recovery": "IRA + CHIPS Act manufacturing surge, AI investment maintaining >60% global share",
-        },
-        "Viet Nam": {
-            "shock": "Global supply chain re-routing uncertainty, currency pressure",
-            "recovery": "China+1 strategy beneficiary, Samsung/Intel FDI inflows, digital infrastructure buildout",
-        },
-    }
+        # Pillar breakdown by scenario — 2027
+        st.markdown('<div class="section-header">All Pillars by Scenario — 2027</div>', unsafe_allow_html=True)
+        sc27 = sc_country[sc_country["Year"]==2027]
+        pillars_sc = ["FDI","Banking","Manufacturing","Digital", _comp_col]
+        fig_sc = go.Figure()
+        for scen, color in SCEN_COLORS.items():
+            row = sc27[sc27["Scenario"]==scen]
+            if not row.empty:
+                vals = []
+                for p in pillars_sc:
+                    if p in row.columns:
+                        vals.append(row[p].values[0])
+                    else:
+                        vals.append(0)
+                labels = ["FDI","Banking","Manufacturing","Digital","Composite"]
+                fig_sc.add_trace(go.Bar(name=SCEN_LABELS[scen], x=labels, y=vals,
+                                        marker_color=color, opacity=0.85))
+        fig_sc.update_layout(
+            barmode="group", height=340, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
+            legend=dict(orientation="h", y=-0.25), margin=dict(l=20,r=20,t=10,b=70),
+            yaxis=dict(title="Score (0–1)"),
+        )
+        st.plotly_chart(fig_sc, use_container_width=True)
 
-    # v2.0: also show T8 policy factors
-    if V2:
-        pf = load_v2_policy_factors()
-        if pf is not None:
-            name_variants = {"United States": ["United States","USA"], "Viet Nam": ["Viet Nam","Vietnam"]}
-            variants = name_variants.get(sel_country, [sel_country])
-            country_factors = pf[pf["country"].isin(variants)][
-                ["pillar","direction","blended_magnitude","confidence","policy_name","years_applicable"]
-            ].sort_values(["pillar","direction"])
-            if not country_factors.empty:
-                st.markdown("---")
-                st.markdown('<div class="section-header">T8 Policy Factors — Blended Adjustments</div>', unsafe_allow_html=True)
-                st.dataframe(
-                    country_factors.rename(columns={
-                        "pillar":"Pillar","direction":"Direction",
-                        "blended_magnitude":"Magnitude %","confidence":"Confidence",
-                        "policy_name":"Policy","years_applicable":"Years"
-                    }).style.format({"Magnitude %":"{:+.1f}%"}),
-                    use_container_width=True, height=280,
-                )
+        # Policy context
+        POLICY_CONTEXT = {
+            "India": {
+                "shock": "RBI rate tightening (6.5% repo), global FDI headwinds in 2024",
+                "recovery": "RBI easing, PLI schemes entering full production, hyperscaler data centre investments ($7B+)",
+            },
+            "United States": {
+                "shock": "Post-SVB banking regulatory tightening (Basel III Endgame), tariff uncertainty",
+                "recovery": "IRA + CHIPS Act manufacturing surge, AI investment maintaining >60% global share",
+            },
+            "Viet Nam": {
+                "shock": "Global supply chain re-routing uncertainty, currency pressure",
+                "recovery": "China+1 strategy beneficiary, Samsung/Intel FDI inflows, digital infrastructure buildout",
+            },
+        }
 
-    ctx = POLICY_CONTEXT.get(sel_country, {})
-    if ctx:
-        st.markdown("---")
-        col1, col2 = st.columns(2)
-        with col1:
-            st.markdown(f"""<div style="background:#fff5f5;border-left:4px solid {C['red']};border-radius:8px;padding:14px;">
-                <b>Scenario B — Policy Adjusted Driver</b><br>
-                <span style="font-size:0.88rem;">{ctx.get('shock','')}</span>
-            </div>""", unsafe_allow_html=True)
-        with col2:
-            st.markdown(f"""<div style="background:#f0faf4;border-left:4px solid {C['green']};border-radius:8px;padding:14px;">
-                <b>Scenario C — Policy Normalisation Driver</b><br>
-                <span style="font-size:0.88rem;">{ctx.get('recovery','')}</span>
-            </div>""", unsafe_allow_html=True)
+        # v2.0: also show T8 policy factors
+        if V2:
+            pf = load_v2_policy_factors()
+            if pf is not None:
+                name_variants = {"United States": ["United States","USA"], "Viet Nam": ["Viet Nam","Vietnam"]}
+                variants = name_variants.get(sel_country, [sel_country])
+                country_factors = pf[pf["country"].isin(variants)][
+                    ["pillar","direction","blended_magnitude","confidence","policy_name","years_applicable"]
+                ].sort_values(["pillar","direction"])
+                if not country_factors.empty:
+                    st.markdown("---")
+                    st.markdown('<div class="section-header">T8 Policy Factors — Blended Adjustments</div>', unsafe_allow_html=True)
+                    st.dataframe(
+                        country_factors.rename(columns={
+                            "pillar":"Pillar","direction":"Direction",
+                            "blended_magnitude":"Magnitude %","confidence":"Confidence",
+                            "policy_name":"Policy","years_applicable":"Years"
+                        }).style.format({"Magnitude %":"{:+.1f}%"}),
+                        use_container_width=True, height=280,
+                    )
+
+        ctx = POLICY_CONTEXT.get(sel_country, {})
+        if ctx:
+            st.markdown("---")
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown(f"""<div style="background:#fff5f5;border-left:4px solid {C['red']};border-radius:8px;padding:14px;">
+                    <b>Scenario B — Policy Adjusted Driver</b><br>
+                    <span style="font-size:0.88rem;">{ctx.get('shock','')}</span>
+                </div>""", unsafe_allow_html=True)
+            with col2:
+                st.markdown(f"""<div style="background:#f0faf4;border-left:4px solid {C['green']};border-radius:8px;padding:14px;">
+                    <b>Scenario C — Policy Normalisation Driver</b><br>
+                    <span style="font-size:0.88rem;">{ctx.get('recovery','')}</span>
+                </div>""", unsafe_allow_html=True)
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # PAGE 6 — INVESTMENT RECOMMENDATIONS
