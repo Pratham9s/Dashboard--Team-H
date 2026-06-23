@@ -148,6 +148,40 @@ def load_v2_robustness():
     except FileNotFoundError:
         return None
 
+@st.cache_data
+def load_v2_historical():
+    try:
+        return pd.read_csv("t9_historical_composite_v2.csv")
+    except FileNotFoundError:
+        return None
+
+@st.cache_data
+def get_v2_tier_thresholds():
+    """Compute v2.0 tier thresholds from 2023 historical distribution (percentile-based).
+    Bottom 33% = Low, middle 33% = Medium, top 33% = High.
+    Falls back to 2024 Scenario A forecast if historical not available,
+    then to v1.0 hardcoded thresholds as last resort."""
+    hist = load_v2_historical()
+    if hist is not None:
+        base = hist[hist["year"]==2023]["composite_v2"].dropna()
+        if len(base) >= 10:
+            low_mid  = round(float(base.quantile(0.333)), 3)
+            mid_high = round(float(base.quantile(0.667)), 3)
+            return low_mid, mid_high
+    # Fallback: use 2024 Scenario A forecast
+    sc = load_v2_scenarios()
+    if sc is not None:
+        base = sc[(sc["Scenario"]=="A_Standard") & (sc["Year"]==2024)]["Composite_v2"].dropna()
+        if len(base) >= 10:
+            return round(float(base.quantile(0.333)), 3), round(float(base.quantile(0.667)), 3)
+    return 0.290, 0.362  # last resort: v1.0 thresholds
+
+def assign_tier_v2(score):
+    low_mid, mid_high = get_v2_tier_thresholds()
+    if score >= mid_high: return "High"
+    elif score >= low_mid: return "Medium"
+    else: return "Low"
+
 # ── Sidebar nav ───────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("## 🌍 Northcard Capital")
@@ -936,7 +970,8 @@ elif page == "🌐 Policy Scenarios":
 
     with tab_all:
         st.markdown("**All 194 countries — A / B / C scenarios under v2.0 weights**")
-        st.caption("162 countries have T8 policy factors (B and C differ from A). 32 data-poor countries have no T8 data — for these B = C = A.")
+        _t1, _t2 = get_v2_tier_thresholds()
+        st.caption(f"Tier thresholds recalibrated to v2.0 distribution (2024 Scenario A baseline): Low <{_t1} · Medium {_t1}–{_t2} · High ≥{_t2}. 162 countries have T8 policy factors; 32 data-poor countries have B = C = A.")
         v2_sc_all = load_v2_scenarios()
         if v2_sc_all is not None:
             col_sc, col_yr, col_f, col_t = st.columns([2,1,3,1])
@@ -960,6 +995,9 @@ elif page == "🌐 Policy Scenarios":
                 (v2_sc_all["Scenario"]==sel_scen_all) &
                 (v2_sc_all["Year"]==sel_yr_all)
             ].copy().sort_values("Composite_v2", ascending=False).reset_index(drop=True)
+
+            # Recompute tier from live distribution — v1.0 thresholds are wrong for v2.0 scores
+            sc_slice["Tier_v2"] = sc_slice["Composite_v2"].apply(assign_tier_v2)
             sc_slice.insert(0, "Rank", range(1, len(sc_slice)+1))
 
             if search_all:
@@ -983,6 +1021,7 @@ elif page == "🌐 Policy Scenarios":
                 (v2_sc_all["Scenario"]==sel_scen_all) &
                 (v2_sc_all["Year"]==sel_yr_all)
             ].copy()
+            sc_full["Tier_v2"] = sc_full["Composite_v2"].apply(assign_tier_v2)
             tier_counts = sc_full["Tier_v2"].value_counts().reset_index()
             tier_counts.columns = ["Tier","Count"]
             fig_pie = px.pie(
