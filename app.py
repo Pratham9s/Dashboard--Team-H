@@ -105,10 +105,82 @@ def load_knn():
     except FileNotFoundError:
         return None
 
+# ── v2.0 data loaders ─────────────────────────────────────────────────────────
+@st.cache_data
+def load_v2_forecasts():
+    try:
+        return pd.read_csv("t9_forecast_composite_v2.csv")
+    except FileNotFoundError:
+        return None
+
+@st.cache_data
+def load_v2_scenarios():
+    try:
+        return pd.read_csv("t9_scenario_comparison_v2.csv")
+    except FileNotFoundError:
+        return None
+
+@st.cache_data
+def load_v2_recommendations():
+    try:
+        return pd.read_csv("t9_recommendations_v2.csv")
+    except FileNotFoundError:
+        return None
+
+@st.cache_data
+def load_v2_risk_rankings():
+    try:
+        return pd.read_csv("t11_risk_adjusted_rankings.csv")
+    except FileNotFoundError:
+        return None
+
+@st.cache_data
+def load_v2_policy_factors():
+    try:
+        return pd.read_csv("t8_impact_factors.csv")
+    except FileNotFoundError:
+        return None
+
+@st.cache_data
+def load_v2_robustness():
+    try:
+        return pd.read_csv("t4_robustness_verdict.csv")
+    except FileNotFoundError:
+        return None
+
 # ── Sidebar nav ───────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("## 🌍 Northcard Capital")
     st.markdown("**Where Should Global Businesses Invest Next?**")
+    st.markdown("---")
+
+    version = st.radio(
+        "Framework Version",
+        ["v1.0 — Original", "v2.0 — Recalibrated"],
+        index=0,
+    )
+    V2 = (version == "v2.0 — Recalibrated")
+
+    if V2:
+        st.markdown("""
+        <div style="background:#f0faf4;border-left:3px solid #27ae60;border-radius:6px;padding:10px;font-size:0.78rem;color:#2c3e50;">
+        <b>v2.0 improvements:</b><br>
+        • Weights optimised via Spearman vs UNCTAD<br>
+        • LLM policy extraction (194 countries)<br>
+        • T5→T8 DiD-blended factors<br>
+        • Risk-adjusted rankings (T11)<br>
+        • Rank stability ρ = 0.979
+        </div>""", unsafe_allow_html=True)
+    else:
+        st.markdown("""
+        <div style="background:#f8f9fa;border-left:3px solid #2980b9;border-radius:6px;padding:10px;font-size:0.78rem;color:#2c3e50;">
+        <b>v1.0 framework:</b><br>
+        • Weights: FDI 30% · Banking 25%<br>
+        • Manufacturing 25% · Digital 20%<br>
+        • Task 9 manual policy factors<br>
+        • Prophet baseline forecasts
+        </div>""", unsafe_allow_html=True)
+
     st.markdown("---")
     page = st.radio("Navigate", [
         "🏠 Overview",
@@ -129,6 +201,16 @@ with st.sidebar:
 if page == "🏠 Overview":
     st.markdown("# 🌍 Where Should Global Businesses Invest Next?")
     st.markdown("**Northcard Capital Analytics | Data Science Capstone**")
+
+    if V2:
+        st.markdown("""
+        <div style="background:#f0faf4;border:1px solid #27ae60;border-radius:8px;padding:12px 18px;margin-bottom:8px;">
+        <b style="color:#27ae60;">v2.0 — Recalibrated Framework</b> &nbsp;|&nbsp;
+        Weights optimised via constrained Spearman maximisation against UNCTAD FDI stock rankings.
+        Policy factors sourced from Cerebras LLM extraction across 194 countries, blended with historical DiD analogues.
+        Rank correlation v1.0 vs v2.0: <b>ρ = 0.979</b> — investment recommendations stable.
+        </div>""", unsafe_allow_html=True)
+
     st.markdown("---")
 
     master = load_master()
@@ -149,15 +231,26 @@ if page == "🏠 Overview":
 
     st.markdown("---")
 
-    # Pillar weights
+    # Pillar weights — switch based on version
     st.markdown('<div class="section-header">4-Pillar Investment Framework</div>', unsafe_allow_html=True)
     col1, col2, col3, col4 = st.columns(4)
-    pillars = [
-        ("💰 FDI", "30%", C["orange"], "Foreign Direct Investment attractiveness"),
-        ("🏦 Banking", "25%", C["blue"],   "Banking sector strength & depth"),
-        ("🏭 Manufacturing", "25%", C["green"],  "Manufacturing capacity & output"),
-        ("💻 Digital Economy", "20%", "#8e44ad", "Digital infrastructure & readiness"),
-    ]
+
+    if V2:
+        pillars = [
+            ("💰 FDI",           "9.5%",  C["orange"], "Optimised — SHAP: 16.9%"),
+            ("🏦 Banking",        "18.8%", C["blue"],   "Optimised — SHAP: 21.5%"),
+            ("🏭 Manufacturing",  "34.3%", C["green"],  "Optimised — SHAP: 24.2%"),
+            ("💻 Digital Economy","37.4%", "#8e44ad",   "Optimised — SHAP: 37.4%"),
+        ]
+        st.caption("v2.0 weights optimised via constrained Spearman maximisation vs UNCTAD FDI stock rankings (T3)")
+    else:
+        pillars = [
+            ("💰 FDI",           "30%", C["orange"], "Foreign Direct Investment attractiveness"),
+            ("🏦 Banking",        "25%", C["blue"],   "Banking sector strength & depth"),
+            ("🏭 Manufacturing",  "25%", C["green"],  "Manufacturing capacity & output"),
+            ("💻 Digital Economy","20%", "#8e44ad",   "Digital infrastructure & readiness"),
+        ]
+
     for col, (name, weight, color, desc) in zip([col1,col2,col3,col4], pillars):
         with col:
             st.markdown(f"""
@@ -191,15 +284,26 @@ if page == "🏠 Overview":
     # Pipeline
     st.markdown("---")
     st.markdown('<div class="section-header">Analytical Pipeline</div>', unsafe_allow_html=True)
-    steps = [
-        ("📥 Data Collection", "World Bank, UNCTAD — 4 sources, 59 raw indicators"),
-        ("🧹 Data Cleaning", "194 countries, 0 nulls, all scores normalised [0,1]"),
-        ("📊 EDA", "Pillar distributions, tier analysis, correlation heatmaps"),
-        ("🤖 ML Models", "KNN · KMeans · Hierarchical · XGBoost+SHAP"),
-        ("📈 Forecasting", "Prophet — 194 countries × 4 pillars, 2024–2027"),
-        ("🌐 Policy Scenarios", "3 scenarios (Baseline / Shock / Recovery) for 3 economies"),
-        ("🏆 Recommendations", "Invest Now / Wait / Avoid per country"),
-    ]
+    if V2:
+        steps = [
+            ("📥 Data Collection",    "World Bank, UNCTAD — 4 sources, 59 raw indicators"),
+            ("🧹 Data Cleaning",       "194 countries, 0 nulls, all scores normalised [0,1]"),
+            ("⚖️ Weight Optimisation", "Constrained Spearman vs UNCTAD (T3) + SHAP validation (T1)"),
+            ("🤖 ML Models",           "KNN · KMeans · Hierarchical · XGBoost+SHAP"),
+            ("📈 Forecasting",         "Prophet — 194 × 4 pillars, v2.0 weights (T9)"),
+            ("🌐 Policy Extraction",   "Cerebras LLM → T5→T6→T7→T8 DiD blend, 162 countries"),
+            ("🏆 Risk-Adj Rankings",   "Score ÷ 5yr volatility — T11 risk-adjusted final rank"),
+        ]
+    else:
+        steps = [
+            ("📥 Data Collection", "World Bank, UNCTAD — 4 sources, 59 raw indicators"),
+            ("🧹 Data Cleaning", "194 countries, 0 nulls, all scores normalised [0,1]"),
+            ("📊 EDA", "Pillar distributions, tier analysis, correlation heatmaps"),
+            ("🤖 ML Models", "KNN · KMeans · Hierarchical · XGBoost+SHAP"),
+            ("📈 Forecasting", "Prophet — 194 countries × 4 pillars, 2024–2027"),
+            ("🌐 Policy Scenarios", "3 scenarios (Baseline / Shock / Recovery) for 3 economies"),
+            ("🏆 Recommendations", "Invest Now / Wait / Avoid per country"),
+        ]
     cols = st.columns(len(steps))
     for col, (title, desc) in zip(cols, steps):
         with col:
@@ -611,7 +715,13 @@ elif page == "🤖 ML Models":
 # ═══════════════════════════════════════════════════════════════════════════════
 elif page == "📈 Forecasting":
     st.markdown("# 📈 Prophet Forecasting — 2024 to 2027")
-    st.markdown("194 countries × 4 pillars × 4 years. Config: `changepoint_prior_scale=0.05`, `interval_width=0.80`.")
+
+    if V2:
+        st.markdown("v2.0 composite recomputed under **optimised weights** (Digital 37.4%, Manufacturing 34.3%, Banking 18.8%, FDI 9.5%). Baseline Prophet pillar forecasts unchanged.")
+        v2_fc = load_v2_forecasts()
+    else:
+        st.markdown("194 countries × 4 pillars × 4 years. Config: `changepoint_prior_scale=0.05`, `interval_width=0.80`.")
+
     st.markdown("---")
 
     master = load_master()
@@ -633,33 +743,41 @@ elif page == "📈 Forecasting":
         pillar_key = pillar_map[pillar_choice]
 
         hist = master[master["Country"]==country].sort_values("TIME_PERIOD")
-        fc = forecasts[forecasts["Country"]==country].sort_values("Year")
+        fc   = forecasts[forecasts["Country"]==country].sort_values("Year")
 
         fig = go.Figure()
-
-        # Historical
         fig.add_trace(go.Scatter(
             x=hist["TIME_PERIOD"], y=hist[pillar_key],
             name="Historical", line=dict(color=C["navy"], width=2.5),
             mode="lines+markers", marker=dict(size=5),
         ))
 
-        # Forecast line — bridge from last historical point
         last_hist_year = int(hist["TIME_PERIOD"].max())
-        last_hist_val = hist[hist["TIME_PERIOD"] == last_hist_year][pillar_key].values[0]
+        last_hist_val  = hist[hist["TIME_PERIOD"] == last_hist_year][pillar_key].values[0]
         fc_years = [last_hist_year] + list(fc["Year"])
         fc_vals  = [last_hist_val]  + list(fc[pillar_key])
         fig.add_trace(go.Scatter(
             x=fc_years, y=fc_vals,
-            name="Forecast", line=dict(color=C["orange"], width=2.5, dash="dash"),
+            name="Forecast (v1.0)", line=dict(color=C["orange"], width=2.5, dash="dash"),
             mode="lines+markers", marker=dict(size=7, symbol="diamond", color=C["orange"]),
         ))
 
-        # Confidence interval
+        # v2.0 composite overlay
+        if V2 and pillar_choice == "Composite" and v2_fc is not None:
+            fc_v2 = v2_fc[v2_fc["country"]==country].sort_values("year")
+            if not fc_v2.empty:
+                v2_years = [last_hist_year] + list(fc_v2["year"])
+                v2_vals  = [last_hist_val]  + list(fc_v2["composite_v2"])
+                fig.add_trace(go.Scatter(
+                    x=v2_years, y=v2_vals,
+                    name="Composite v2.0 (optimised weights)",
+                    line=dict(color="#27ae60", width=2.5, dash="dot"),
+                    mode="lines+markers", marker=dict(size=7, symbol="circle", color="#27ae60"),
+                ))
+
         if pillar_key != "score_composite":
             intv = intervals[(intervals["Country"]==country) & (intervals["Pillar"]==pillar_key)]
         else:
-            # Approximate composite CI from average of pillar CIs
             intv = intervals[intervals["Country"]==country].groupby("Year")[["yhat_lower","yhat_upper"]].mean().reset_index()
             intv["Pillar"] = "score_composite"
 
@@ -673,7 +791,6 @@ elif page == "📈 Forecasting":
 
         fig.add_vline(x=last_hist_year + 0.5, line_dash="dot", line_color="#aaa",
                       annotation_text="Forecast →", annotation_position="top right")
-
         fig.update_layout(
             height=440, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
             xaxis=dict(title="Year", range=[2000, 2028], dtick=5, tickmode="linear"),
@@ -684,7 +801,6 @@ elif page == "📈 Forecasting":
         )
         st.plotly_chart(fig, use_container_width=True)
 
-        # Country 2027 summary
         fc27 = fc[fc["Year"]==2027].iloc[0] if len(fc[fc["Year"]==2027]) > 0 else None
         if fc27 is not None:
             st.markdown("**2027 Forecast Summary**")
@@ -695,20 +811,41 @@ elif page == "📈 Forecasting":
             ]):
                 with col:
                     color = PILLAR_COLORS[key]
+                    val = fc27[key]
+                    # Show v2.0 composite alongside v1.0
+                    if V2 and key == "score_composite" and v2_fc is not None:
+                        fc_v2_27 = v2_fc[(v2_fc["country"]==country) & (v2_fc["year"]==2027)]
+                        v2_val = fc_v2_27["composite_v2"].values[0] if not fc_v2_27.empty else None
+                        extra = f"<div style='font-size:0.72rem;color:#27ae60;margin-top:2px;'>v2.0: {v2_val:.3f}</div>" if v2_val else ""
+                    else:
+                        extra = ""
                     st.markdown(f"""<div class="metric-card" style="border-top:3px solid {color};">
-                        <div class="metric-value" style="color:{color};font-size:1.4rem;">{fc27[key]:.3f}</div>
-                        <div class="metric-label">{label} 2027</div></div>""", unsafe_allow_html=True)
+                        <div class="metric-value" style="color:{color};font-size:1.4rem;">{val:.3f}</div>
+                        <div class="metric-label">{label} 2027</div>{extra}</div>""", unsafe_allow_html=True)
 
     with tab2:
         st.markdown('<div class="section-header">Top 20 Countries by Composite Score — 2027</div>', unsafe_allow_html=True)
-        fc27_all = forecasts[forecasts["Year"]==2027].sort_values("score_composite", ascending=False).head(20)
-        fig_top = px.bar(
-            fc27_all, x="score_composite", y="Country", orientation="h",
-            color="score_composite",
-            color_continuous_scale=[[0,C["blue"]],[1,C["green"]]],
-            labels={"score_composite":"Composite Score 2027","Country":""},
-            text=fc27_all["score_composite"].apply(lambda x: f"{x:.3f}"),
-        )
+
+        if V2 and v2_fc is not None:
+            # Show v2.0 composite ranking
+            fc27_all = v2_fc[v2_fc["year"]==2027].sort_values("composite_v2", ascending=False).head(20)
+            fig_top = px.bar(
+                fc27_all, x="composite_v2", y="country", orientation="h",
+                color="composite_v2",
+                color_continuous_scale=[[0,C["blue"]],[1,C["green"]]],
+                labels={"composite_v2":"Composite Score 2027 (v2.0)","country":""},
+                text=fc27_all["composite_v2"].apply(lambda x: f"{x:.3f}"),
+            )
+        else:
+            fc27_all = forecasts[forecasts["Year"]==2027].sort_values("score_composite", ascending=False).head(20)
+            fig_top = px.bar(
+                fc27_all, x="score_composite", y="Country", orientation="h",
+                color="score_composite",
+                color_continuous_scale=[[0,C["blue"]],[1,C["green"]]],
+                labels={"score_composite":"Composite Score 2027","Country":""},
+                text=fc27_all["score_composite"].apply(lambda x: f"{x:.3f}"),
+            )
+
         fig_top.update_layout(
             height=560, yaxis=dict(autorange="reversed"),
             paper_bgcolor="white", plot_bgcolor="#f8f9fa",
@@ -718,14 +855,28 @@ elif page == "📈 Forecasting":
         st.plotly_chart(fig_top, use_container_width=True)
 
         st.markdown('<div class="section-header">2027 Global Composite Map</div>', unsafe_allow_html=True)
-        fig_map27 = px.choropleth(
-            forecasts[forecasts["Year"]==2027], locations="REF_AREA", locationmode="ISO-3",
-            color="score_composite", hover_name="Country",
-            hover_data={"score_composite":":.3f","REF_AREA":False},
-            color_continuous_scale=[[0,"#e74c3c"],[0.5,"#f39c12"],[1,"#27ae60"]],
-            range_color=[0.15,0.60],
-            labels={"score_composite":"Score"},
-        )
+        if V2 and v2_fc is not None:
+            map_src = v2_fc[v2_fc["year"]==2027].copy()
+            # Need REF_AREA — merge from forecasts
+            ref_map = forecasts[forecasts["Year"]==2027][["Country","REF_AREA"]].rename(columns={"Country":"country"})
+            map_src = map_src.merge(ref_map, on="country", how="left")
+            fig_map27 = px.choropleth(
+                map_src, locations="REF_AREA", locationmode="ISO-3",
+                color="composite_v2", hover_name="country",
+                hover_data={"composite_v2":":.3f","REF_AREA":False},
+                color_continuous_scale=[[0,"#e74c3c"],[0.5,"#f39c12"],[1,"#27ae60"]],
+                range_color=[0.15, 0.85],
+                labels={"composite_v2":"Score (v2.0)"},
+            )
+        else:
+            fig_map27 = px.choropleth(
+                forecasts[forecasts["Year"]==2027], locations="REF_AREA", locationmode="ISO-3",
+                color="score_composite", hover_name="Country",
+                hover_data={"score_composite":":.3f","REF_AREA":False},
+                color_continuous_scale=[[0,"#e74c3c"],[0.5,"#f39c12"],[1,"#27ae60"]],
+                range_color=[0.15, 0.60],
+                labels={"score_composite":"Score"},
+            )
         fig_map27.update_layout(
             height=400, margin=dict(l=0,r=0,t=10,b=0),
             geo=dict(showframe=False), paper_bgcolor="white",
@@ -737,18 +888,30 @@ elif page == "📈 Forecasting":
 # ═══════════════════════════════════════════════════════════════════════════════
 elif page == "🌐 Policy Scenarios":
     st.markdown("# 🌐 Policy Scenarios — A / B / C")
-    st.markdown("Three scenarios modelled for India, United States, and Viet Nam.")
+
+    if V2:
+        st.markdown("Three scenarios under **v2.0 optimised weights**. Policy factors from T8 (LLM + DiD blend, 162 countries). India / USA / Viet Nam use manually-verified Task 9 factors.")
+        scenarios = load_v2_scenarios()
+        if scenarios is None:
+            st.error("t9_scenario_comparison_v2.csv not found — upload to repo root.")
+            st.stop()
+        # v2.0 column names use Composite_v2
+        _comp_col = "Composite_v2"
+    else:
+        st.markdown("Three scenarios modelled for India, United States, and Viet Nam.")
+        scenarios = load_scenarios()
+        _comp_col = "Composite"
 
     col1, col2, col3 = st.columns(3)
     with col1:
         st.markdown(f"""<div class="metric-card" style="border-top:4px solid {C['green']};">
             <b>Scenario A — Baseline</b><br>
-            <span style="font-size:0.85rem;color:#6b7c93;">Task 5 Prophet forecast, no policy overlay</span>
+            <span style="font-size:0.85rem;color:#6b7c93;">Prophet forecast, no policy overlay</span>
         </div>""", unsafe_allow_html=True)
     with col2:
         st.markdown(f"""<div class="metric-card" style="border-top:4px solid {C['red']};">
             <b>Scenario B — Policy Adjusted</b><br>
-            <span style="font-size:0.85rem;color:#6b7c93;">Pillar scores adjusted by Task 9 factors</span>
+            <span style="font-size:0.85rem;color:#6b7c93;">Pillar scores adjusted by {"T8 blended" if V2 else "Task 9"} factors</span>
         </div>""", unsafe_allow_html=True)
     with col3:
         st.markdown(f"""<div class="metric-card" style="border-top:4px solid {C['orange']};">
@@ -757,9 +920,6 @@ elif page == "🌐 Policy Scenarios":
         </div>""", unsafe_allow_html=True)
 
     st.markdown("---")
-
-    scenarios = load_scenarios()
-    rec = load_recommendations()
 
     SCEN_COLORS = {
         "A_Standard":       C["green"],
@@ -779,7 +939,7 @@ elif page == "🌐 Policy Scenarios":
     with col2:
         sel_pillar = st.selectbox("Pillar", ["Composite","FDI","Banking","Manufacturing","Digital"])
 
-    pillar_col_map = {"Composite":"Composite","FDI":"FDI","Banking":"Banking",
+    pillar_col_map = {"Composite": _comp_col, "FDI":"FDI","Banking":"Banking",
                       "Manufacturing":"Manufacturing","Digital":"Digital"}
     pcol = pillar_col_map[sel_pillar]
 
@@ -788,11 +948,24 @@ elif page == "🌐 Policy Scenarios":
     fig = go.Figure()
     for scen, color in SCEN_COLORS.items():
         sc_data = sc_country[sc_country["Scenario"]==scen].sort_values("Year")
+        if pcol not in sc_data.columns:
+            continue
         fig.add_trace(go.Scatter(
             x=sc_data["Year"], y=sc_data[pcol],
             name=SCEN_LABELS[scen], line=dict(color=color, width=2.5),
             mode="lines+markers", marker=dict(size=8),
         ))
+
+    # CI bands (v2.0 only)
+    if V2 and "CI_Lower_95" in sc_country.columns and sel_pillar == "Composite":
+        sc_b = sc_country[sc_country["Scenario"]=="B_PolicyAdjusted"].sort_values("Year")
+        if not sc_b.empty:
+            fig.add_trace(go.Scatter(
+                x=list(sc_b["Year"]) + list(sc_b["Year"])[::-1],
+                y=list(sc_b["CI_Upper_95"]) + list(sc_b["CI_Lower_95"])[::-1],
+                fill="toself", fillcolor="rgba(231,76,60,0.1)",
+                line=dict(color="rgba(0,0,0,0)"), showlegend=True, name="95% CI (B)",
+            ))
 
     fig.update_layout(
         height=420, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
@@ -807,13 +980,20 @@ elif page == "🌐 Policy Scenarios":
     # Pillar breakdown by scenario — 2027
     st.markdown('<div class="section-header">All Pillars by Scenario — 2027</div>', unsafe_allow_html=True)
     sc27 = sc_country[sc_country["Year"]==2027]
-    pillars_sc = ["FDI","Banking","Manufacturing","Digital","Composite"]
+    pillars_sc = ["FDI","Banking","Manufacturing","Digital", _comp_col]
     fig_sc = go.Figure()
     for scen, color in SCEN_COLORS.items():
         row = sc27[sc27["Scenario"]==scen]
         if not row.empty:
-            vals = [row[p].values[0] for p in pillars_sc]
-            fig_sc.add_trace(go.Bar(name=SCEN_LABELS[scen], x=pillars_sc, y=vals, marker_color=color, opacity=0.85))
+            vals = []
+            for p in pillars_sc:
+                if p in row.columns:
+                    vals.append(row[p].values[0])
+                else:
+                    vals.append(0)
+            labels = ["FDI","Banking","Manufacturing","Digital","Composite"]
+            fig_sc.add_trace(go.Bar(name=SCEN_LABELS[scen], x=labels, y=vals,
+                                    marker_color=color, opacity=0.85))
     fig_sc.update_layout(
         barmode="group", height=340, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
         legend=dict(orientation="h", y=-0.25), margin=dict(l=20,r=20,t=10,b=70),
@@ -836,6 +1016,28 @@ elif page == "🌐 Policy Scenarios":
             "recovery": "China+1 strategy beneficiary, Samsung/Intel FDI inflows, digital infrastructure buildout",
         },
     }
+
+    # v2.0: also show T8 policy factors
+    if V2:
+        pf = load_v2_policy_factors()
+        if pf is not None:
+            name_variants = {"United States": ["United States","USA"], "Viet Nam": ["Viet Nam","Vietnam"]}
+            variants = name_variants.get(sel_country, [sel_country])
+            country_factors = pf[pf["country"].isin(variants)][
+                ["pillar","direction","blended_magnitude","confidence","policy_name","years_applicable"]
+            ].sort_values(["pillar","direction"])
+            if not country_factors.empty:
+                st.markdown("---")
+                st.markdown('<div class="section-header">T8 Policy Factors — Blended Adjustments</div>', unsafe_allow_html=True)
+                st.dataframe(
+                    country_factors.rename(columns={
+                        "pillar":"Pillar","direction":"Direction",
+                        "blended_magnitude":"Magnitude %","confidence":"Confidence",
+                        "policy_name":"Policy","years_applicable":"Years"
+                    }).style.format({"Magnitude %":"{:+.1f}%"}),
+                    use_container_width=True, height=280,
+                )
+
     ctx = POLICY_CONTEXT.get(sel_country, {})
     if ctx:
         st.markdown("---")
@@ -855,6 +1057,182 @@ elif page == "🌐 Policy Scenarios":
 # PAGE 6 — INVESTMENT RECOMMENDATIONS
 # ═══════════════════════════════════════════════════════════════════════════════
 elif page == "🏆 Investment Recommendations":
+    st.markdown("# 🏆 Investment Recommendations")
+
+    if V2:
+        st.markdown("Final investment verdict based on **v2.0 recalibrated composite** — optimised weights + T8 policy overlay + T11 risk-adjusted rankings.")
+        rec = load_v2_recommendations()
+        scenarios = load_v2_scenarios()
+        risk = load_v2_risk_rankings()
+        forecasts_src = load_v2_forecasts()
+        _comp_col = "composite_v2"
+        _country_col = "country"
+    else:
+        st.markdown("Final investment verdict based on Scenario C (Post-Recovery) 2027 composite trajectory.")
+        rec = load_recommendations()
+        scenarios = load_scenarios()
+        risk = None
+        forecasts_src = load_forecasts()
+        _comp_col = "score_composite"
+        _country_col = "Country"
+
+    forecasts = load_forecasts()
+    st.markdown("---")
+
+    # ── Recommendation cards ──────────────────────────────────────────────────
+    st.markdown('<div class="section-header">Country Verdicts — 2027</div>', unsafe_allow_html=True)
+    for _, row in rec.iterrows():
+        country      = row.get("Country", row.get("country",""))
+        recommendation = row.get("Recommendation", row.get("recommendation",""))
+        rationale    = row.get("Rationale", row.get("rationale",""))
+        tier         = row.get("Tier_2027", row.get("tier_2027",""))
+        score_2024   = row.get("Score_2024_ScenC", row.get("score_2024", 0))
+        score_2027   = row.get("Score_2027_ScenC", row.get("score_2027", 0))
+        trend        = row.get("Trend_2024_2027",  row.get("trend", 0))
+
+        rec_color = {"Invest Now": C["green"], "Wait": C["amber"], "Avoid": C["red"]}.get(recommendation, C["navy"])
+
+        # Risk rank badge for v2.0
+        risk_badge = ""
+        if V2 and risk is not None:
+            r_row = risk[risk["country"]==country]
+            if not r_row.empty:
+                rr = int(r_row["rank_risk_adj"].values[0])
+                rc = int(r_row["rank_composite"].values[0])
+                arrow = "▲" if rr < rc else ("▼" if rr > rc else "–")
+                risk_badge = f'<span style="background:#f0faf4;color:#27ae60;border-radius:20px;padding:4px 12px;font-size:0.82rem;border:1px solid #27ae60;">Risk-adj rank: #{rr} {arrow}</span>'
+
+        st.markdown(f"""
+        <div style="background:white;border-radius:12px;padding:20px;margin-bottom:14px;
+                    box-shadow:0 2px 10px rgba(0,0,0,0.08);border-left:6px solid {rec_color};">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;flex-wrap:wrap;">
+                <div style="font-size:1.4rem;font-weight:700;color:{C['navy']};">{country}</div>
+                <span style="background:{rec_color};color:white;border-radius:20px;padding:4px 14px;font-weight:700;font-size:0.9rem;">
+                    {recommendation}
+                </span>
+                <span style="background:{C['light']};color:{C['navy']};border-radius:20px;padding:4px 12px;font-size:0.85rem;">
+                    Tier: {tier}
+                </span>
+                {risk_badge}
+            </div>
+            <div style="display:flex;gap:24px;margin-bottom:10px;">
+                <div><span style="color:#6b7c93;font-size:0.82rem;">2024 Score</span><br>
+                     <span style="font-weight:700;font-size:1.1rem;">{score_2024:.4f}</span></div>
+                <div><span style="color:#6b7c93;font-size:0.82rem;">2027 Score</span><br>
+                     <span style="font-weight:700;font-size:1.1rem;color:{rec_color};">{score_2027:.4f}</span></div>
+                <div><span style="color:#6b7c93;font-size:0.82rem;">Trend (2024–27)</span><br>
+                     <span style="font-weight:700;font-size:1.1rem;color:{C['green'] if trend>0 else C['red']};">
+                     {"▲" if trend > 0 else "▼"} {abs(trend):.4f}</span></div>
+            </div>
+            <div style="font-size:0.88rem;color:#555;">{rationale}</div>
+        </div>""", unsafe_allow_html=True)
+
+    st.markdown("---")
+
+    # ── v2.0: Risk-adjusted ranking table (top 20) ────────────────────────────
+    if V2 and risk is not None:
+        st.markdown('<div class="section-header">Risk-Adjusted Rankings — Top 20 (2027, v2.0)</div>', unsafe_allow_html=True)
+        st.caption("Risk-adjusted score = composite_v2 ÷ 5yr rolling volatility (std). Countries with stable, high scores rank best.")
+        top20_risk = risk.sort_values("rank_risk_adj").head(20)[
+            ["country","composite_v2","vol_std","risk_adj_score","rank_composite","rank_risk_adj"]
+        ].reset_index(drop=True)
+        top20_risk.index += 1
+        top20_risk.columns = ["Country","Composite v2.0","Volatility (5yr std)","Risk-Adj Score","Composite Rank","Risk-Adj Rank"]
+        top20_risk["Rank Δ"] = top20_risk["Composite Rank"] - top20_risk["Risk-Adj Rank"]
+        st.dataframe(
+            top20_risk.style
+                .format({"Composite v2.0":"{:.3f}","Volatility (5yr std)":"{:.4f}","Risk-Adj Score":"{:.2f}"})
+                .background_gradient(subset=["Composite v2.0"], cmap="Greens")
+                .background_gradient(subset=["Risk-Adj Score"], cmap="Blues"),
+            use_container_width=True, height=700,
+        )
+        st.markdown("---")
+
+    # ── Scenario C trajectory ─────────────────────────────────────────────────
+    st.markdown('<div class="section-header">Scenario C Composite Trajectories (2024–2027)</div>', unsafe_allow_html=True)
+    if V2 and scenarios is not None:
+        sc_c = scenarios[scenarios["Scenario"]=="C_ShockFade"].sort_values(["Country","Year"])
+        fig_traj = px.line(
+            sc_c, x="Year", y="Composite_v2", color="Country",
+            markers=True,
+            color_discrete_sequence=[C["green"], C["blue"], C["orange"]],
+            labels={"Composite_v2":"Composite Score (v2.0)","Year":"Year"},
+        )
+    else:
+        sc_c = load_scenarios()
+        sc_c = sc_c[sc_c["Scenario"]=="C_ShockFade"].sort_values(["Country","Year"])
+        fig_traj = px.line(
+            sc_c, x="Year", y="Composite", color="Country",
+            markers=True, line_dash="Country",
+            color_discrete_sequence=[C["green"], C["blue"], C["orange"]],
+            labels={"Composite":"Composite Score","Year":"Year"},
+        )
+
+    fig_traj.update_layout(
+        height=380, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
+        xaxis=dict(tickformat='d'),
+        legend=dict(orientation="h", y=-0.2),
+        yaxis=dict(range=[0.3, 0.85] if V2 else [0.3, 0.7]),
+        margin=dict(l=40,r=20,t=20,b=60),
+    )
+    st.plotly_chart(fig_traj, use_container_width=True)
+
+    # ── Global top 10 ─────────────────────────────────────────────────────────
+    if V2 and forecasts_src is not None:
+        st.markdown('<div class="section-header">Global Top 10 — Composite Score 2027 (v2.0, All 194 Countries)</div>', unsafe_allow_html=True)
+        top10 = forecasts_src[forecasts_src["year"]==2027].sort_values("composite_v2", ascending=False).head(10)
+        # Merge REF_AREA from v1 forecasts for display
+        ref_map = forecasts[forecasts["Year"]==2027][["Country","REF_AREA"]].rename(columns={"Country":"country"})
+        top10 = top10.merge(ref_map, on="country", how="left")
+        top10_display = top10[["country","composite_v2","composite_v1"]].copy()
+        top10_display.columns = ["Country","Composite v2.0","Composite v1.0"]
+        top10_display["Δ v2–v1"] = top10_display["Composite v2.0"] - top10_display["Composite v1.0"]
+        top10_display = top10_display.reset_index(drop=True)
+        top10_display.index += 1
+        st.dataframe(
+            top10_display.style
+                .format({c:"{:.3f}" for c in ["Composite v2.0","Composite v1.0","Δ v2–v1"]})
+                .background_gradient(subset=["Composite v2.0"], cmap="Greens"),
+            use_container_width=True, height=380,
+        )
+    else:
+        st.markdown('<div class="section-header">Global Top 10 — Composite Score 2027 (All 194 Countries)</div>', unsafe_allow_html=True)
+        top10 = forecasts[forecasts["Year"]==2027].sort_values("score_composite", ascending=False).head(10)
+        top10_display = top10[["Country","score_composite","score_fdi","score_banking","score_manuf","score_digital"]].copy()
+        top10_display.columns = ["Country","Composite","FDI","Banking","Manufacturing","Digital"]
+        top10_display = top10_display.reset_index(drop=True)
+        top10_display.index += 1
+        st.dataframe(
+            top10_display.style.format({c:"{:.3f}" for c in ["Composite","FDI","Banking","Manufacturing","Digital"]})
+                               .background_gradient(subset=["Composite"], cmap="Greens"),
+            use_container_width=True, height=380,
+        )
+
+    # ── Key insights ──────────────────────────────────────────────────────────
+    st.markdown("---")
+    st.markdown('<div class="section-header">Key Insights</div>', unsafe_allow_html=True)
+    if V2:
+        insights = [
+            ("🏆 United States #1 risk-adjusted",   "Highest risk-adj score — strong composite AND lowest volatility (0.022 std). Consistent performer across all weight sets."),
+            ("🇳🇱 Netherlands #1 composite (v2.0)", "Composite 0.810 in 2027 — balanced pillar strength amplified by Digital upweighting. No single-pillar dependency."),
+            ("📈 India — Digital-led rise",           "Composite 0.594 by 2027 under v2.0. Manufacturing strength + accelerating digital. FDI remains the drag."),
+            ("⚖️ Rank stability ρ = 0.979",          "Spearman correlation between v1.0 and v2.0 composite rankings is 0.979 — investment recommendations unchanged by recalibration."),
+            ("💻 Digital Economy is the key differentiator", "SHAP confirms 37.4% importance — now reflected in optimised weights. Countries with weak digital lose rank under v2.0."),
+        ]
+    else:
+        insights = [
+            ("🏆 Netherlands #1 in 2027",                f"Composite 0.576 — balanced strength across all 4 pillars simultaneously. No single-pillar dependency."),
+            ("💻 USA strong but digital-concentrated",    "Composite 0.531 — digital score near ceiling. Growth limited by FDI volatility."),
+            ("📈 India — Digital-led rise",               "Composite 0.444 by 2027. Manufacturing strength + accelerating digital. FDI remains the drag."),
+            ("📉 UK — FDI-driven decline",                "2023: 0.426 → 2027: 0.354. Post-Brexit FDI volatility extrapolated by Prophet. No policy overlay."),
+            ("🌐 Digital Economy is the key differentiator", "SHAP confirms 72.7% of composite variance explained by digital score. Highest separation across tiers."),
+        ]
+    for title, body in insights:
+        st.markdown(f"""
+        <div style="background:{C['light']};border-radius:8px;padding:14px;margin-bottom:8px;border-left:4px solid {C['orange']};">
+            <div style="font-weight:700;color:{C['navy']};">{title}</div>
+            <div style="font-size:0.88rem;color:#555;margin-top:4px;">{body}</div>
+        </div>""", unsafe_allow_html=True)
     st.markdown("# 🏆 Investment Recommendations")
     st.markdown("Final investment verdict based on Scenario C (Post-Recovery) 2027 composite trajectory.")
     st.markdown("---")
