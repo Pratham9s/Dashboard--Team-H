@@ -973,7 +973,7 @@ elif page == "🌐 Policy Scenarios":
             )
 
             # Tier breakdown pie
-            tier_counts = sc_display["Tier"].value_counts().reset_index()
+            tier_counts = sc_display["Tier_v2"].value_counts().reset_index()
             tier_counts.columns = ["Tier","Count"]
             fig_pie = px.pie(tier_counts, names="Tier", values="Count",
                              color="Tier", color_discrete_map={"High":C["green"],"Medium":C["amber"],"Low":C["red"]},
@@ -1284,101 +1284,6 @@ elif page == "🏆 Investment Recommendations":
             ("📉 UK — FDI-driven decline",                "2023: 0.426 → 2027: 0.354. Post-Brexit FDI volatility extrapolated by Prophet. No policy overlay."),
             ("🌐 Digital Economy is the key differentiator", "SHAP confirms 72.7% of composite variance explained by digital score. Highest separation across tiers."),
         ]
-    for title, body in insights:
-        st.markdown(f"""
-        <div style="background:{C['light']};border-radius:8px;padding:14px;margin-bottom:8px;border-left:4px solid {C['orange']};">
-            <div style="font-weight:700;color:{C['navy']};">{title}</div>
-            <div style="font-size:0.88rem;color:#555;margin-top:4px;">{body}</div>
-        </div>""", unsafe_allow_html=True)
-    st.markdown("# 🏆 Investment Recommendations")
-    st.markdown("Final investment verdict based on Scenario C (Post-Recovery) 2027 composite trajectory.")
-    st.markdown("---")
-
-    rec = load_recommendations()
-    forecasts = load_forecasts()
-    scenarios = load_scenarios()
-
-    # Recommendation cards
-    st.markdown('<div class="section-header">Country Verdicts — 2027</div>', unsafe_allow_html=True)
-    for _, row in rec.iterrows():
-        country = row["Country"]
-        recommendation = row["Recommendation"]
-        rationale = row["Rationale"]
-        tier = row["Tier_2027"]
-        score_2024 = row["Score_2024_ScenC"]
-        score_2027 = row["Score_2027_ScenC"]
-        trend = row["Trend_2024_2027"]
-
-        rec_color = {"Invest Now": C["green"], "Wait": C["amber"], "Avoid": C["red"]}.get(recommendation, C["navy"])
-
-        st.markdown(f"""
-        <div style="background:white;border-radius:12px;padding:20px;margin-bottom:14px;
-                    box-shadow:0 2px 10px rgba(0,0,0,0.08);border-left:6px solid {rec_color};">
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
-                <div style="font-size:1.4rem;font-weight:700;color:{C['navy']};">{country}</div>
-                <span style="background:{rec_color};color:white;border-radius:20px;padding:4px 14px;font-weight:700;font-size:0.9rem;">
-                    {recommendation}
-                </span>
-                <span style="background:{C['light']};color:{C['navy']};border-radius:20px;padding:4px 12px;font-size:0.85rem;">
-                    Tier: {tier}
-                </span>
-            </div>
-            <div style="display:flex;gap:24px;margin-bottom:10px;">
-                <div><span style="color:#6b7c93;font-size:0.82rem;">2024 Score</span><br>
-                     <span style="font-weight:700;font-size:1.1rem;">{score_2024:.4f}</span></div>
-                <div><span style="color:#6b7c93;font-size:0.82rem;">2027 Score</span><br>
-                     <span style="font-weight:700;font-size:1.1rem;color:{rec_color};">{score_2027:.4f}</span></div>
-                <div><span style="color:#6b7c93;font-size:0.82rem;">Trend (2024–27)</span><br>
-                     <span style="font-weight:700;font-size:1.1rem;color:{C['green'] if trend>0 else C['red']};">
-                     {"▲" if trend > 0 else "▼"} {abs(trend):.4f}</span></div>
-            </div>
-            <div style="font-size:0.88rem;color:#555;">{rationale}</div>
-        </div>""", unsafe_allow_html=True)
-
-    st.markdown("---")
-
-    # Scenario C trajectory comparison
-    st.markdown('<div class="section-header">Scenario C Composite Trajectories (2024–2027)</div>', unsafe_allow_html=True)
-    sc_c = scenarios[scenarios["Scenario"]=="C_ShockFade"].sort_values(["Country","Year"])
-    fig_traj = px.line(
-        sc_c, x="Year", y="Composite", color="Country",
-        markers=True, line_dash="Country",
-        color_discrete_sequence=[C["green"], C["blue"], C["orange"]],
-        labels={"Composite":"Composite Score","Year":"Year"},
-    )
-    fig_traj.update_layout(
-        height=380, paper_bgcolor="white", plot_bgcolor="#f8f9fa",
-        xaxis=dict(tickformat='d'),
-        legend=dict(orientation="h", y=-0.2),
-        yaxis=dict(range=[0.3,0.7]),
-        margin=dict(l=40,r=20,t=20,b=60),
-    )
-    st.plotly_chart(fig_traj, use_container_width=True)
-
-    # Global top 10 from Task 5 (2027)
-    st.markdown('<div class="section-header">Global Top 10 — Composite Score 2027 (All 194 Countries)</div>', unsafe_allow_html=True)
-    top10 = forecasts[forecasts["Year"]==2027].sort_values("score_composite", ascending=False).head(10)
-    top10_display = top10[["Country","score_composite","score_fdi","score_banking","score_manuf","score_digital"]].copy()
-    top10_display.columns = ["Country","Composite","FDI","Banking","Manufacturing","Digital"]
-    top10_display = top10_display.reset_index(drop=True)
-    top10_display.index += 1
-
-    st.dataframe(
-        top10_display.style.format({c:"{:.3f}" for c in ["Composite","FDI","Banking","Manufacturing","Digital"]})
-                           .background_gradient(subset=["Composite"], cmap="Greens"),
-        use_container_width=True, height=380,
-    )
-
-    # Key insights
-    st.markdown("---")
-    st.markdown('<div class="section-header">Key Insights</div>', unsafe_allow_html=True)
-    insights = [
-        ("🏆 Netherlands #1 in 2027", f"Composite 0.576 — balanced strength across all 4 pillars simultaneously. No single-pillar dependency."),
-        ("💻 USA strong but digital-concentrated", "Composite 0.531 — digital score near ceiling. Growth limited by FDI volatility."),
-        ("📈 India — Digital-led rise", "Composite 0.444 by 2027. Manufacturing strength + accelerating digital. FDI remains the drag."),
-        ("📉 UK — FDI-driven decline", "2023: 0.426 → 2027: 0.354. Post-Brexit FDI volatility extrapolated by Prophet. No policy overlay."),
-        ("🌐 Digital Economy is the key differentiator", "SHAP confirms 72.7% of composite variance explained by digital score. Highest separation across tiers."),
-    ]
     for title, body in insights:
         st.markdown(f"""
         <div style="background:{C['light']};border-radius:8px;padding:14px;margin-bottom:8px;border-left:4px solid {C['orange']};">
