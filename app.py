@@ -936,7 +936,7 @@ elif page == "🌐 Policy Scenarios":
 
     with tab_all:
         st.markdown("**All 194 countries — composite scores under v2.0 optimised weights**")
-        st.caption("Source: t9_forecast_composite_v2.csv — all 194 countries, 2024–2027, v2.0 optimised weights. Scenario A (baseline) shown. For B/C policy overlay see Focus Countries tab.")
+        st.caption("Source: t9_forecast_composite_v2.csv — all 194 countries, 2024–2027, v2.0 optimised weights.")
         v2_fc_all = load_v2_forecasts()
         if v2_fc_all is not None:
             col_yr, col_f, col_t = st.columns([1, 3, 1])
@@ -947,16 +947,19 @@ elif page == "🌐 Policy Scenarios":
             with col_t:
                 tier_filter = st.selectbox("Tier", ["All","High","Medium","Low"], key="all_tier")
 
-            sc_display = v2_fc_all[v2_fc_all["year"]==sel_yr_all].copy()
-            sc_display = sc_display.rename(columns={
+            # Full year slice — used for pie chart
+            sc_year = v2_fc_all[v2_fc_all["year"]==sel_yr_all].copy()
+            sc_year = sc_year.rename(columns={
                 "country": "Country",
                 "composite_v2": "Composite_v2",
                 "composite_v1": "Composite_v1",
                 "tier_v2": "Tier_v2",
             })
-            sc_display = sc_display.sort_values("Composite_v2", ascending=False).reset_index(drop=True)
-            sc_display.insert(0, "Rank", range(1, len(sc_display)+1))
+            sc_year = sc_year.sort_values("Composite_v2", ascending=False).reset_index(drop=True)
+            sc_year.insert(0, "Rank", range(1, len(sc_year)+1))
 
+            # Filtered slice — used for table only
+            sc_display = sc_year.copy()
             if search:
                 sc_display = sc_display[sc_display["Country"].str.contains(search, case=False, na=False)]
             if tier_filter != "All":
@@ -972,14 +975,35 @@ elif page == "🌐 Policy Scenarios":
                 use_container_width=True, height=540,
             )
 
-            # Tier breakdown pie
-            tier_counts = sc_display["Tier_v2"].value_counts().reset_index()
+            st.markdown("---")
+
+            # Pie chart — always full 194 countries, not filtered
+            tier_counts = sc_year["Tier_v2"].value_counts().reset_index()
             tier_counts.columns = ["Tier","Count"]
             fig_pie = px.pie(tier_counts, names="Tier", values="Count",
                              color="Tier", color_discrete_map={"High":C["green"],"Medium":C["amber"],"Low":C["red"]},
                              title=f"Tier Distribution — {sel_yr_all} (v2.0, all 194 countries)")
             fig_pie.update_layout(height=300, paper_bgcolor="white", margin=dict(t=40,b=20))
             st.plotly_chart(fig_pie, use_container_width=True)
+
+            # Top 20 bar chart
+            st.markdown('<div class="section-header">Top 20 by Composite v2.0</div>', unsafe_allow_html=True)
+            top20 = sc_year.head(20)
+            fig_top20 = px.bar(
+                top20, x="Composite_v2", y="Country", orientation="h",
+                color="Tier_v2",
+                color_discrete_map={"High":C["green"],"Medium":C["blue"],"Low":C["red"]},
+                labels={"Composite_v2":"Composite v2.0","Country":""},
+                text="Composite_v2",
+            )
+            fig_top20.update_traces(texttemplate="%{text:.3f}", textposition="outside")
+            fig_top20.update_layout(
+                height=560, yaxis=dict(autorange="reversed"),
+                paper_bgcolor="white", plot_bgcolor="#f8f9fa",
+                showlegend=True, margin=dict(l=120,r=80,t=20,b=40),
+            )
+            st.plotly_chart(fig_top20, use_container_width=True)
+
         else:
             st.info("Upload t9_forecast_composite_v2.csv to the repo root to enable this view.")
 
