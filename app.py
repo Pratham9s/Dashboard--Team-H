@@ -932,12 +932,63 @@ elif page == "🌐 Policy Scenarios":
         "C_ShockFade":      "C — Recovery",
     }
 
-    countries = scenarios["Country"].unique().tolist()
-    col1, col2 = st.columns([2,1])
-    with col1:
-        sel_country = st.selectbox("Select Country", countries)
-    with col2:
-        sel_pillar = st.selectbox("Pillar", ["Composite","FDI","Banking","Manufacturing","Digital"])
+    tab_focus, tab_all = st.tabs(["🔎 Focus Countries (A/B/C)", "🌍 All 194 Countries (Scenario A)"])
+
+    with tab_all:
+        st.markdown("**Scenario A — Baseline composite trajectory for all 194 countries (v2.0 weights)**")
+        st.caption("Full A/B/C scenario modelling is available for India, USA, and Viet Nam. All other countries show Scenario A (Prophet baseline under v2.0 weights).")
+        v2_fc_all = load_v2_forecasts()
+        if v2_fc_all is not None:
+            fc_2027 = v2_fc_all[v2_fc_all["year"]==2027].sort_values("composite_v2", ascending=False).copy()
+            fc_2027["rank"] = range(1, len(fc_2027)+1)
+            # Tier assignment
+            def assign_tier(s):
+                if s >= 0.362: return "High"
+                elif s >= 0.290: return "Medium"
+                else: return "Low"
+            fc_2027["tier"] = fc_2027["composite_v2"].apply(assign_tier)
+            tier_color_map = {"High": C["green"], "Medium": C["amber"], "Low": C["red"]}
+
+            col_f, col_t = st.columns([3,1])
+            with col_f:
+                search = st.text_input("Search country", placeholder="Type to filter...")
+            with col_t:
+                tier_filter = st.selectbox("Tier", ["All","High","Medium","Low"])
+
+            display = fc_2027.copy()
+            if search:
+                display = display[display["country"].str.contains(search, case=False)]
+            if tier_filter != "All":
+                display = display[display["tier"]==tier_filter]
+
+            st.dataframe(
+                display[["rank","country","composite_v2","composite_v1","tier"]].rename(columns={
+                    "rank":"Rank","country":"Country",
+                    "composite_v2":"Composite v2.0","composite_v1":"Composite v1.0","tier":"Tier"
+                }).reset_index(drop=True).style
+                    .format({"Composite v2.0":"{:.3f}","Composite v1.0":"{:.3f}"})
+                    .background_gradient(subset=["Composite v2.0"], cmap="Greens"),
+                use_container_width=True, height=520,
+            )
+
+            # Tier breakdown pie
+            tier_counts = fc_2027["tier"].value_counts().reset_index()
+            tier_counts.columns = ["Tier","Count"]
+            fig_pie = px.pie(tier_counts, names="Tier", values="Count",
+                             color="Tier", color_discrete_map={"High":C["green"],"Medium":C["amber"],"Low":C["red"]},
+                             title="2027 Tier Distribution (194 countries, v2.0)")
+            fig_pie.update_layout(height=320, paper_bgcolor="white", margin=dict(t=40,b=20))
+            st.plotly_chart(fig_pie, use_container_width=True)
+        else:
+            st.info("Upload t9_forecast_composite_v2.csv to the repo root to enable this view.")
+
+    with tab_focus:
+        countries = scenarios["Country"].unique().tolist()
+        col1, col2 = st.columns([2,1])
+        with col1:
+            sel_country = st.selectbox("Select Country", countries)
+        with col2:
+            sel_pillar = st.selectbox("Pillar", ["Composite","FDI","Banking","Manufacturing","Digital"])
 
     pillar_col_map = {"Composite": _comp_col, "FDI":"FDI","Banking":"Banking",
                       "Manufacturing":"Manufacturing","Digital":"Digital"}
@@ -1086,9 +1137,9 @@ elif page == "🏆 Investment Recommendations":
         recommendation = row.get("Recommendation", row.get("recommendation",""))
         rationale    = row.get("Rationale", row.get("rationale",""))
         tier         = row.get("Tier_2027", row.get("tier_2027",""))
-        score_2024   = row.get("Score_2024_ScenC", row.get("score_2024", 0))
-        score_2027   = row.get("Score_2027_ScenC", row.get("score_2027", 0))
-        trend        = row.get("Trend_2024_2027",  row.get("trend", 0))
+        score_2024   = float(row.get("Score_2024_ScenC", row.get("score_2024", 0)) or 0)
+        score_2027   = float(row.get("Score_2027_ScenC", row.get("score_2027", 0)) or 0)
+        trend        = float(row.get("Trend_2024_2027",  row.get("trend", 0)) or 0)
 
         rec_color = {"Invest Now": C["green"], "Wait": C["amber"], "Avoid": C["red"]}.get(recommendation, C["navy"])
 
